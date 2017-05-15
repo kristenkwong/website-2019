@@ -28,13 +28,15 @@
 			#main a {
 				color: white;
 				text-decoration: none;
+				border-bottom: 3px solid white;
 				font-weight: bold;
 				padding-right: 7px;
 				padding-left: 2px;
-				transition: background 1.5s;
+				transition: background 1.5s, border-bottom 1s;
 			}
 			#main a:hover {
 				background-color: #44BBE3;
+				border-bottom: none;
 			}
 
 			#main a:hover ~ #hidden {
@@ -51,19 +53,18 @@
 				background-size: 100%;
 				background-repeat: no-repeat;
 				background-position: bottom left;
-				height: 40vh;
+				height: auto;
 
 				padding-top: 10vh;
 				padding-right: 20vw;
 				padding-bottom: 10vh;
-				text-align: right;
+				padding-left: 20vw;
+				text-align: center;
 			}
 			#about .photo {
-				height: 40vh;
-				border-radius: 60%;
-				float: left;
-				margin-left: 15vw;
-				margin-right: 50px;
+				height: 250px;
+				border-radius: 50%;
+				margin-bottom: 5vh;
 			}
 		</style>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
