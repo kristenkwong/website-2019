@@ -6,20 +6,22 @@
 		<style>
 			body {
 				background-color: #262626;
-				background-image: url(bg.svg);
-				background-position: top right;
-				background-repeat: no-repeat;
-				background-size: contain;
-			}
-			#main {
-				padding: 0.8em;
-				color: white;
 				font-family: 'Montserrat', sans-serif;
 				font-size: 30px;
-				background-size: cover;
+
+			}
+			#main {
+				background-image: url(bg.svg);
+				background-size: contain;
+				background-color: #262626;
+				background-position: top right;
+				background-repeat: no-repeat;
+
+				padding: 0.8em;
+				color: white;
 				height: 60vh;
-				margin-top: 30vh;
-				margin-left: 8vw;
+				padding-top: 30vh;
+				padding-left: 5vw;
 			}
 			#main a {
 				color: white;
@@ -27,15 +29,31 @@
 				font-weight: bold;
 				padding-right: 7px;
 				padding-left: 2px;
-				transition: background 2s, width 5s;
+				transition: background 1s;
 			}
 			#main a:hover {
 				background-color: #44BBE3;
+				transition: 2s;
 			}
 
+			#main a:hover ~ #hidden {
+				display: block;
+			}
+
+			#hidden {
+				transition: 2s;
+				display: none;
+			}
 			#about {
 				padding: 0.8em;
+				background-image: url(map.svg);
 				background-color: #44BBE3;
+				background-size: 100%;
+				background-repeat: no-repeat;
+				background-position: bottom left;
+				height: 50vh;
+
+				padding-top: 30vh;
 			}
 		</style>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,9 +65,10 @@
 	<div class="container">
 		<div id = "main">
 			Hi! I'm <a href="#"><font size = 40>Kristen</font></a>, <br>a second year <b>Computer Science</b> student at UBC.
+			<div id="hidden">I'm a <b>developer</b>, <b>designer</b>, and <b>travel enthusiast.</b></div>
 		</div>
 		<div id = "about">
-			This is a placeholder about page.
+			I'm a developer, designer, and travel enthusiast.
 		</div>
 		<div id = "past">
 			I have worked at Netgear Canada as a Software Test Engineer.
