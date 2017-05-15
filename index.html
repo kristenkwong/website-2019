@@ -7,10 +7,12 @@
 			body {
 				background-color: #262626;
 				font-family: 'Montserrat', sans-serif;
-				font-size: 30px;
+				color: white;
 
 			}
 			#main {
+				font-size: 30px;
+
 				background-image: url(bg.svg);
 				background-size: contain;
 				background-color: #262626;
@@ -45,14 +47,23 @@
 			}
 			#about {
 				padding: 0.8em;
-				background-image: url(map.svg);
 				background-color: #44BBE3;
 				background-size: 100%;
 				background-repeat: no-repeat;
 				background-position: bottom left;
-				height: 50vh;
+				height: 40vh;
 
-				padding-top: 30vh;
+				padding-top: 10vh;
+				padding-right: 20vw;
+				padding-bottom: 10vh;
+				text-align: right;
+			}
+			#about .photo {
+				height: 40vh;
+				border-radius: 60%;
+				float: left;
+				margin-left: 15vw;
+				margin-right: 50px;
 			}
 		</style>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,14 +74,17 @@
 <body>
 	<div class="container">
 		<div id = "main">
-			Hi! I'm <a href="#"><font size = 40>Kristen</font></a>, <br>a second year <b>Computer Science</b> student at UBC.<br><br>
+			Hi! I'm <a href="#"><font size=10px>Kristen</font></a>, <br>a second year <b>Computer Science</b> student at UBC.<br><br>
 			<div id="hidden">I'm a <b>developer</b>, <b>designer</b>, and <b>travel enthusiast.</b></div>
 		</div>
-		<div id = "about">
-			I'm a developer, designer, and travel enthusiast.
+		<div id = "about" class="photo">
+			<img src="me.jpeg" class="photo">
+			<br>I'm from Vancouver, Canada. 
+			<br><br> I love learning about anything and everything, from Python to Java to Graphic Design to Web Development. I'm currently in an 8 month internship working as a Software Test Engineer Co-op at Netgear.
+			<br><br> Previously, I was an graphic design and web development intern at VIZ Future, a small graphic design startup in Shanghai, China.
 		</div>
 		<div id = "past">
-			I have worked at Netgear Canada as a Software Test Engineer.
+			<!--I have worked at Netgear Canada as a Software Test Engineer.-->
 		</div>
 	</div>
 </body>
