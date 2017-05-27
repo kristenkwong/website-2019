@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 	<head> 
 		<title> Hello world!</title>
 		<style>
 			body {
 				background-color: #262626;
-				font-family: 'Montserrat', sans-serif;
+				font-family: 'Open Sans Condensed', sans-serif;
+				font-size: 20px;
 				color: white;
 
 			}
 			#main {
+				font-family: 'Montserrat', sans-serif;
 				font-size: 30px;
 
 				background-image: url(bg.svg);
@@ -48,48 +50,67 @@
 				opacity: 0;
 			}
 			#about {
-				padding: 0.8em;
 				background-color: #44BBE3;
 				background-size: 100%;
-				background-repeat: no-repeat;
-				background-position: bottom left;
 
 				padding-top: 10vh;
-				padding-right: 20vw;
-				padding-bottom: 10vh;
-				padding-left: 20vw;
+				padding-right: 10vw;
+				padding-left: 10vw;
 				text-align: center;
+				overflow: auto;
+				position: relative;
 			}
 			#about .photo {
+				float: left;
+				margin-left: 10%;
+				margin-right: 10%;
 				height: 250px;
 				border-radius: 50%;
-				margin-bottom: 5vh;
 			}
+			#about .text {
+				padding-top: 10vh;
+			}
+
+			#chartdiv {
+				top: 0;
+				left: 0;
+				z-index: -100;
+				background-color: #44BBE3;
+  				width: 100%;
+  				height: 80vh;
+			}
+
 		</style>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 	</head>
 </html>
 
 <body>
+
+	<script src="https://www.amcharts.com/lib/3/ammap.js"></script>
+	<script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
+	<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+	<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+	<script src="map.js"></script>
+
+
 	<div class="container">
 		<div id = "main">
 			Hi! I'm <a href="#"><font size=10px>Kristen</font></a>, <br>a second year <b>Computer Science</b> student at UBC.<br><br>
 			<div id="hidden">I'm a <b>developer</b>, <b>designer</b>, and <b>travel enthusiast.</b></div>
 		</div>
 
-
-
-
-
-
 		
-		<div id = "about" class="photo">
+		<div id = "about">
 			<img src="me.jpeg" class="photo">
-			<br>I'm from Vancouver, Canada. 
-			<br><br> I love learning about anything and everything, from Python to Java to Graphic Design to Web Development. I'm currently in an 8 month internship working as a Software Test Engineer Co-op at Netgear.
-			<br><br> Previously, I was an graphic design and web development intern at VIZ Future, a small graphic design startup in Shanghai, China.
+			<div class="text">
+				<br>I'm Kristen Kwong. I'm from Vancouver, Canada. 
+				<br><br> I love learning about anything and everything, from Python to Java to Graphic Design to Web Development. I'm currently in an 8 month internship working as a Software Test Engineer Co-op at Netgear.
+			</div>
 		</div>
+		<div id="chartdiv"></div>
 		<div id = "past">
 			<!--I have worked at Netgear Canada as a Software Test Engineer.-->
 		</div>
