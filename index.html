@@ -4,6 +4,11 @@
 	<head> 
 		<title> Hello world!</title>
 		<style>
+
+			::selection{
+				background: #6AC6E6;
+			}
+
 			body {
 				background-color: #262626;
 				font-family: 'Open Sans Condensed', sans-serif;
@@ -65,12 +70,13 @@
 				height: 150px;
 				border-radius: 50% 50% 0% 50%;
 				margin-right: 40px;
+				margin-left: 40px;
 			}
 			#about .text {
 				margin-top: 20px;
-				width: 50vw;
+				width: 200px;
 				text-align: left;
-				min-width: 40vw;
+				min-width: 50vw;
 				display: inline-block;
 			}
 
@@ -81,6 +87,27 @@
 				background-color: #44BBE3;
   				width: 100%;
   				height: 50vh;
+			}
+
+			#heading {
+				text-align: left;
+				font-family: 'Montserrat', sans-serif;
+				font-weight: bold;
+				font-size: 28px;
+				letter-spacing: 2px;
+				padding-bottom: 0.8em;
+			}
+
+			.interest {
+				width: 50%;
+				float: left;
+				display: inline-block;
+			}
+
+			.text b {
+				font-weight: bold;
+				background-color: #6AC6E6;
+
 			}
 
 		</style>
@@ -109,8 +136,14 @@
 		<div id = "about">
 			<img src="me.jpeg" class="photo">
 			<div class="text">
+			<div id="heading">about</div>
 				<b>Location:</b> Vancouver, Canada
-				<br><br> I love learning about anything and everything, from Python to Java to Graphic Design to Web Development. I'm currently in an 8 month internship working as a Software Test Engineer Co-op at Netgear.
+				<br><b>Currently:</b> Software Test Engineer Co-op @ <a href="https://www.netgear.com/">Netgear</a>
+				<br><br><b>Interests:</b>
+				<br><div class="interest">software development</div>
+				<div class="interest">automation</div>
+				<div class="interest">web development</div>
+				<div class="interest">graphic design</div>
 			</div>
 		</div>
 		<div id="chartdiv"></div>
