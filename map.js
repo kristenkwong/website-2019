@@ -23,9 +23,9 @@ var map = AmCharts.makeChart( "chartdiv", {
 
   "dataProvider": {
     "map": "worldLow",
-    "zoomLevel": 1.5,
+    "zoomLevel": 2,
     "zoomLongitude": 0,
-    "zoomLatitude": 40,
+    "zoomLatitude": 50,
 
     "lines": [ {
       "id": "line1",
