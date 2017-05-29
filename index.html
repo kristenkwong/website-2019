@@ -38,12 +38,13 @@
 				font-weight: bold;
 				padding-right: 7px;
 				padding-left: 2px;
-				/* border-bottom: 4px solid white;*/
-				transition: background 1.5s;/* border-bottom 0.5s;*/
+				transition: 1s;
+				box-shadow: inset 0 0px 0 white, inset 0 -6px 0 #44BBE3;
 			}
 			#main a:hover {
-				background-color: #44BBE3;
-				/*border-bottom: 1px solid #44BBE3;*/
+				/*background-color: #44BBE3;*/
+				box-shadow: inset 0 0px 0 white, inset 0 33px 0 #44BBE3;
+				background-color: transparent;
 			}
 
 			#main a:hover ~ #hidden {
@@ -67,6 +68,7 @@
 				text-align: center;
 			}
 			#about .photo {
+				pointer-events: none;
 				height: 150px;
 				border-radius: 50% 50% 0% 50%;
 				margin-right: 40px;
@@ -108,6 +110,17 @@
 				font-weight: bold;
 				background-color: #6AC6E6;
 
+			}
+
+			a {
+				text-decoration: none;
+				color: white;
+				box-shadow: inset 0 0px 0 white, inset 0 -6px 0 #8670cd;
+				transition: 1s;
+			}
+
+			a:hover {
+				box-shadow: inset 0 0px 0 white, inset 0 25px 0 #8670cd;
 			}
 
 		</style>
