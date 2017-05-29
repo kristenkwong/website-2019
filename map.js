@@ -23,9 +23,9 @@ var map = AmCharts.makeChart( "chartdiv", {
 
   "dataProvider": {
     "map": "worldLow",
-    "zoomLevel": 2,
+    "zoomLevel": 2.3,
     "zoomLongitude": 0,
-    "zoomLatitude": 50,
+    "zoomLatitude": 45,
 
     "lines": [ {
       "id": "line1",
@@ -86,6 +86,36 @@ var map = AmCharts.makeChart( "chartdiv", {
       "latitude": 51.1784,
       "longitude": -115.5708
     }, {
+      "svgPath": targetSVG,
+      "title": "San Francisco",
+      "latitude": 37.7749,
+      "longitude": -122.4194
+    }, {
+      "svgPath": targetSVG,
+      "title": "Los Angeles",
+      "latitude": 34.0522,
+      "longitude": -118.2437
+    }, {
+      "svgPath": targetSVG,
+      "title": "Las Vegas",
+      "latitude": 36.1699,
+      "longitude": -115.1398
+    }, {
+      "svgPath": targetSVG,
+      "title": "Tokyo",
+      "latitude": 35.6895,
+      "longitude": 139.6917
+    }, {
+      "svgPath": targetSVG,
+      "title": "Portland",
+      "latitude": 45.5127,
+      "longitude": -122.6795
+    }, {
+      "svgPath": targetSVG,
+      "title": "Ottawa",
+      "latitude": 45.4215,
+      "longitude": -75.6972
+    }, {
       "svgPath": planeSVG,
       "positionOnLine": 0,
       "color": "#000000",
@@ -119,7 +149,7 @@ var map = AmCharts.makeChart( "chartdiv", {
     "selectedColor": "#585869",
     "pauseDuration": 0.2,
     "animationDuration": 3,
-    "adjustAnimationSpeed": false
+    "adjustAnimationSpeed": true
   },
 
   "linesSettings": {
