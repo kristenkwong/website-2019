@@ -1,0 +1,120 @@
+::selection{
+				background: #44BBE3;
+			}
+
+			body {
+				background-color: #262626;
+				font-family: 'Open Sans Condensed', sans-serif;
+				font-size: 20px;
+				color: white;
+
+			}
+			#main {
+				font-family: 'Montserrat', sans-serif;
+				font-size: 30px;
+
+				background-image: url(bg.svg);
+				background-size: contain;
+				background-color: #262626;
+				background-position: top right;
+				background-repeat: no-repeat;
+
+				padding: 0.8em;
+				color: white;
+				height: 60vh;
+				overflow: auto;
+				padding-top: 30vh;
+				padding-left: 5vw;
+			}
+			#main a {
+				color: white;
+				text-decoration: none;
+				font-weight: bold;
+				padding-right: 7px;
+				padding-left: 2px;
+				transition: 1s;
+				box-shadow: inset 0 0px 0 white, inset 0 -6px 0 #44BBE3;
+			}
+			#main a:hover {
+				/*background-color: #44BBE3;*/
+				box-shadow: inset 0 0px 0 white, inset 0 33px 0 #44BBE3;
+				background-color: transparent;
+			}
+
+			#main a:hover ~ #hidden {
+				opacity: 100;
+			}
+
+			#hidden {
+				transition: 2s;
+				opacity: 0;
+			}
+			#about {
+				background-color: #44BBE3;
+				background-size: 100%;
+
+				padding-top: 8vh;
+				padding-right: 8vw;
+				padding-left: 8vw;
+				padding-bottom: 8vh;
+				overflow: auto;
+				position: relative;
+				text-align: center;
+			}
+			#about .photo {
+				pointer-events: none;
+				user-select: none;
+
+				height: 150px;
+				border-radius: 50% 50% 0% 50%;
+				margin-right: 40px;
+				margin-left: 40px;
+				vertical-align: top;
+			}
+			#about .text {
+				padding-top: 10px;
+				text-align: left;
+				min-width: 20vw;
+				display: inline-block;
+			}
+
+			#chartdiv {
+				top: 0;
+				left: 0;
+				z-index: -100;
+				background-color: #44BBE3;
+  				width: 100%;
+  				height: 40vh;
+			}
+
+			#heading {
+				text-align: left;
+				font-family: 'Montserrat', sans-serif;
+				font-weight: bold;
+				font-size: 28px;
+				letter-spacing: 2px;
+				padding-bottom: 0.8em;
+			}
+
+			.interest {
+				width: 50%;
+				float: left;
+				display: inline-block;
+			}
+
+			.text b {
+				font-weight: bold;
+				background-color: #6AC6E6;
+
+			}
+
+			a {
+				text-decoration: none;
+				color: white;
+				box-shadow: inset 0 0px 0 white, inset 0 -6px 0 #8670cd;
+				transition: 1s;
+			}
+
+			a:hover {
+				box-shadow: inset 0 0px 0 white, inset 0 25px 0 #8670cd;
+			}
