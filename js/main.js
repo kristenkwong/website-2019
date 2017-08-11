@@ -17,24 +17,57 @@ $(function() {
 	});
 });
 
-$(function() {
-	$("#develop").hover(function() {
-		$(this).animate({right: '10%'},
-			{queue: false, duration: 500});
-	}, function() {
-		$(this).animate({right:'50%'},
-			{queue: false, duration: 500});
+if( $(window).width() > 750 ) {
+    $(function() {
+		$("#develop").hover(function() {
+			$(this).animate({right: '10%'},
+				{queue: false, duration: 500});
+		}, function() {
+			$(this).animate({right:'50%'},
+				{queue: false, duration: 500});
+		});
 	});
+}
+
+$(window).resize(function() {
+    if( $(window).width() > 750 ) {
+        $(function() {
+			$("#develop").hover(function() {
+				$(this).animate({right: '10%'},
+					{queue: false, duration: 500});
+			}, function() {
+				$(this).animate({right:'50%'},
+					{queue: false, duration: 500});
+			});
+		});
+    }
 });
 
-$(function() {
-	$("#design").hover(function() {
-		$(this).animate({left: '10%'},
-			{queue: false, duration: 500});
-	}, function() {
-		$(this).animate({left:'50%'},
-			{queue: false, duration: 500});
-	});
+if( $(window).width() > 750 ) {
+		$(function() {
+			$("#design").hover(function() {
+				$(this).animate({left: '10%'},
+					{queue: false, duration: 500});
+			}, function() {
+				$(this).animate({left:'50%'},
+					{queue: false, duration: 500});
+			});
+		});
+    }
+
+
+$(window).resize(function() {
+    if( $(window).width() > 750 ) {
+		$(function() {
+			$("#design").hover(function() {
+				$(this).animate({left: '10%'},
+					{queue: false, duration: 500});
+			}, function() {
+				$(this).animate({left:'50%'},
+					{queue: false, duration: 500});
+			});
+		});
+    }	
 });
 
 
