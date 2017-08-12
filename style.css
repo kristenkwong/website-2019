@@ -209,12 +209,10 @@ a:hover {
 		right: 50%;
 		text-align: right;
 		z-index: 0;
-		transition: z-index 3s;
 	}
 
 	#develop:hover {
 		z-index: 400;
-		transition: z-index 3s;
 	}
 
 	#design { 
@@ -228,14 +226,13 @@ a:hover {
 		vertical-align: top;
 		overflow: hidden;
 		left: 50%;
-		z-index: 0;
+		z-index: -1;
 		text-align: left;
-		transition: z-index 3s;
+		transition: z-index 2s;
 	}
 
 	#design:hover {
 		z-index: 400;
-		transition: z-index 3s;
 	}
 }
 
