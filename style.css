@@ -195,13 +195,6 @@ a:hover {
 	text-align: center;
 }
 
-#projects #heading {
-	color: #262626;
-	background-color: #eaf9ff;
-	padding-top: 2vh;
-	padding-bottom: 2vh;
-}
-
 @media only screen and (min-width: 750px) {
 	#develop {
 		position: absolute;
@@ -215,11 +208,13 @@ a:hover {
 		overflow: hidden;
 		right: 50%;
 		text-align: right;
+		z-index: 0;
+		transition: z-index 3s;
 	}
 
 	#develop:hover {
-		transition: z-index 9s;
 		z-index: 400;
+		transition: z-index 3s;
 	}
 
 	#design { 
@@ -234,13 +229,13 @@ a:hover {
 		overflow: hidden;
 		left: 50%;
 		z-index: 0;
-		transition: z-index 9s;
 		text-align: left;
+		transition: z-index 3s;
 	}
 
 	#design:hover {
-		transition: z-index 9s;
 		z-index: 400;
+		transition: z-index 3s;
 	}
 }
 
