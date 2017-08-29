@@ -81,6 +81,13 @@ body {
 	opacity: 0;
 }
 
+
+@media only screen and (max-width: 800px) {
+	#hidden {
+		opacity: 100;
+	}
+}
+
 #heading {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: bold;
