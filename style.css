@@ -295,14 +295,14 @@ body {
 		padding-bottom: 10vh;
 		padding-right: 5vh;
 		float: left;
-		width: 60%;
+		width: 100%;
 		background-color: #8670cd; /*purple*/
 		vertical-align: top;
 		overflow: hidden;
 		right: 50%;
 		text-align: right;
 		z-index: 0;
-		transition: width 0.3s;
+		transition: width 0.8s;
 		height: 60vh;
 	}
 
@@ -332,6 +332,7 @@ body {
 	#design:hover {
 		z-index: 400;
 		width: 100%;
+		transition: z-index 2s, width 0.8s;
 	}
 
 	#design img {
