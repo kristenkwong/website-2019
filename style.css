@@ -222,29 +222,37 @@ body {
 	padding-top: 10px;
 }
 
-#design .readmore {
-	background-color: #8670cd;
+.readmore {
 	border: none;
 	color: white;
-	padding: 5px 5px;
+	padding: 2px 5px;
 	text-align: center;
 	text-decoration: none;
 	font-size: 12px;
 	border-radius: 5px;
 	float: right;
 	font-family: 'Source Sans Pro', sans-serif;
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    float: right;
+}
+
+#design .readmore {
+	background-color: #8670cd;
+}
+
+#design .readmore:hover {
+	background-color: #44BBE3;
+	border: 1px solid #8670cd;
 }
 
 #develop .readmore {
 	background-color: #44BBE3;
-	border: none;
-	color: white;
-	padding: 10px 10px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 12px;
-	font-family: 'Source Sans Pro', sans-serif;
+}
+
+#develop .readmore:hover {
+	background-color: #8670cd;
+	border: 1px solid #44BBE3;
 }
 
 .tags {
@@ -253,20 +261,34 @@ body {
 }
 
 .tag {
-	background-color: #B5DDEB;
 	padding: 2px 5px;
 	border-radius: 5px;
+	margin-left: 5px;
+	float: left;
+}
+
+#design .tag {
+	background-color: #B5DDEB;
 	color: #8670cd;
 }
 
-@media only screen and (min-width: 750px) {
+#develop .tag {
+	background-color: #B5DDEB;
+	color: #8670cd;
+}
+.description b {
+		font-size: 18px;
+		font-family: 'Montserrat', sans-serif;
+	}
+
+@media only screen and (min-width: 800px) {
 	#develop {
 		position: absolute;
 		padding-top: 10vh;
 		padding-bottom: 10vh;
 		padding-right: 5vh;
 		float: left;
-		width: 50%;
+		width: 90%;
 		background-color: #8670cd; /*purple*/
 		vertical-align: top;
 		overflow: hidden;
@@ -288,7 +310,7 @@ body {
 		padding-top: 10vh;
 		padding-bottom: 10vh;
 		padding-left: 5vh;
-		width: 50%;
+		width: 90%;
 		background-color: #44BBE3; /*blue*/
 		float: right;
 		vertical-align: top;
@@ -305,19 +327,16 @@ body {
 		width: 100%;
 	}
 
-	.image {
+	#design img {
 		display: inline-block;
 		width: 40vw;
 		float: left;
 		padding-left: 20px;
 		vertical-align: top;
-	}
-
-	.image img {
 		width: 40vw;
 	}
 
-	.description {
+	#design .description {
 		display: block;
 		position: relative;
 		padding-left: 50vw;
@@ -325,44 +344,47 @@ body {
 		vertical-align: top;
 	}
 
-	.description b {
-		font-size: 18px;
-		font-family: 'Montserrat', sans-serif;
+	#develop img {
+		display: inline-block;
+		float: right;
+		width: 40vw;
+		vertical-align: top;
+	}
+
+	#develop .description {
+		display: inline-block;
+		width: 30vw;
+		position: relative;
+		padding-right: 7vw;
 	}
 
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 800px) {
+
+	#projects img {
+		width: 100%;
+		padding-top: 20px;
+		width: 100%;
+		display: inline-block;
+	}
+
 	#develop {
 		padding-top: 10vh;
 		padding-bottom: 10vh;
 		background-color: #8670cd;
-		width: 100%;
-		display: inline-block;
 	}
 
 	#design {
 		padding-top: 10vh;
 		padding-bottom: 10vh;
 		background-color: #44BBE3;
-		width: 100%;
-		display: inline-block;
 	}
 
-	#image img {
-		width: 320px;
-		padding-top: 20px;
-	}
-
-	#description {
+	.description {
 		width: 320px;
 		display: inline-block;
-		padding: 10px 20px 10px 20px;
+		padding-top: 30px;
 		font-size: 16px;
-	}
-
-	#description h3 {
-		font-size: 18px;
-		font-family: 'Montserrat', sans-serif;
 	}
 }
