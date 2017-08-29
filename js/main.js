@@ -70,6 +70,17 @@ $(window).resize(function() {
     }	
 });
 
+/*if( $(window).width() > 750 ) {
+
+	$('#design').hover(function(){
+	    $('#design .description').css({"display":"inline-block"});
+	},function(){
+	    $('#design .description').css({"display":"none"});
+
+	});
+
+}*/
+
 
 $(document).scroll(function() {
 	$('#nav').toggle($(this).scrollTop()>600);

@@ -11,14 +11,14 @@ body {
 
 }
 
-a {
+#about a {
 	text-decoration: none;
 	color: white;
 	box-shadow: inset 0 0px 0 white, inset 0 -5px 0 #8670cd;
 	transition: 1s;
 }
 
-a:hover {
+#about a:hover {
 	box-shadow: inset 0 0px 0 white, inset 0 25px 0 #8670cd;
 }
 
@@ -191,8 +191,72 @@ a:hover {
 	background-image: linear-gradient(to right, rgba(38, 38, 38, 0), rgba(193, 193, 193, 0.75), rgba(38, 38, 38, 0));
 }
 
+.blue a {
+	text-decoration: none;
+	color: white;
+	transition: 1s;
+	box-shadow: inset 0 0px 0 white, inset 0 -5px 0 #44BBE3;
+}
+
+.blue a:hover {
+	box-shadow: inset 0 0px 0 white, inset 0 25px 0 #44BBE3;
+}
+
+.purple a {
+	text-decoration: none;
+	color: white;
+	transition: 1s;
+	box-shadow: inset 0 0px 0 white, inset 0 -5px 0 #8670cd;
+}
+
+.purple a:hover {
+	box-shadow: inset 0 0px 0 white, inset 0 25px 0 #8670cd;
+}
+
 #projects {
 	text-align: center;
+	overflow: auto;
+}
+
+#project {
+	padding-top: 10px;
+}
+
+#design .readmore {
+	background-color: #8670cd;
+	border: none;
+	color: white;
+	padding: 5px 5px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 12px;
+	border-radius: 5px;
+	float: right;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+#develop .readmore {
+	background-color: #44BBE3;
+	border: none;
+	color: white;
+	padding: 10px 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 12px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.tags {
+	padding-top: 30px;
+	font-size: 14px;
+}
+
+.tag {
+	background-color: #B5DDEB;
+	padding: 2px 5px;
+	border-radius: 5px;
+	color: #8670cd;
 }
 
 @media only screen and (min-width: 750px) {
@@ -202,17 +266,21 @@ a:hover {
 		padding-bottom: 10vh;
 		padding-right: 5vh;
 		float: left;
-		width: 100%;
+		width: 50%;
 		background-color: #8670cd; /*purple*/
 		vertical-align: top;
 		overflow: hidden;
 		right: 50%;
 		text-align: right;
 		z-index: 0;
+		transition: width 0.8s;
+		height: 50vh;
 	}
 
 	#develop:hover {
 		z-index: 400;
+		width: 100%;
+
 	}
 
 	#design { 
@@ -220,7 +288,7 @@ a:hover {
 		padding-top: 10vh;
 		padding-bottom: 10vh;
 		padding-left: 5vh;
-		width: 100%;
+		width: 50%;
 		background-color: #44BBE3; /*blue*/
 		float: right;
 		vertical-align: top;
@@ -228,12 +296,40 @@ a:hover {
 		left: 50%;
 		z-index: -1;
 		text-align: left;
-		transition: z-index 2s;
+		transition: z-index 2s, width 0.8s;
+		height: 50vh;
 	}
 
 	#design:hover {
 		z-index: 400;
+		width: 100%;
 	}
+
+	.image {
+		display: inline-block;
+		width: 40vw;
+		float: left;
+		padding-left: 20px;
+		vertical-align: top;
+	}
+
+	.image img {
+		width: 40vw;
+	}
+
+	.description {
+		display: block;
+		position: relative;
+		padding-left: 50vw;
+		width: 30vw;
+		vertical-align: top;
+	}
+
+	.description b {
+		font-size: 18px;
+		font-family: 'Montserrat', sans-serif;
+	}
+
 }
 
 @media only screen and (max-width: 750px) {
@@ -251,5 +347,22 @@ a:hover {
 		background-color: #44BBE3;
 		width: 100%;
 		display: inline-block;
+	}
+
+	#image img {
+		width: 320px;
+		padding-top: 20px;
+	}
+
+	#description {
+		width: 320px;
+		display: inline-block;
+		padding: 10px 20px 10px 20px;
+		font-size: 16px;
+	}
+
+	#description h3 {
+		font-size: 18px;
+		font-family: 'Montserrat', sans-serif;
 	}
 }
