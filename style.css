@@ -331,8 +331,8 @@ body {
 
 	#design:hover {
 		z-index: 400;
-		width: 100%;
-		transition: z-index 2s, width 0.8s;
+		width: 90%;
+		transition: z-index 2s;
 	}
 
 	#design img {
