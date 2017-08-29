@@ -295,14 +295,14 @@ body {
 		padding-bottom: 10vh;
 		padding-right: 5vh;
 		float: left;
-		width: 90%;
+		width: 60%;
 		background-color: #8670cd; /*purple*/
 		vertical-align: top;
 		overflow: hidden;
 		right: 50%;
 		text-align: right;
 		z-index: 0;
-		transition: width 0.8s;
+		transition: width 0.3s;
 		height: 60vh;
 	}
 
@@ -317,7 +317,7 @@ body {
 		padding-top: 10vh;
 		padding-bottom: 10vh;
 		padding-left: 5vh;
-		width: 90%;
+		width: 50%;
 		background-color: #44BBE3; /*blue*/
 		float: right;
 		vertical-align: top;
