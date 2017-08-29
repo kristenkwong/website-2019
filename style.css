@@ -303,7 +303,7 @@ body {
 		text-align: right;
 		z-index: 0;
 		transition: width 0.8s;
-		height: 100vh;
+		height: 60vh;
 	}
 
 	#develop:hover {
@@ -326,7 +326,7 @@ body {
 		z-index: -1;
 		text-align: left;
 		transition: z-index 2s, width 0.8s;
-		height: 100vh;
+		height: 60vh;
 	}
 
 	#design:hover {
