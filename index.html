@@ -43,10 +43,18 @@
 	<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 	<script src="map.js"></script>
 
-
+	<a name="main"></a>
 	<div id = "main">
 		Hi! I'm <a href="#about"><font size=10px>Kristen</font></a>, <br>a second year <b>Computer Science</b> student at UBC.<br><br>
 		<div id="hidden">I'm a <b>developer</b>, <b>designer</b>, and <b>travel enthusiast.</b></div>
+	</div>
+
+	<div id = "nav">
+		<span class="title">#nav</span>
+		<a href="#main">↑ zoom to top</a>
+		<br><a href="http://blog.kristenkwong.com">blog</a>
+		<br><a href="#about">about</a>
+		<br><a href="#projects">projects</a>
 	</div>
 
 	
@@ -68,10 +76,6 @@
 	</div>
 
 	<div id="chartdiv"></div>
-
-	<div id = "past">
-		<!--I have worked at Netgear Canada as a Software Test Engineer.-->
-	</div>
 
 	<a name = "skills"></a>
 	<div id = "skills">
@@ -98,15 +102,29 @@
 				<img src="images/sortAI_mockup.png">
 				<div class = "description blue">
 					<b>SortAI</b>
+					<div class = "date">Dubhacks, October 2016</div>
 					<br>Android application that takes pictures of objects and notifies the user of which disposal category to use, written in Java and XML with Android Studio. Integrated the Clarifai API for image recognition.
 					<div class = "tags">
 						<span class = "tag">#java</span>
 						<span class = "tag">#android</span>
 						<span class = "tag">#api</span>
-						<a href="https://github.com/NoaAvigad/SortAI"><button class = "readmore">github →</button></a>
+						<a href="https://github.com/kristenkwong/SortAI"><button class = "readmore">github →</button></a>
 					</div>
 				</div>
-
+			</div>
+			<div id="project">
+				<img src="images/day0_mockup.png">
+				<div class = "description blue">
+					<b>Day Zero</b>
+					<div class = "date">AxiomZen and BCS Hackathon, April 2017</div>
+					<br>iOS application written in Swift with Xcode where the user takes a selfie, and the emotion is analyzed and recorded into a journaled list of emojis. Uses the Microsoft Emotion API to detect the facial expressions and the Charts library to display a radial chart.
+					<div class = "tags">
+						<span class= "tag">#swift</span>
+						<span class = "tag">#iOS</span>
+						<span class = "tag">#api</span>
+						<a href="https://github.com/kristenkwong/Day0"><button class="readmore">github →</button></a>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div id = "design" class = "blue">
@@ -115,6 +133,7 @@
 				<img src="images/odelice.gif">
 				<div class = "description purple">
 					<b>Ôdelice Restaurant Website</b>
+					<div class = "date">May 2016</div>
 					<br>I designed a website for the French restaurant Ôdelice! I used Squarespace, HTML, and CSS to implement my design into a live website. 
 					<br><br><a href="http://www.o-delice.com/">http://www.o-delice.com/</a>
 					<div class = "tags">
