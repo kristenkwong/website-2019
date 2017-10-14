@@ -35,10 +35,10 @@ var map = AmCharts.makeChart( "chartdiv", {
       "longitudes": [ -123.1411, 121.4737, 114.1095, -123.1411 ]
     }, {
       "id": "line2",
-      "alpha": 0,
-      "color": "#000000",
-      "latitudes": [ 49.1652, 31.2304, 22.3964, 49.1652 ],
-      "longitudes": [ -123.1411, 121.4737, 114.1095, -123.1411 ]
+      "arc": -0.85,
+      "alpha": 0.3,
+      "latitudes": [ 49.1652, 34.0522, 28.5383, 44.9778, 49.1652],
+      "longitudes": [ -123.1411, -118.2437, -81.3792, -93.2650, -123.1411]
     } ],
     "images": [ {
       "svgPath": targetSVG,
@@ -116,6 +116,16 @@ var map = AmCharts.makeChart( "chartdiv", {
       "latitude": 45.4215,
       "longitude": -75.6972
     }, {
+      "svgPath": targetSVG,
+      "title": "Orlando",
+      "latitude": 28.5383,
+      "longitude": -81.3792
+    }, {
+      "svgPath": targetSVG,
+      "title": "Minneapolis",
+      "latitude": 44.9778,
+      "longitude": -93.2650
+    }, {
       "svgPath": planeSVG,
       "positionOnLine": 0,
       "color": "#000000",
@@ -136,6 +146,16 @@ var map = AmCharts.makeChart( "chartdiv", {
       "loop": true,
       "scale": 0.03,
       "positionScale": 1.8
+    }, {
+      "svgPath": planeSVG,
+      "positionOnLine": 0,
+      "color": "#585869",
+      "animateAlongLine": true,
+      "lineId": "line2",
+      "flipDirection": true,
+      "loop": true,
+      "scale": 0.03,
+      "positionScale": 1.3
     } ]
   },
 
