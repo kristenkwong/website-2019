@@ -159,6 +159,7 @@ body {
 #about .button:hover {
 	background-color: white;
 	color: #44BBE3;
+	box-shadow: none;
 }
 
 
