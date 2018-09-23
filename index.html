@@ -14,7 +14,7 @@
  		<meta property="og:url" content="http://kristenkwong.com"/>
   		<meta property="og:description" content="Kristen Kwong is a second year Computer Science student at UBC, with a passion for development, design, and travel."/>
   		<meta property="og:site_name" content="Kristen Kwong | Developer + Designer + Travel Enthusiast"/>
-  		<meta property="og:image" content="http://kristenkwong.github.io/me.jpeg"/>
+  		<meta property="og:image" content="images/icon.png"/>
 		
 		<!--- TWITTER CARD ---->
 		<meta name="twitter:card" content="summary"/>
@@ -22,149 +22,39 @@
   		<meta name="twitter:description" content="Kristen Kwong is a second year Computer Science student at UBC, 
 						  with a passion for development, design, and travel."/>
   		<meta name="twitter:creator" content="@kristenkwng"/>
-  		<meta name="twitter:image" content="http://kristenkwong.github.io/me.jpeg"/>
+  		<meta name="twitter:image" content="images/icon.png"/>
 		
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="css/style.css">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
 		<!-- GOOGLE FONTS -->
-		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet">
 	</head>
+
+	<body>
+
+		<div id="container">
+
+			<h3>Kristen Kwong</h3>
+
+			<p>
+				Hi there, welcome to my page! 👋🏻
+			</p>
+
+			<p>
+				It's a little empty here cause I'm doing some renovations at the moment 🚧 
+			</p>
+
+			<p>
+				Check out my resume <a href="resume.pdf">here</a>, and feel free to connect with me!
+			</p>
+
+			<div class="links">
+				<a href="https://www.linkedin.com/in/kristenkwong/">LinkedIn</a> | <a href="https://github.com/kristenkwong">GitHub</a> | kristenkwong.wy@hotmail.com
+			</div>
+
+		</div>
+
+	</body>
 </html>
-
-<body>
-
-	<script src="https://www.amcharts.com/lib/3/ammap.js"></script>
-	<script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
-	<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-	<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
-	<script src="map.js"></script>
-
-	<a name="main"></a>
-	<div id = "main">
-		Hi! I'm <a href="#about"><font size=10px>Kristen</font></a>, <br>a second year <b>Computer Science</b> student at UBC.<br><br>
-		<div id="hidden">I'm a <b>developer</b>, <b>designer</b>, and <b>travel enthusiast.</b></div>
-	</div>
-
-	<div id = "nav">
-		<span class="title">#nav</span>
-		<a href="#main">↑ zoom to top</a>
-		<!-- <br><a href="http://blog.kristenkwong.com">blog</a> -->
-		<br><a href="#about">about</a>
-		<br><a href="#projects">projects</a>
-	</div>
-
-	
-	<a name="about"></a>
-	<div id = "about">
-		<img src="me.jpeg" class="photo">
-		<div class="text">
-		<div id="heading">about</div>
-			<b>Location:</b> Cupertino, California
-			<br><b>Currently:</b> Software Engineering Intern @ <a href="https://www.apple.com/">Apple Inc.</a>
-			<div><br><b>Interests:</b>
-			<br><div class="interest">software development</div>
-			<div class="interest">automation</div>
-			<div class="interest">web development</div>
-			<div class="interest">graphic design</div></div>
-			<div><br><br><br><br><b>My next adventure:</b> To be determined!
-			<br>Currently searching for 2019 Summer Internships!</div>
-			<div><br><a href="resume.pdf" class="button" title="resume">Click here to see my resume</a></div>
-		</div>
-	</div>
-
-	<div id="chartdiv"></div>
-
-	<a name = "skills"></a>
-	<div id = "skills">
-		<div id = "heading">What I can do</div>
-		<div class = "skill blue">
-			<img src="develop.svg">
-			<hr>
-			<br><b>Development</b>
-			<br><br>I have worked with creating automation testing frameworks using <a>Python</a>, Android applications with Java, iOS apps with Swift, web development projects using Javascript (including this website!), and games in Unity with C#.
-		</div>
-		<div class = "skill purple">
-			<img src = "design.svg">
-			<hr>
-			<br><b>Design</b>
-			<br><br>I can create vector graphics using <a>Adobe Illustrator</a>, and illustrations using <a>Photoshop</a>. I have experience designing websites, as well as <a>print media</a> and <a>branding material</a> for a variety of brands, from school societies to restaurants.
-		</div>
-	</div>
-
-	<a name = "projects"></a>
-	<div id = "projects">
-		<div id = "develop" class = "purple">
-			<div id = "heading">Development Projects</div>
-			<div id = "project">
-				<img src="images/sortAI_mockup.png">
-				<div class = "description blue">
-					<b>SortAI</b>
-					<div class = "date">Dubhacks, October 2016</div>
-					<br>Android application that takes pictures of objects and notifies the user of which disposal category to use, written in Java and XML with Android Studio. Integrated the Clarifai API for image recognition.
-					<div class = "tags">
-						<span class = "tag">#java</span>
-						<span class = "tag">#android</span>
-						<span class = "tag">#api</span>
-						<a href="https://github.com/kristenkwong/SortAI"><button class = "readmore">github →</button></a>
-					</div>
-				</div>
-			</div>
-			<div id="project">
-				<img src="images/day0_mockup.png">
-				<div class = "description blue">
-					<b>Day Zero</b>
-					<div class = "date">AxiomZen and BCS Hackathon, April 2017</div>
-					<br>iOS application written in Swift with Xcode where the user takes a selfie, and the emotion is analyzed and recorded into a journaled list of emojis. Uses the Microsoft Emotion API to detect the facial expressions and the Charts library to display a radial chart.
-					<div class = "tags">
-						<span class= "tag">#swift</span>
-						<span class = "tag">#iOS</span>
-						<span class = "tag">#api</span>
-						<a href="https://github.com/kristenkwong/Day0"><button class="readmore">github →</button></a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id = "design" class = "blue">
-			<div id = "heading">Design Projects</div>
-			<div id = "project">
-				<img src="images/clipboard.png">
-				<div class = "description purple">
-					<b>UBC Science Undergraduate Society Clipboard</b>
-					<div class = "date">August 2017</div>
-					<br>I designed the back of the clipboards for the Science Undergraduate Society. These were mass produced and given to the entire Science undergraduate student faculty.
-					<div class = "tags">
-						<span class = "tag">#illustrator</span>
-						<span class = "tag">#print</span>
-						<a href="documents/sus_clipboard.pdf"><button class = "readmore">see pdf →</button></a>
-					</div>
-				</div>
-			</div>
-			<div id = "project">
-				<img src="images/odelice.gif">
-				<div class = "description purple">
-					<b>Ôdelice Restaurant Website</b>
-					<div class = "date">May 2016</div>
-					<br>I designed a website for the French restaurant Ôdelice! I used Squarespace, HTML, and CSS to implement my design into a live website. 
-					<br><br><a href="http://www.o-delice.com/">http://www.o-delice.com/</a>
-					<div class = "tags">
-						<span class = "tag">#html</span>
-						<span class = "tag">#css</span>
-						<span class = "tag">#cms</span>
-						<!-- <button class = "readmore">read more →</button> -->
-					</div>
-				</div>
-			</div>
-			<br><br><br>
-		</div>
-	</div>
-
-</div>
-
-	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-	<script src="js/main.js"></script>
-
-</body>
