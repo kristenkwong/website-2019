@@ -18,6 +18,10 @@ a:hover {
 	background-color: #27706a;
 }
 
+::selection {
+	background: #27706a;
+}
+
 #container {
 	padding-top: 60px;
 	margin: 0 auto;
@@ -29,4 +33,14 @@ a:hover {
 .links {
 	padding-top: 20px;
 	font-size: 12px;
+}
+
+.tiny b {
+	color: #44404f;
+}
+
+.tiny {
+	color: #514d5e;
+	padding-top: 50px;
+	font-size: 10px;
 }
