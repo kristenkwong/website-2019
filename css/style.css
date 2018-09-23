@@ -12,10 +12,14 @@ b, h3 {
 a {
 	color: #1ffeb0;
 	text-decoration: none;
+	-webkit-transition: background 0.5s; /* safari */
+	transition: background 0.5s;
 }
 
 a:hover {
 	background-color: #27706a;
+	-webkit-transition: background 0.5s; /* safari */
+	transition: background 0.5s;
 }
 
 ::selection {
