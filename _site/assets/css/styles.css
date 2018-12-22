@@ -4,7 +4,16 @@ html, body {
   height: 100%;
   margin: 0px;
   padding: 0px;
-  font-size: 14px; }
+  font-size: 13px;
+  font-family: "PT Mono", monospace; }
+
+::selection {
+  /* WebKit/Blink Browsers */
+  background: #e0e0e0; }
+
+::-moz-selection {
+  /* Gecko Browsers */
+  background: #e0e0e0; }
 
 .sticky {
   position: fixed;
@@ -23,12 +32,25 @@ mark {
   left: 50%;
   margin-top: 20px; }
 
+.section-header {
+  width: 100%;
+  font-family: "Merriweather", serif;
+  font-size: 72px;
+  font-weight: bold;
+  text-align: left;
+  float: left;
+  padding-left: 90px;
+  position: relative;
+  padding-bottom: 40px;
+  color: #303030; }
+  .section-header mark {
+    background-color: #e0e0e0; }
+
 nav {
   position: fixed;
   background-color: #303030;
   width: 100%;
   z-index: 99999;
-  font-family: "PT Mono", monospace;
   font-size: 14px;
   top: 0; }
   nav #nav-items {
@@ -67,17 +89,15 @@ nav {
     color: #fdf59c; }
 
 #about {
-  height: 60%;
+  height: 80%;
   background-color: #f2f2f3;
   color: #303030;
   width: 100%;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 100px;
   position: relative; }
   #about .desc {
     padding-top: 20px;
     width: 300px;
-    font-family: "PT Mono", monospace;
     font-size: 13px;
     text-align: center;
     display: block;
@@ -85,48 +105,54 @@ nav {
   #about .resume {
     margin: 0 auto;
     text-align: center;
-    padding-top: 20px; }
-  #about .resume a {
-    font-family: "Merriweather", serif;
-    font-style: italic; }
+    padding-top: 30px; }
+    #about .resume a {
+      font-family: "Merriweather", serif;
+      font-style: italic;
+      font-size: 16px;
+      border: 2px solid #303030;
+      padding: 10px 20px 10px 20px;
+      text-decoration: none; }
+    #about .resume a:hover {
+      background-color: #e0e0e0;
+      padding: 10px 20px 10px 20px;
+      text-decoration: none; }
   #about a {
     text-decoration: underline;
     font-weight: bold;
-    color: #303030; }
+    color: #303030;
+    -webkit-transition: background-color 0.5s;
+    /* Safari */
+    transition: background-color 0.5s; }
   #about a:hover {
     text-decoration: underline;
-    background-color: #fdf59c; }
+    background-color: #fdf59c;
+    -webkit-transition: background-color 0.5s;
+    /* Safari */
+    transition: background-color 0.5s; }
+  #about .readmore {
+    font-size: 11px; }
 
 #experiences {
   height: auto;
   background-color: #f2f2f3;
-  color: #303030;
   width: 100%;
-  padding-top: 80px; }
+  padding-top: 30px; }
   #experiences .container {
     width: 60%;
     margin: 0 auto; }
-  #experiences .section-header {
-    font-family: "Merriweather", serif;
-    font-weight: bold;
-    font-size: 20px;
-    text-align: center;
-    text-decoration: underline; }
-    #experiences .section-header mark {
-      background-color: #e0e0e0; }
   #experiences .experience {
-    height: auto;
-    padding-top: 40px; }
+    height: auto; }
   #experiences .description {
+    padding-top: 20px;
+    padding-bottom: 40px;
     text-align: right;
-    font-family: "PT Mono", monospace;
-    padding: 40px;
     -webkit-transition: margin-right 0.5s;
     /* Safari */
     transition: margin-right 0.5s; }
   #experiences .company {
     font-weight: bold;
-    font-size: 16px; }
+    font-size: 14px; }
   #experiences .dates {
     font-size: 12px;
     font-color: #e0e0e0; }
@@ -157,3 +183,55 @@ nav {
     -webkit-transition: margin-left 0.5s;
     /* Safari */
     transition: margin-left 0.5s; }
+
+#projects {
+  height: auto;
+  min-height: 100%; }
+  #projects .project {
+    position: relative;
+    width: 50%; }
+
+#footer {
+  width: 100%;
+  bottom: 0;
+  position: relative;
+  text-align: center;
+  background-color: #e0e0e0;
+  margin-top: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px; }
+  #footer a {
+    margin: 3px;
+    text-decoration: none; }
+  #footer svg {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 25px;
+    width: 25px; }
+  #footer path {
+    fill: #ffffff;
+    -webkit-transition: all 0.5s;
+    /* Safari */
+    transition: all 0.5s; }
+  #footer path:hover {
+    fill: #303030;
+    -webkit-transition: all 0.5s;
+    /* Safari */
+    transition: all 0.5s; }
+  #footer .red {
+    color: #e24949; }
+  #footer .email a {
+    color: #303030;
+    font-weight: bold;
+    text-decoration: underline;
+    -webkit-transition: all 0.5s;
+    /* Safari */
+    transition: all 0.5s; }
+  #footer .email a:hover {
+    background-color: #fdf59c;
+    -webkit-transition: all 0.5s;
+    /* Safari */
+    transition: all 0.5s; }
+  #footer .text {
+    padding-top: 30px;
+    font-size: 11px; }

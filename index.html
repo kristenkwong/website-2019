@@ -12,29 +12,29 @@ layout: default
 
 <div id="about">
 	<div class="desc">
-		I'm a <mark>software engineer</mark> and a third year Computer Science student at the University of British Columbia. 
+		I'm a <mark>software engineer</mark> and Computer Science student at the University of British Columbia. 
 	</div>
 	<div class="desc">
-		Currently a teaching assistant for CPSC 304 (Databases), and a hackathon organizer at <a href="https://www.nwhacks.io/">nwPlus</a>.
+		Currently a TA for CPSC 304 Databases, and a hackathon organizer at <a href="https://www.nwhacks.io/">nwPlus</a>.
+		I'm also an incoming software engineering intern at <a href="https://www.apple.com/">Apple</a> on the Siri Client team.
 	</div>
-	<div class="desc">
-		I'm also an incoming software engineering intern at Apple on the Siri Client team.
+	<div class="desc readmore">
+		<a href="/about.html">Read more →</a>
 	</div>
 	<div class="vert-line"></div>
 	<div class="resume">
 		<a href="/assets/resume.pdf">resume</a>
 	</div>
-
 </div>
 
 <div id="experiences">
 
+	<div class="section-header">
+		experience
+		<!--<p>Here's what I've done so far</p>-->
+	</div>
+
 	<div class="container">
-
-		<span class="section-header">
-			<p>Here's what I've done so far</p>
-		</span>
-
 		{% assign sorted_experiences = site.experiences | sort: "startdate" | reverse %}
 		{% for experience in sorted_experiences %}
 			<div class="experience">
@@ -48,6 +48,31 @@ layout: default
 		{% endfor %}
 
 	</div>
+
+</div>
+
+<div id="projects">
+
+	<div class="section-header">
+		passions
+		<br>& projects
+	</div>
+
+	{% assign sorted_projects = site.projects | sort: "enddate" | reverse %}
+	{% for project in sorted_projects %}
+		<div class="project">
+			<div class="project-name">
+				{{ project.title }}
+			</div>
+			<div class="description">
+				{% for item in project.stack %}
+					<span class="stack-item">
+						{{ item }}
+					</span>
+				{% endfor %}
+			</div>
+		</div>
+	{% endfor %}
 
 </div>
 

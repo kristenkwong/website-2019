@@ -1,5 +1,5 @@
 ---
-position: Software Engineering Intern - Power & Performance
+position: Software Engineering Intern (Power & Performance)
 dates: April - August 2018
 title: Apple
 startdate: 2018-04-30

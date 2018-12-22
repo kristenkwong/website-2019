@@ -12,7 +12,16 @@ html, body {
 	height: 100%;
 	margin: 0px;
 	padding: 0px;
-	font-size: 14px;
+	font-size: 13px;
+	font-family: $font-body;
+}
+
+::selection { /* WebKit/Blink Browsers */
+	background: $secondary-color;
+}
+
+::-moz-selection { /* Gecko Browsers */
+	background: $secondary-color;
 }
 
 .sticky {
@@ -35,12 +44,28 @@ mark {
 	margin-top: 20px;
 }
 
+.section-header {
+		width: 100%;
+		font-family: $font-heading;
+		font-size: 72px;
+		font-weight: bold;
+		text-align: left;
+		float: left;
+		padding-left: 90px;
+		position: relative;
+		padding-bottom: 40px;
+		color: $dark-bg;
+
+		mark {
+			background-color: $secondary-color;
+		}
+	}
+
 nav {
 	position: fixed;
 	background-color: $dark-bg;
 	width: 100%;
 	z-index: 99999;
-	font-family: $font-body;
 	font-size: 14px;
 	top: 0;
 
@@ -99,18 +124,16 @@ nav {
 }
 
 #about {
-	height: 60%;
+	height: 80%;
 	background-color: $light-bg;
 	color: $dark-bg;
 	width: 100%;
-	padding-top: 80px;
-	padding-bottom: 80px;
+	padding-top: 100px;
 	position: relative;
 
 	.desc {
 		padding-top: 20px;
 		width: 300px;
-		font-family: $font-body;
 		font-size: 13px;
 		text-align: center;
 		display: block;
@@ -120,67 +143,70 @@ nav {
 	.resume {
 		margin: 0 auto;
 		text-align: center;
-		padding-top: 20px;
-	}
+		padding-top: 30px;
 
-	.resume a {
-		font-family: $font-heading;
-		font-style: italic;
+		a {
+			font-family: $font-heading;
+			font-style: italic;
+			font-size: 16px;
+			border: 2px solid $dark-bg;
+			padding: 10px 20px 10px 20px;
+			text-decoration: none;
+		}
+
+		a:hover {
+			background-color: $secondary-color;
+			padding: 10px 20px 10px 20px;
+			text-decoration: none;
+		}
 	}
 
 	a {
 		text-decoration: underline;
 		font-weight: bold;
 		color: $dark-bg;
+		-webkit-transition: background-color 0.5s; /* Safari */
+  		transition: background-color 0.5s;
 	}
 
 	a:hover {
 		text-decoration: underline;
 		background-color: $accent-color;
+		-webkit-transition: background-color 0.5s; /* Safari */
+  		transition: background-color 0.5s;
+	}
+
+	.readmore {
+		font-size: 11px;
 	}
 }
 
 #experiences {
 	height: auto;
 	background-color: $light-bg;
-	color: $dark-bg;
 	width: 100%;
-	padding-top: 80px;
+	padding-top: 30px;
 
 	.container {
 		width: 60%;
 		margin: 0 auto;
 	}
 
-	.section-header {
-		font-family: $font-heading;
-		font-weight: bold;
-		font-size: 20px;
-		text-align: center;
-
-		mark {
-			background-color: $secondary-color;
-		}
-
-		text-decoration: underline;
-	}
-
 	.experience {
 		height: auto;
-		padding-top: 40px;
 	}
 
 	.description {
+		padding-top: 20px;
+		padding-bottom: 40px;
 		text-align: right;
-		font-family: $font-body;
-		padding: 40px;
 		-webkit-transition: margin-right 0.5s; /* Safari */
   		transition: margin-right 0.5s;
 	}
 
 	.company {
 		font-weight: bold;
-		font-size: 16px;
+		font-size: 14px;
 	}
 
 	.dates {
@@ -219,5 +245,78 @@ nav {
 		margin-left: 40px;
 		-webkit-transition: margin-left 0.5s; /* Safari */
   		transition: margin-left 0.5s;
+	}
+}
+
+#projects {
+	height: auto;
+	min-height: 100%;
+
+	.project {
+		position: relative;
+		width: 50%;
+	}
+
+}	
+
+#footer {
+
+	width: 100%;
+	bottom: 0;
+	position: relative;
+	text-align: center;
+	background-color: $secondary-color;
+	margin-top: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	a {
+		margin: 3px;
+		text-decoration: none;
+	}
+
+	svg {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		height: 25px;
+		width: 25px;
+	}
+
+	path {
+		fill: $primary-color;
+		-webkit-transition: all 0.5s; /* Safari */
+  		transition: all 0.5s;
+	}
+
+	path:hover {
+		fill: $dark-bg;
+		-webkit-transition: all 0.5s; /* Safari */
+  		transition: all 0.5s;
+	}
+
+	.red {
+		color: #e24949;
+	}
+
+	.email {
+
+		a {
+			color: $dark-bg;
+			font-weight: bold;
+			text-decoration: underline;
+			-webkit-transition: all 0.5s; /* Safari */
+  			transition: all 0.5s;
+		}
+
+		a:hover {
+			background-color: $accent-color;
+			-webkit-transition: all 0.5s; /* Safari */
+  			transition: all 0.5s;
+		}
+	}
+
+	.text {
+		padding-top: 30px;
+		font-size: 11px;
 	}
 }
