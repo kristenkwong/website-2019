@@ -1,83 +1,62 @@
-<!DOCTYPE html>
+---
+title: Kristen Kwong - Software Engineer
+layout: default
+---
+<div id="hero">
+	<div class="container">
+		<span id="title">Hey there, 
+			<br>I'm <span class="highlight-on-scroll">Kristen</span>! 👋🏻
+		</span>
+	</div>
+</div>
 
-<html lang="en">
-	<head>
+<div id="about">
+	<div class="desc">
+		I'm a <mark>software engineer</mark> and a third year Computer Science student at the University of British Columbia. 
+	</div>
+	<div class="desc">
+		Currently a teaching assistant for CPSC 304 (Databases), and a hackathon organizer at <a href="https://www.nwhacks.io/">nwPlus</a>.
+	</div>
+	<div class="desc">
+		I'm also an incoming software engineering intern at Apple on the Siri Client team.
+	</div>
+	<div class="vert-line"></div>
+	<div class="resume">
+		<a href="/assets/resume.pdf">resume</a>
+	</div>
 
-		<title>kristen kwong</title>
-		<link rel="icon" href="images/icon.png">
-		<meta name="author" content="Kristen Kwong"/>
-		<meta name="description" content="Kristen Kwong is a second year Computer Science student at UBC, with a passion for development, design, and travel." />
-		<meta charset="utf-8"/>
+</div>
 
-		<!--- OPEN GRAPH DATA ---->
-		<meta property="og:title" content="Kristen Kwong"/>
- 		<meta property="og:url" content="http://kristenkwong.com"/>
-  		<meta property="og:description" content="Kristen Kwong is a second year Computer Science student at UBC, with a passion for development, design, and travel."/>
-  		<meta property="og:site_name" content="Kristen Kwong"/>
-  		<meta property="og:image" content="images/icon.png"/>
+<div id="experiences">
 
-		<!--- TWITTER CARD ---->
-		<meta name="twitter:card" content="summary"/>
- 		<meta name="twitter:title" content="Kristen Kwong's Website"/>
-  		<meta name="twitter:description" content="Kristen Kwong is a second year Computer Science student at UBC,
-						  with a passion for development, design, and travel."/>
-  		<meta name="twitter:creator" content="@kristenkwng"/>
-  		<meta name="twitter:image" content="images/icon.png"/>
+	<div class="container">
 
-		<link rel="stylesheet" href="css/style.css">
+		<span class="section-header">
+			<p>Here's what I've done so far</p>
+		</span>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-		<!-- GOOGLE FONTS -->
-		<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600" rel="stylesheet">
-	</head>
-
-	<body>
-
-		<div id="container">
-
-			<h3>kristen kwong 👩🏻‍💻</h3>
-
-			<p>
-				👋🏻 hi there, welcome to my page!
-			</p>
-
-			<p>
-				it's a little empty here cause i'm doing some renovations at the moment 🚧
-			</p>
-
-			<p>
-				check out my resume <a href="resume.pdf">here</a>, and feel free to connect with me!
-			</p>
-
-			<div class="links">
-				<a href="https://www.linkedin.com/in/kristenkwong/">linkedin</a> | <a href="https://github.com/kristenkwong">github</a> | kristenkwong@gmail.com
+		{% assign sorted_experiences = site.experiences | sort: "startdate" | reverse %}
+		{% for experience in sorted_experiences %}
+			<div class="experience">
+				<div class="tagline"><a href="{{ experience.url }}">{{ experience.tagline }}</a></div>
+				<div class="description">
+					<div class="company"><mark>{{ experience.title }}</mark></div>
+					<div class="position">{{ experience.position }}</div> 
+					<div class="dates">{{ experience.dates }}</div>
+				</div>
 			</div>
+		{% endfor %}
 
-			<br><br>
+	</div>
 
-			<p>
-				<br>
-				<b>some tidbits</b>
-				<br><br>
-				<b>▅ travel plans:</b> rochester dec 7 / nyc dec 27 / toronto + rochester feb 15 / rochester apr 29 / cali may 13
-				<br><br>
-				<b>▅ what's playing?</b> probably astroworld on repeat
-				<br><br>
-				<b>▅ current classes</b> intermediate algorithms and data structures, software engineering principles, web applications, and spanish
-				<br><br>
-				<b>▅ upcoming career plans</b> heading back to apple as a software engineering intern for the siri client team in summer'19 💎
-			</p>
+</div>
 
+<!---
+<div id="projects">
 
+	<span class="section-header">
+		Projects
+	</span>
 
-			<div class="tiny">
-				<b>fun fact:</b> kristen despises capital letters
-				<br>
-				© updated sept 2018 by kristen kwong
-			</div>
-
-		</div>
-
-	</body>
-</html>
+</div>
+-->

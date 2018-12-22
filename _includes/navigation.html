@@ -1,0 +1,14 @@
+<nav id="navbar">
+	<div id="nav-items">
+		<span class="nav-item" id="home">
+			<a href="/" {% if page.url == "/" %}class="current-page"{% endif %}>Kristen Kwong</a>
+		</span>
+		{% for item in site.data.navigation %}
+			<span class="nav-item">
+				<a href="{{ item.link }}" {% if page.url == item.link %} class="current-page" {% endif %}>
+					{{ item.name }}
+				</a>
+			</span>
+		{% endfor %}
+	</div>
+</nav>

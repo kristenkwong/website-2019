@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700|PT+Mono');
+$font-body: 'PT Mono', monospace;
+$font-heading: 'Merriweather', serif;
+$primary-color: #ffffff;
+$secondary-color: #e0e0e0;
+$dark-bg: #303030;
+$light-bg: #f2f2f3;
+$accent-color: #fdf59c;
+
+html, body {
+	background-color: $light-bg;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	font-size: 14px;
+}
+
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: red;
+}
+
+mark {
+	background-color: $accent-color;
+}
+
+.vert-line {
+	border-left: 1px solid $secondary-color;
+	height: 100px;
+	position: relative;
+	display: inline-block;
+	left: 50%;
+	margin-top: 20px;
+}
+
+nav {
+	position: fixed;
+	background-color: $dark-bg;
+	width: 100%;
+	z-index: 99999;
+	font-family: $font-body;
+	font-size: 14px;
+	top: 0;
+
+	#nav-items {
+		padding-bottom: 10px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	#home {
+		float: left;
+	}
+
+	.nav-item {
+		margin: 0;
+		padding: 10px;
+		float: right;
+	}
+
+	.nav-item a {
+		text-decoration: none;
+		color: white;
+		font-weight: normal;
+	}
+
+	.nav-item a:hover {
+		text-decoration: line-through;
+	}
+
+	.current-page {
+		color: green;
+	}
+}
+
+#hero {
+	height: 100%;
+	width: 100%;
+	background-color: $dark-bg;
+	color: $primary-color;
+
+	.container {
+		position: absolute;
+		padding-left: 90px;
+		bottom: 100px;
+	}
+
+	#title {
+		font-family: $font-heading;
+		font-size: 72px;
+		font-weight: bold;
+	}
+
+	.highlight-on-scroll {
+		color: $accent-color;
+	}
+}
+
+#about {
+	height: 60%;
+	background-color: $light-bg;
+	color: $dark-bg;
+	width: 100%;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	position: relative;
+
+	.desc {
+		padding-top: 20px;
+		width: 300px;
+		font-family: $font-body;
+		font-size: 13px;
+		text-align: center;
+		display: block;
+		margin: 0 auto;
+	}
+
+	.resume {
+		margin: 0 auto;
+		text-align: center;
+		padding-top: 20px;
+	}
+
+	.resume a {
+		font-family: $font-heading;
+		font-style: italic;
+	}
+
+	a {
+		text-decoration: underline;
+		font-weight: bold;
+		color: $dark-bg;
+	}
+
+	a:hover {
+		text-decoration: underline;
+		background-color: $accent-color;
+	}
+}
+
+#experiences {
+	height: auto;
+	background-color: $light-bg;
+	color: $dark-bg;
+	width: 100%;
+	padding-top: 80px;
+
+	.container {
+		width: 60%;
+		margin: 0 auto;
+	}
+
+	.section-header {
+		font-family: $font-heading;
+		font-weight: bold;
+		font-size: 20px;
+		text-align: center;
+
+		mark {
+			background-color: $secondary-color;
+		}
+
+		text-decoration: underline;
+	}
+
+	.experience {
+		height: auto;
+		padding-top: 40px;
+	}
+
+	.description {
+		text-align: right;
+		font-family: $font-body;
+		padding: 40px;
+		-webkit-transition: margin-right 0.5s; /* Safari */
+  		transition: margin-right 0.5s;
+	}
+
+	.company {
+		font-weight: bold;
+		font-size: 16px;
+	}
+
+	.dates {
+		font-size: 12px;
+		font-color: $secondary-color;
+	}
+
+	.tagline {
+		width: 70%;
+		font-family: $font-heading;
+		font-size: 24px;
+		font-style: italic;
+		font-weight: bold;
+		-webkit-transition: margin-left 0.5s; /* Safari */
+  		transition: margin-left 0.5s;
+	}
+
+	.tagline a {
+		text-decoration: none;
+		color: $dark-bg;
+	}
+
+	.tagline:hover {
+		margin-left: 40px;
+		-webkit-transition: margin-left 0.5s; /* Safari */
+  		transition: margin-left 0.5s;
+	}
+
+	.tagline:hover + .description {
+		margin-right: 40px;
+		-webkit-transition: margin-right 0.5s; /* Safari */
+  		transition: margin-right 0.5s;
+	}
+
+	.description:hover + .hover {
+		margin-left: 40px;
+		-webkit-transition: margin-left 0.5s; /* Safari */
+  		transition: margin-left 0.5s;
+	}
+}

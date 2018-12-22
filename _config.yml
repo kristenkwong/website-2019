@@ -1,2 +1,21 @@
-gems:
-  - jekyll-seo-tag
+collections:
+  experiences:
+    output: true 
+  projects:
+    output: true
+
+defaults: 
+  - scope:
+      path: ""
+      type: "experiences"
+    values:
+      layout: "experience"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+    values:
+      layout: "default"

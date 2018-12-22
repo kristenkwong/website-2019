@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather:400,400i,700|PT+Mono");
+html, body {
+  background-color: #f2f2f3;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  font-size: 14px; }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: red; }
+
+mark {
+  background-color: #fdf59c; }
+
+.vert-line {
+  border-left: 1px solid #e0e0e0;
+  height: 100px;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  margin-top: 20px; }
+
+nav {
+  position: fixed;
+  background-color: #303030;
+  width: 100%;
+  z-index: 99999;
+  font-family: "PT Mono", monospace;
+  font-size: 14px;
+  top: 0; }
+  nav #nav-items {
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px; }
+  nav #home {
+    float: left; }
+  nav .nav-item {
+    margin: 0;
+    padding: 10px;
+    float: right; }
+  nav .nav-item a {
+    text-decoration: none;
+    color: white;
+    font-weight: normal; }
+  nav .nav-item a:hover {
+    text-decoration: line-through; }
+  nav .current-page {
+    color: green; }
+
+#hero {
+  height: 100%;
+  width: 100%;
+  background-color: #303030;
+  color: #ffffff; }
+  #hero .container {
+    position: absolute;
+    padding-left: 90px;
+    bottom: 100px; }
+  #hero #title {
+    font-family: "Merriweather", serif;
+    font-size: 72px;
+    font-weight: bold; }
+  #hero .highlight-on-scroll {
+    color: #fdf59c; }
+
+#about {
+  height: 60%;
+  background-color: #f2f2f3;
+  color: #303030;
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative; }
+  #about .desc {
+    padding-top: 20px;
+    width: 300px;
+    font-family: "PT Mono", monospace;
+    font-size: 13px;
+    text-align: center;
+    display: block;
+    margin: 0 auto; }
+  #about .resume {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 20px; }
+  #about .resume a {
+    font-family: "Merriweather", serif;
+    font-style: italic; }
+  #about a {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #303030; }
+  #about a:hover {
+    text-decoration: underline;
+    background-color: #fdf59c; }
+
+#experiences {
+  height: auto;
+  background-color: #f2f2f3;
+  color: #303030;
+  width: 100%;
+  padding-top: 80px; }
+  #experiences .container {
+    width: 60%;
+    margin: 0 auto; }
+  #experiences .section-header {
+    font-family: "Merriweather", serif;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: underline; }
+    #experiences .section-header mark {
+      background-color: #e0e0e0; }
+  #experiences .experience {
+    height: auto;
+    padding-top: 40px; }
+  #experiences .description {
+    text-align: right;
+    font-family: "PT Mono", monospace;
+    padding: 40px;
+    -webkit-transition: margin-right 0.5s;
+    /* Safari */
+    transition: margin-right 0.5s; }
+  #experiences .company {
+    font-weight: bold;
+    font-size: 16px; }
+  #experiences .dates {
+    font-size: 12px;
+    font-color: #e0e0e0; }
+  #experiences .tagline {
+    width: 70%;
+    font-family: "Merriweather", serif;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: bold;
+    -webkit-transition: margin-left 0.5s;
+    /* Safari */
+    transition: margin-left 0.5s; }
+  #experiences .tagline a {
+    text-decoration: none;
+    color: #303030; }
+  #experiences .tagline:hover {
+    margin-left: 40px;
+    -webkit-transition: margin-left 0.5s;
+    /* Safari */
+    transition: margin-left 0.5s; }
+  #experiences .tagline:hover + .description {
+    margin-right: 40px;
+    -webkit-transition: margin-right 0.5s;
+    /* Safari */
+    transition: margin-right 0.5s; }
+  #experiences .description:hover + .hover {
+    margin-left: 40px;
+    -webkit-transition: margin-left 0.5s;
+    /* Safari */
+    transition: margin-left 0.5s; }

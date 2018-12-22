@@ -1,0 +1,6 @@
+- name: Resume
+  link: /assets/resume.pdf
+- name: Projects
+  link: /projects.html
+- name: About 
+  link: /about.html
