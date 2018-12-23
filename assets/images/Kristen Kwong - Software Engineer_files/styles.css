@@ -52,8 +52,6 @@ nav {
   font-size: 14px;
   top: 0; }
   nav #nav-items {
-    padding-left: 20px;
-    padding-right: 20px;
     padding-bottom: 10px; }
   nav #home {
     float: left; }
@@ -189,33 +187,21 @@ nav {
   height: auto;
   min-height: 100%; }
   #projects .container {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     text-align: center; }
   #projects .section-header {
     padding-left: 90px; }
   #projects .project {
     text-align: left;
-    margin: 10px;
+    margin: 15px;
     width: 350px;
     height: 350px;
-    background-color: #ffffff;
+    background-color: #e0e0e0;
     position: relative;
     display: inline-block; }
   #projects .project:hover {
     top: -8px; }
-  #projects .links {
-    position: absolute;
-    right: 0;
-    padding-right: 20px;
-    padding-top: 20px;
-    z-index: 99; }
-  #projects svg {
-    height: 30px; }
-  #projects svg path {
-    fill: #e0e0e0; }
-  #projects svg path:hover {
-    fill: #303030; }
   #projects .description {
     position: absolute;
     padding: 40px; }
@@ -228,24 +214,13 @@ nav {
     text-decoration: none;
     color: #303030; }
   #projects .project-summary {
-    height: 150px;
-    padding-top: 15px;
-    padding-left: 10px;
-    padding-bottom: 15px; }
-  #projects .link {
-    font-size: 11px;
-    text-decoration: underline; }
+    padding: 10px; }
   #projects .project-stack {
-    padding-left: 40px;
-    width: 270px;
-    position: absolute;
-    bottom: 40px; }
+    position: relative;
+    bottom: 0; }
   #projects .stack-item {
     display: inline;
     font-size: 11px; }
-
-#passions .section-header {
-  padding-left: 90px; }
 
 #footer {
   width: 100%;

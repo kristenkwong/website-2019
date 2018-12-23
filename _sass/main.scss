@@ -9,6 +9,7 @@ $accent-color: #fdf59c;
 
 html, body {
 	background-color: $light-bg;
+	width: 100%;
 	height: 100%;
 	margin: 0px;
 	padding: 0px;
@@ -45,21 +46,18 @@ mark {
 }
 
 .section-header {
-		width: 100%;
-		font-family: $font-heading;
-		font-size: 72px;
-		font-weight: bold;
-		text-align: left;
-		float: left;
-		padding-left: 90px;
-		position: relative;
-		padding-bottom: 40px;
-		color: $dark-bg;
+	font-family: $font-heading;
+	font-size: 72px;
+	font-weight: bold;
+	text-align: left;
+	position: relative;
+	padding-bottom: 40px;
+	color: $dark-bg;
 
-		mark {
-			background-color: $secondary-color;
-		}
+	mark {
+		background-color: $secondary-color;
 	}
+}
 
 nav {
 	position: fixed;
@@ -70,9 +68,9 @@ nav {
 	top: 0;
 
 	#nav-items {
-		padding-bottom: 10px;
 		padding-left: 20px;
 		padding-right: 20px;
+		padding-bottom: 10px;
 	}
 
 	#home {
@@ -192,6 +190,10 @@ nav {
 		margin: 0 auto;
 	}
 
+	.section-header {
+		padding-left: 90px;
+	}
+
 	.experience {
 		height: auto;
 	}
@@ -249,15 +251,104 @@ nav {
 }
 
 #projects {
+	padding-top: 30px;
 	height: auto;
 	min-height: 100%;
 
-	.project {
-		position: relative;
-		width: 50%;
+	.container {
+		width: 90%;
+		margin: 0 auto;
+		text-align: center;
 	}
 
-}	
+	.section-header {
+		padding-left: 90px;
+	}
+
+	.project {
+		text-align: left;
+		margin: 10px;
+		width: 350px;
+		height: 350px;
+		background-color: $primary-color;
+		position: relative;
+		display: inline-block;
+	}
+
+	.project:hover {
+		top: -8px;
+	}
+
+	.links {
+		position: absolute;
+		right: 0;
+		padding-right: 20px;
+		padding-top: 20px;
+		z-index: 99;
+	}
+
+	svg {
+		height: 30px;
+	}
+
+	svg path {
+		fill: $secondary-color;
+	}
+
+	svg path:hover {
+		fill: $dark-bg;
+	}
+
+	.description {
+		position: absolute;
+		padding: 40px;
+	}
+
+	.project-name {
+		font-weight: bold;
+		font-size: 28px;
+		font-family: $font-heading;
+		font-style: italic;
+	}
+
+	.project a {
+		text-decoration: none;
+		color: $dark-bg;
+	}
+
+	.project-summary {
+		height: 150px;
+		padding-top: 15px;
+		padding-left: 10px;
+		padding-bottom: 15px;
+	}
+
+	.link {
+		font-size: 11px;
+		text-decoration: underline;
+	}
+
+	.project-stack {
+		padding-left: 40px;
+		width: 270px;
+		position: absolute;
+		bottom: 40px;
+	}
+
+	.stack-item {
+		display: inline;
+		font-size: 11px;
+	}
+
+}
+
+#passions {
+
+	.section-header {
+		padding-left: 90px;
+	}
+	
+}
 
 #footer {
 
@@ -268,7 +359,7 @@ nav {
 	background-color: $secondary-color;
 	margin-top: 30px;
 	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 
 	a {
 		margin: 3px;

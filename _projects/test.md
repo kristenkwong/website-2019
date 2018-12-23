@@ -1,17 +1,18 @@
 ---
 stack: 
-- TypeScript
-- Node.js
 - JavaScript
-- HTML/CSS
+- Node.js
+- Express
+- black magic
+- witchcraft
 dates: Sept - Nov 2018
 github: https://github.com/kristenkwong/InsightUBC
-link: https://insightubc-310.herokuapp.com/
-enddate: 2018-11-31
-title: InsightUBC
-summary: InsightUBC is a full-stack web application, providing a query system for UBC course and room information, hosted on Heroku. Data, such as room capacity, building names, course averages, course instructors, and pass/fail rates, can be queried and filtered through a WebUI. 
+link: ""
+enddate: 2017-11-31
+title: Project2
+summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis massa accumsan, pharetra orci vitae, dignissim urna. Aenean vitae consequat felis, ac malesuada arcu. Fusce auctor neque nec auctor aliquam. Suspendisse vitae lacus et urna auctor aliquam et et ligula. 
 ---
-# InsightUBC: Course and Room Data Querying
+# TEST PROJECT
 
 #### ✨✨ CLICK [HERE](https://insightubc-310.herokuapp.com/) TO SEE OUR APP IN ACTION ✨✨
 
