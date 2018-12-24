@@ -29,10 +29,8 @@ layout: default
 
 <div id="experiences">
 
-	<div class="container-header">
-		<div class="section-header">
-			experience
-		</div>
+	<div class="section-header">
+		experience
 	</div>
 
 	<div class="container">
@@ -53,10 +51,8 @@ layout: default
 
 <div id="projects">
 
-	<div class="container-header">
-		<div class="section-header">
-			projects
-		</div>
+	<div class="section-header">
+		projects
 	</div>
 
 	<div class="container">
@@ -113,4 +109,57 @@ layout: default
 		</div>
 	</div>
 
+	<div class="container">
+		<p>I'm not coding all the time. Here are some of the other things I'm passionate about.</p>
+		<div class="item">
+			<div class="heading">Diversity in Tech</div>
+			<div class="text">
+				some summary text
+				<br>- Attended <a href="https://ghc.anitab.org/">Grace Hopper</a> twice
+				<br>- Fellow at <a href="https://rewritingthecode.org/">Rewriting the Code</a>
+			</div>
+		</div>
+		<div class="item">
+			<div class="heading">Design</div>
+			<div class="text">
+				<br> afdsjfjhkadsfl
+				<br> adhkjlfjdshf</div>
+		</div>
+		<div class="item">
+			<div class="heading">Learning</div>
+			<div class="text"><b>Current coursework:</b> <mark>Computer networking</mark>, <mark>computer hardware and operating systems</mark>, problem solving in CS, Spanish
+				<br><b>Outside of school:</b> <mark>Cybersecurity</mark>
+		</div>
+		<div class="item">
+			<div class="heading">Travel</div>
+			<div class="text"><b>Next destination:</b> <mark>Washington, DC</mark> for Shmoocon
+				<br><b>Recent destinations:</b> New York City; Rochester; Houston
+		</div>
+
+		<div class="item">
+			I also eat a lot and play video games sometimes.
+		</div>
+
+		<div class="features">
+			<div class="heading">Features</div>
+			<div class="feature">
+				<a class="article-title" href="https://medium.com/nwplusubc/started-as-hackers-83383092b159">Started as hackers, now we're here</a>
+				<span class="desc">Read about my journey from complete hackathon newbie to three-time organizer at <a href="https://www.nwplus.io/#/localhackday">nwPlus</a>.</span>
+			</div>
+		</div>
+
+		{% assign sorted_posts = site.posts | sort: "date" | reverse %}
+		{% unless sorted_posts != '' %}
+		<div class="features">
+			<div class="heading">Blog</div>
+			{% for post in sorted_posts %}
+				<div class="feature">
+					<a class="article-title" href="{{ post.url }}">{{ post.title }}</a>
+					<span class="desc">{{ post.summary }}</span>
+				</div>
+			{% endfor %}
+			</div>
+			{% endunless %}
+		</div>
+	</div>
 </div>

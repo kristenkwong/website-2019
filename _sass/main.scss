@@ -15,6 +15,7 @@ html, body {
 	padding: 0px;
 	font-size: 13px;
 	font-family: $font-body;
+	color: $dark-bg;
 }
 
 ::selection { /* WebKit/Blink Browsers */
@@ -147,9 +148,10 @@ nav {
 			font-family: $font-heading;
 			font-style: italic;
 			font-size: 16px;
-			border: 2px solid $dark-bg;
+			/* border: 2px solid $dark-bg; */
 			padding: 10px 20px 10px 20px;
 			text-decoration: none;
+			background-color: $primary-color;
 		}
 
 		a:hover {
@@ -273,10 +275,15 @@ nav {
 		background-color: $primary-color;
 		position: relative;
 		display: inline-block;
+		top: 0px;
+		-webkit-transition: top 0.2s; /* Safari */
+  		transition: top 0.2s;
 	}
 
 	.project:hover {
 		top: -8px;
+		-webkit-transition: top 0.2s; /* Safari */
+  		transition: top 0.2s;
 	}
 
 	.links {
@@ -293,10 +300,14 @@ nav {
 
 	svg path {
 		fill: $secondary-color;
+		-webkit-transition: all 0.5s; /* Safari */
+  		transition: all 0.5s;
 	}
 
 	svg path:hover {
 		fill: $dark-bg;
+		-webkit-transition: all 0.5s; /* Safari */
+  		transition: all 0.5s;
 	}
 
 	.description {
@@ -344,8 +355,69 @@ nav {
 
 #passions {
 
+	padding-top: 30px;
+	height: auto;
+	text-align: center;
+
+	a {
+		color: $dark-bg;
+		-webkit-transition: background-color 0.5s; /* Safari */
+  		transition: background-color 0.5s;
+	}
+
+	a:hover {
+		background-color: $accent-color;
+		-webkit-transition: background-color 0.5s; /* Safari */
+  		transition: background-color 0.5s;
+	}
+
 	.section-header {
 		padding-left: 90px;
+	}
+
+	.container {
+		width: 50%;
+		display: inline-block;
+
+		p {
+			text-align: left;
+		}
+	}
+
+	.item {
+		padding-top: 10px;
+		text-align: left;
+
+		.heading {
+			font-family: $font-heading;
+			font-weight: bold;
+			font-style: italic;
+			font-size: 16px;
+		}
+
+		.text {
+			font-family: $font-body;
+		}
+	}
+
+	.features {
+		padding-top: 20px;
+		text-align: left;
+
+		.heading {
+			font-family: $font-heading;
+			font-weight: bold;
+			font-size: 24px;
+		}
+
+		.feature {
+			.article-title {
+				font-size: 14px;
+				font-weight: bold;
+				margin-right: 5px;
+			}
+		}
+
 	}
 	
 }
@@ -357,7 +429,7 @@ nav {
 	position: relative;
 	text-align: center;
 	background-color: $secondary-color;
-	margin-top: 30px;
+	margin-top: 80px;
 	padding-top: 10px;
 	padding-bottom: 20px;
 

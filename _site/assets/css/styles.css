@@ -6,7 +6,8 @@ html, body {
   margin: 0px;
   padding: 0px;
   font-size: 13px;
-  font-family: "PT Mono", monospace; }
+  font-family: "PT Mono", monospace;
+  color: #303030; }
 
 ::selection {
   /* WebKit/Blink Browsers */
@@ -108,9 +109,10 @@ nav {
       font-family: "Merriweather", serif;
       font-style: italic;
       font-size: 16px;
-      border: 2px solid #303030;
+      /* border: 2px solid $dark-bg; */
       padding: 10px 20px 10px 20px;
-      text-decoration: none; }
+      text-decoration: none;
+      background-color: #ffffff; }
     #about .resume a:hover {
       background-color: #e0e0e0;
       padding: 10px 20px 10px 20px;
@@ -201,9 +203,16 @@ nav {
     height: 350px;
     background-color: #ffffff;
     position: relative;
-    display: inline-block; }
+    display: inline-block;
+    top: 0px;
+    -webkit-transition: top 0.2s;
+    /* Safari */
+    transition: top 0.2s; }
   #projects .project:hover {
-    top: -8px; }
+    top: -8px;
+    -webkit-transition: top 0.2s;
+    /* Safari */
+    transition: top 0.2s; }
   #projects .links {
     position: absolute;
     right: 0;
@@ -213,9 +222,15 @@ nav {
   #projects svg {
     height: 30px; }
   #projects svg path {
-    fill: #e0e0e0; }
+    fill: #e0e0e0;
+    -webkit-transition: all 0.5s;
+    /* Safari */
+    transition: all 0.5s; }
   #projects svg path:hover {
-    fill: #303030; }
+    fill: #303030;
+    -webkit-transition: all 0.5s;
+    /* Safari */
+    transition: all 0.5s; }
   #projects .description {
     position: absolute;
     padding: 40px; }
@@ -244,8 +259,48 @@ nav {
     display: inline;
     font-size: 11px; }
 
-#passions .section-header {
-  padding-left: 90px; }
+#passions {
+  padding-top: 30px;
+  height: auto;
+  text-align: center; }
+  #passions a {
+    color: #303030;
+    -webkit-transition: background-color 0.5s;
+    /* Safari */
+    transition: background-color 0.5s; }
+  #passions a:hover {
+    background-color: #fdf59c;
+    -webkit-transition: background-color 0.5s;
+    /* Safari */
+    transition: background-color 0.5s; }
+  #passions .section-header {
+    padding-left: 90px; }
+  #passions .container {
+    width: 50%;
+    display: inline-block; }
+    #passions .container p {
+      text-align: left; }
+  #passions .item {
+    padding-top: 10px;
+    text-align: left; }
+    #passions .item .heading {
+      font-family: "Merriweather", serif;
+      font-weight: bold;
+      font-style: italic;
+      font-size: 16px; }
+    #passions .item .text {
+      font-family: "PT Mono", monospace; }
+  #passions .features {
+    padding-top: 20px;
+    text-align: left; }
+    #passions .features .heading {
+      font-family: "Merriweather", serif;
+      font-weight: bold;
+      font-size: 24px; }
+    #passions .features .feature .article-title {
+      font-size: 14px;
+      font-weight: bold;
+      margin-right: 5px; }
 
 #footer {
   width: 100%;
@@ -253,7 +308,7 @@ nav {
   position: relative;
   text-align: center;
   background-color: #e0e0e0;
-  margin-top: 30px;
+  margin-top: 80px;
   padding-top: 10px;
   padding-bottom: 20px; }
   #footer a {
