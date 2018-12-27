@@ -5,4 +5,4 @@ title: Netgear
 startdate: 2017-01-02
 tagline: integrated an Arduino into testing framework for a previously manual process,
 ---
-I interned as a Software Engineering Intern on the Power and Performance team in the summer of 2018, where I did some cool shit
+i just ate a lot of food and browsed expedia the whole time

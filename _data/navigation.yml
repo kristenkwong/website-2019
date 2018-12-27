@@ -1,6 +1,8 @@
 - name: Resume
   link: /assets/resume.pdf
 - name: Projects
-  link: /projects.html
+  link: /#projects
+- name: Experience
+  link: /#experiences
 - name: About 
-  link: /about.html
+  link: /#about

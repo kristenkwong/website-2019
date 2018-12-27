@@ -97,6 +97,23 @@ nav {
 	.current-page {
 		color: green;
 	}
+
+	@media only screen and (max-width: 600px) {
+		.nav-item {
+			padding: 2px;
+			padding-top: 10px;
+		}
+
+		#home {
+			width: 100%;
+		}
+
+		.nav-item:not(#home) {
+			font-size: 12px;
+			float: none;
+			display: inline-block;
+		}
+	}
 }
 
 #hero {
@@ -104,17 +121,19 @@ nav {
 	width: 100%;
 	background-color: $dark-bg;
 	color: $primary-color;
+	position: relative;
 
 	.container {
-		position: absolute;
-		padding-left: 90px;
-		bottom: 100px;
+
 	}
 
 	#title {
 		font-family: $font-heading;
 		font-size: 72px;
 		font-weight: bold;
+		position: absolute;
+		bottom: 60px;
+		left: 90px;
 	}
 
 	.highlight-on-scroll {
@@ -127,8 +146,9 @@ nav {
 	background-color: $light-bg;
 	color: $dark-bg;
 	width: 100%;
-	padding-top: 100px;
+	padding-top: 80px;
 	position: relative;
+	margin-bottom: 40px;
 
 	.desc {
 		padding-top: 20px;
@@ -185,7 +205,7 @@ nav {
 	height: auto;
 	background-color: $light-bg;
 	width: 100%;
-	padding-top: 30px;
+	padding-top: 80px;
 
 	.container {
 		width: 60%;
@@ -202,7 +222,7 @@ nav {
 
 	.description {
 		padding-top: 20px;
-		padding-bottom: 40px;
+		margin-bottom: 40px;
 		text-align: right;
 		-webkit-transition: margin-right 0.5s; /* Safari */
   		transition: margin-right 0.5s;
@@ -253,12 +273,12 @@ nav {
 }
 
 #projects {
-	padding-top: 30px;
+	padding-top: 60px;
 	height: auto;
-	min-height: 100%;
+	min-height: 90%;
 
 	.container {
-		width: 90%;
+		max-width: 90%;
 		margin: 0 auto;
 		text-align: center;
 	}
@@ -376,7 +396,9 @@ nav {
 	}
 
 	.container {
-		width: 50%;
+		padding-left: 60px;
+		padding-right: 60px;
+		max-width: 700px;
 		display: inline-block;
 
 		p {
@@ -425,13 +447,14 @@ nav {
 #footer {
 
 	width: 100%;
+	position: static;
 	bottom: 0;
-	position: relative;
 	text-align: center;
 	background-color: $secondary-color;
 	margin-top: 80px;
 	padding-top: 10px;
 	padding-bottom: 20px;
+	z-index: 999;
 
 	a {
 		margin: 3px;

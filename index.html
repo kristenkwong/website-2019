@@ -10,9 +10,10 @@ layout: default
 	</div>
 </div>
 
+<a id="about"></a>
 <div id="about">
 	<div class="desc">
-		I'm a <mark>software engineer</mark> and third Computer Science student at the University of British Columbia. 
+		I'm a <mark>software engineer</mark> and third year Computer Science student at the University of British Columbia. 
 	</div>
 	<div class="desc">
 		Currently a TA for CPSC 304 Databases, and a hackathon organizer at <a href="https://www.nwhacks.io/">nwPlus</a>.
@@ -27,6 +28,7 @@ layout: default
 	</div>
 </div>
 
+<a id="experiences"></a>
 <div id="experiences">
 
 	<div class="section-header">
@@ -40,7 +42,7 @@ layout: default
 				<div class="tagline"><a href="{{ experience.url }}">{{ experience.tagline }}</a></div>
 				<div class="description">
 					<div class="company"><mark>{{ experience.title }}</mark></div>
-					<div class="position">{{ experience.position }}</div> 
+					<div class="position">{{ experience.position | strip_html }}</div> 
 					<div class="dates">{{ experience.dates }}</div>
 				</div>
 			</div>
@@ -49,6 +51,7 @@ layout: default
 
 </div>
 
+<a id="projects"></a>
 <div id="projects">
 
 	<div class="section-header">
@@ -114,26 +117,29 @@ layout: default
 		<div class="item">
 			<div class="heading">Diversity in Tech</div>
 			<div class="text">
-				some summary text
+				- Organized <a href="https://www.nwplus.io/#/localhackday">UBC Local Hack Day</a> 2016, 2017, & 2018 to build a more welcoming tech community. Read more about our event <a href="http://localhost:4000/experiences/lhd_2016W.html">here</a>!
 				<br>- Attended <a href="https://ghc.anitab.org/">Grace Hopper</a> twice
-				<br>- Fellow at <a href="https://rewritingthecode.org/">Rewriting the Code</a>
+				<br>- 2018-19 Fellow at <a href="https://rewritingthecode.org/">Rewriting the Code</a>
+				<br>- Volunteered for <a href="https://www.cs.ubc.ca/girlsmarts4tech/">GirlSmarts4Tech</a>
 			</div>
 		</div>
 		<div class="item">
 			<div class="heading">Design</div>
-			<div class="text">
-				<br> afdsjfjhkadsfl
-				<br> adhkjlfjdshf</div>
+			<div class="text">- Design and marketing for UBC Hacks and Local Hack Day 2016 & 2017
+				<br>- Interned at VIZ Future, design firm in Shanghai
+			</div>
 		</div>
 		<div class="item">
 			<div class="heading">Learning</div>
-			<div class="text"><b>Current coursework:</b> <mark>Computer networking</mark>, <mark>computer hardware and operating systems</mark>, problem solving in CS, Spanish
-				<br><b>Outside of school:</b> <mark>Cybersecurity</mark>
+			<div class="text">- Current coursework: <mark>Computer networking</mark>, <mark>computer hardware and operating systems</mark>, problem solving in CS, Spanish
+				<br>- Outside of school: <mark>Cybersecurity</mark>
+			</div>
 		</div>
 		<div class="item">
 			<div class="heading">Travel</div>
-			<div class="text"><b>Next destination:</b> <mark>Washington, DC</mark> for Shmoocon
-				<br><b>Recent destinations:</b> New York City; Rochester; Houston
+			<div class="text">- Next destination: <mark>Washington, DC</mark> for Shmoocon
+				<br>- Recent destinations: New York City; Rochester; Houston
+			</div>
 		</div>
 
 		<div class="item">
@@ -158,8 +164,7 @@ layout: default
 					<span class="desc">{{ post.summary }}</span>
 				</div>
 			{% endfor %}
-			</div>
-			{% endunless %}
 		</div>
+		{% endunless %}
 	</div>
 </div>

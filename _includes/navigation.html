@@ -4,11 +4,11 @@
 			<a href="/" {% if page.url == "/" %}class="current-page"{% endif %}>Kristen Kwong</a>
 		</span>
 		{% for item in site.data.navigation %}
-			<span class="nav-item">
-				<a href="{{ item.link }}" {% if page.url == item.link %} class="current-page" {% endif %}>
-					{{ item.name }}
-				</a>
-			</span>
+		<span class="nav-item">
+			<a href="{{ item.link }}" {% if page.url == item.link %} class="current-page" {% endif %}>
+				{{ item.name }}
+			</a>
+		</span>
 		{% endfor %}
 	</div>
 </nav>

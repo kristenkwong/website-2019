@@ -9,12 +9,12 @@ defaults:
       path: ""
       type: "experiences"
     values:
-      layout: "experience"
+      layout: "content"
   - scope:
       path: ""
       type: "projects"
     values:
-      layout: "project"
+      layout: "content"
   - scope:
       path: ""
     values:
