@@ -88,21 +88,31 @@ nav {
   color: #ffffff;
   position: relative; }
   #hero #title {
+    height: auto;
     font-family: "Merriweather", serif;
+    text-align: left;
     font-size: 72px;
     font-weight: bold;
     position: absolute;
-    bottom: 60px;
-    left: 90px; }
+    bottom: 100px;
+    left: 100px; }
   #hero .highlight-on-scroll {
     color: #fdf59c; }
+  @media only screen and (max-width: 700px) {
+    #hero #title {
+      padding-right: 40px;
+      padding-left: 40px;
+      text-align: top;
+      font-size: 72px;
+      top: 120px;
+      left: 0px; } }
 
 #about {
   height: 80%;
   background-color: #f2f2f3;
   color: #303030;
   width: 100%;
-  padding-top: 80px;
+  padding-top: 120px;
   position: relative;
   margin-bottom: 40px; }
   #about .desc {
@@ -170,6 +180,7 @@ nav {
     font-size: 12px;
     font-color: #e0e0e0; }
   #experiences .tagline {
+    text-align: left;
     width: 70%;
     font-family: "Merriweather", serif;
     font-size: 24px;
@@ -196,6 +207,15 @@ nav {
     -webkit-transition: margin-left 0.5s;
     /* Safari */
     transition: margin-left 0.5s; }
+  @media only screen and (max-width: 700px) {
+    #experiences .container {
+      width: 80%; }
+    #experiences .tagline {
+      width: 90%; }
+    #experiences .section-header {
+      padding-left: 0;
+      text-align: center;
+      font-size: 48px; } }
 
 #projects {
   padding-top: 60px;
@@ -269,6 +289,11 @@ nav {
   #projects .stack-item {
     display: inline;
     font-size: 11px; }
+  @media only screen and (max-width: 700px) {
+    #projects .section-header {
+      padding-left: 0;
+      text-align: center;
+      font-size: 48px; } }
 
 #passions {
   padding-top: 30px;
@@ -314,6 +339,11 @@ nav {
       font-size: 14px;
       font-weight: bold;
       margin-right: 5px; }
+  @media only screen and (max-width: 700px) {
+    #passions .section-header {
+      padding-left: 0;
+      text-align: center;
+      font-size: 48px; } }
 
 #footer {
   width: 100%;
@@ -427,6 +457,12 @@ nav {
     margin-bottom: 30px;
     padding: 20px;
     width: 200px; }
+  #content p img {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none; }
   #content p img:not(.custom) {
     max-width: 80%;
     margin-left: auto;

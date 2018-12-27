@@ -84,6 +84,14 @@ $accent-color: #fdf59c;
 		width: 200px;
 	}
 
+	p img {
+		-webkit-user-select: none;
+	    -khtml-user-select: none;
+	    -moz-user-select: none;
+	    -o-user-select: none;
+	    user-select: none;
+	}
+
 	/* markdown images, not html */
 	p img:not(.custom) {
 		max-width: 80%;

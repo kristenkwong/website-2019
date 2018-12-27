@@ -128,16 +128,30 @@ nav {
 	}
 
 	#title {
+		height: auto;
 		font-family: $font-heading;
+		text-align: left;
 		font-size: 72px;
 		font-weight: bold;
 		position: absolute;
-		bottom: 60px;
-		left: 90px;
+		bottom: 100px;
+		left: 100px;
 	}
 
 	.highlight-on-scroll {
 		color: $accent-color;
+	}
+
+	@media only screen and (max-width: 700px) {
+
+		#title {
+			padding-right: 40px;
+			padding-left: 40px;
+			text-align: top;
+			font-size: 72px;
+			top: 120px;
+			left: 0px;
+		}
 	}
 }
 
@@ -146,7 +160,7 @@ nav {
 	background-color: $light-bg;
 	color: $dark-bg;
 	width: 100%;
-	padding-top: 80px;
+	padding-top: 120px;
 	position: relative;
 	margin-bottom: 40px;
 
@@ -239,6 +253,7 @@ nav {
 	}
 
 	.tagline {
+		text-align: left;
 		width: 70%;
 		font-family: $font-heading;
 		font-size: 24px;
@@ -269,6 +284,22 @@ nav {
 		margin-left: 40px;
 		-webkit-transition: margin-left 0.5s; /* Safari */
   		transition: margin-left 0.5s;
+	}
+
+	@media only screen and (max-width: 700px) {
+		.container {
+			width: 80%;
+		}
+
+		.tagline {
+			width: 90%;
+		}
+
+		.section-header {
+			padding-left: 0;
+			text-align: center;
+			font-size: 48px;
+		}
 	}
 }
 
@@ -371,6 +402,15 @@ nav {
 		font-size: 11px;
 	}
 
+	@media only screen and (max-width: 700px) {
+
+		.section-header {
+			padding-left: 0;
+			text-align: center;
+			font-size: 48px;
+		}
+	}
+
 }
 
 #passions {
@@ -440,6 +480,15 @@ nav {
 			}
 		}
 
+	}
+
+	@media only screen and (max-width: 700px) {
+
+		.section-header {
+			padding-left: 0;
+			text-align: center;
+			font-size: 48px;
+		}
 	}
 	
 }
