@@ -2,7 +2,7 @@
 layout: content 
 title: About Me
 banner: /assets/images/about/me.jpg
-subtitle: I'm basically an egg. AMA! ok i need to test a longer subtitle now bhjkhdkfhdfjksahlfjdsfh dshkjfhskjlf dsjkhfldf k egg
+subtitle: this page is under construction, i'm also really an egg tho
 --- 
 
 <div class="sidebar">

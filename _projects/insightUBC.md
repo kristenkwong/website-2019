@@ -10,6 +10,8 @@ link: https://insightubc-310.herokuapp.com/
 enddate: 2018-11-31
 title: InsightUBC
 summary: InsightUBC is a full-stack web application, providing a query system for UBC course and room information, hosted on Heroku. Data, such as room capacity, building names, course averages, course instructors, and pass/fail rates, can be queried and filtered through a WebUI. 
+banner: /assets/images/projects/insightUBC.png
+readmore: false
 ---
 # InsightUBC: Course and Room Data Querying
 

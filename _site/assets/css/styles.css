@@ -7,7 +7,8 @@ html, body {
   padding: 0px;
   font-size: 13px;
   font-family: "PT Mono", monospace;
-  color: #303030; }
+  color: #303030;
+  scroll-behavior: smooth; }
 
 ::selection {
   /* WebKit/Blink Browsers */
@@ -207,7 +208,7 @@ nav {
     -webkit-transition: margin-left 0.5s;
     /* Safari */
     transition: margin-left 0.5s; }
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 500px) {
     #experiences .container {
       width: 80%; }
     #experiences .tagline {
@@ -289,11 +290,13 @@ nav {
   #projects .stack-item {
     display: inline;
     font-size: 11px; }
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 450px) {
     #projects .section-header {
       padding-left: 0;
       text-align: center;
-      font-size: 48px; } }
+      font-size: 48px; }
+    #projects .project {
+      width: 95%; } }
 
 #passions {
   padding-top: 30px;
@@ -339,7 +342,7 @@ nav {
       font-size: 14px;
       font-weight: bold;
       margin-right: 5px; }
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 600px) {
     #passions .section-header {
       padding-left: 0;
       text-align: center;

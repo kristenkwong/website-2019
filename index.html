@@ -16,12 +16,12 @@ layout: default
 		I'm a <mark>software engineer</mark> and third year Computer Science student at the University of British Columbia. 
 	</div>
 	<div class="desc">
-		Currently a TA for CPSC 304 Databases, and a hackathon organizer at <a href="https://www.nwhacks.io/">nwPlus</a>.
+		Currently, I'm a TA for CPSC 304 Databases, and a hackathon organizer at <a href="https://www.nwhacks.io/">nwPlus</a>.
 		I'm also an incoming software engineering intern at <a href="https://www.apple.com/">Apple</a> on the Siri Client team.
 	</div>
-	<div class="desc readmore">
+	<!-- <div class="desc readmore">
 		<a href="/about.html">Read more →</a>
-	</div>
+	</div> -->
 	<div class="vert-line"></div>
 	<div class="resume">
 		<a href="/assets/resume.pdf">resume</a>
@@ -86,9 +86,11 @@ layout: default
 					<div class="project-summary">
 						{{ project.summary }}
 					</div>
+					{% unless project.readmore == false %}
 					<div class="link">
 						<a href="{{ project.url }}">read more →</a>
-				</div>
+					</div>
+					{% endunless %}
 				</div>
 				<div class="project-stack">
 					{% for item in project.stack %}

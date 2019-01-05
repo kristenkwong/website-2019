@@ -3,6 +3,30 @@
 	<head>
 		<meta charset="utf-8">
 		<title>{{ page.title }}</title>
+		<link rel="shortcut icon" type="image/png" href="/assets/images/icon.png">
+		<meta name="author" content="Kristen Kwong"/>
+		<meta charset="utf-8"/>
+
+		<meta itemprop="description" name="description" content="{% if page.description %}{{ page.description | truncate: 160 }}{% else %}{{ site.description | truncate: 160  }}{% endif %}" />
+
+		<!--- OPEN GRAPH TAGS ---->
+		<meta property="og:locale" content="en_US">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="{%if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+		<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+		<meta property="og:image" content="{% if page.banner %}{{ page.banner }}{% else %}/assets/images/icon.png{% endif %}" />
+		<meta property="og:site_name" content="Kristen Kwong - Software Engineer">
+		<meta property="article:author" content="Kristen Kwong" />
+		<meta property="article:published_time" content="{{ page.date }}" />
+		<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+
+		<!--- TWITTER CARD ---->
+  		<meta name="twitter:card" content="summary_large_image"/>
+		<meta name="twitter:title" content="{%if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+		<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+		<meta name="twitter:creator" content="@kristenkwng">
+		<meta name="twitter:card" content="summary">
+
 		<link rel="stylesheet" href="/assets/css/styles.css">
 		<script type="text/javascript" src="/assets/js/main.js"></script>
 		{% feed_meta %}
