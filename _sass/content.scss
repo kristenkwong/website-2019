@@ -8,7 +8,11 @@ $dark-bg: #303030;
 $light-bg: #f2f2f3;
 $accent-color: #fdf59c;
 
-.title-container {
+body {
+	text-align: center;
+}
+
+.content-title-container {
 
 	position: relative;
 	width: auto;
@@ -35,11 +39,15 @@ $accent-color: #fdf59c;
 	}
 }
 
-.container {
+.content-container {
+	margin: 0 auto;
 	width: auto;
+	max-width: 850px;
 	height: auto;
 	min-height: 100%;
 	text-align: center;
+	font-family: $font-heading;
+	line-height: 1.9em;
 }
 
 #subtitle {
@@ -49,6 +57,7 @@ $accent-color: #fdf59c;
 	font-size: 18px;
 	color: $dark-bg;
 	width: 80%;
+	max-width: 600px;
 	text-align: center;
 	display: inline-block;
 	padding: 30px;
@@ -59,7 +68,43 @@ $accent-color: #fdf59c;
 	position: static;
 	padding-left: 90px;
 	padding-right: 90px;
+	padding-bottom: 40px;
+	padding-top: 20px;
 	text-align: left;
+
+	hr {
+		border-color: $secondary-color; /* Chrome, Safari */
+		background-color: $secondary-color; /* Firefox */
+		color: $secondary-color; /* ID */
+		height: 1px;
+		border: 0;
+	}
+
+	blockquote {
+		font-style: italic;
+		border-left: 10px solid $secondary-color;
+		padding-left: 10px;
+	}
+
+	code {
+		background-color: $primary-color;
+		font-family: $font-body;
+		padding: 3px;
+	}
+
+	pre {
+		background-color: $dark-bg;
+		overflow-x: scroll;
+		width: 550px;
+		border-radius: 5px;
+		padding: 20px;
+		font-family: $font-body;
+	}
+
+	pre code {
+		color: $light-bg;
+		background-color: transparent;
+	}
 
 	a {
 		color: $dark-bg;
@@ -79,9 +124,13 @@ $accent-color: #fdf59c;
 		position: relative;
 		background-color: $secondary-color;
 		margin-left: 30px;
-		margin-bottom: 30px;
+		margin-bottom: 20px;
+		margin-top: 20px;
 		padding: 20px;
-		width: 200px;
+		width: 250px;
+		font-size: 13px;
+		font-family: $font-body;
+		line-height: 1.3em;
 	}
 
 	p img {
@@ -115,26 +164,30 @@ $accent-color: #fdf59c;
 
 	p .float-left {
 		float: left;
-		margin: 10px 20px 10px 0px;
-		max-width: 300px;
+		margin: 5px 20px 5px 0px;
+		max-width: 500px;
 	}
 
 	p .float-right {
 		float: right;
-		margin: 10px 0px 10px 20px;
-		max-width: 300px;
+		margin: 5px 0px 5px 20px;
+		max-width: 500px;
 	}
 
 	p .horizontal-fill {
 		max-width: 100%;
 		width: 100%;
 		object-fit: cover;
-		height: 400px;
+		height: 500px;
 		display: block;
 	}
 
 	/* for mobile devices and small screens */
-	@media only screen and (max-width: 600px) {
+	@media only screen and (max-width: 800px) {
+
+		pre {
+			width: auto;
+		}
 
 		p .float-left, p .float-right {
 			width: 100%;
@@ -153,7 +206,9 @@ $accent-color: #fdf59c;
 			margin-top: 20px;
 			margin-bottom: 20px;
 		}
+	}
 
+	@media only screen and (max-width: 700px) {
 		.sidebar {
 			float: none;
 			position: relative;
@@ -165,7 +220,7 @@ $accent-color: #fdf59c;
 	}
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 600px) {
 	#content {
 		padding-left: 40px;
 		padding-right: 40px;

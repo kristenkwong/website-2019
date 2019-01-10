@@ -43,7 +43,6 @@ mark {
 	height: 100px;
 	position: relative;
 	display: inline-block;
-	left: 50%;
 	margin-top: 20px;
 }
 
@@ -99,7 +98,7 @@ nav {
 		color: green;
 	}
 
-	@media only screen and (max-width: 600px) {
+	@media only screen and (max-width: 500px) {
 		.nav-item {
 			padding: 2px;
 			padding-top: 10px;
@@ -119,6 +118,7 @@ nav {
 
 #hero {
 	height: 100%;
+	min-height: 600px;
 	width: 100%;
 	background-color: $dark-bg;
 	color: $primary-color;
@@ -137,6 +137,7 @@ nav {
 		position: absolute;
 		bottom: 100px;
 		left: 100px;
+		line-height: 1em;
 	}
 
 	.highlight-on-scroll {
@@ -150,14 +151,16 @@ nav {
 			padding-left: 40px;
 			text-align: top;
 			font-size: 72px;
-			top: 120px;
+			top: 20%;
 			left: 0px;
+			max-width: 400px;
 		}
 	}
 }
 
 #about {
 	height: 80%;
+	min-height: 600px;
 	background-color: $light-bg;
 	color: $dark-bg;
 	width: 100%;
@@ -218,6 +221,7 @@ nav {
 
 #experiences {
 	height: auto;
+	min-height: 600px;
 	background-color: $light-bg;
 	width: 100%;
 	padding-top: 80px;
@@ -257,6 +261,7 @@ nav {
 		text-align: left;
 		width: 70%;
 		font-family: $font-heading;
+		line-height: 1.3em;
 		font-size: 24px;
 		font-style: italic;
 		font-weight: bold;
@@ -307,7 +312,7 @@ nav {
 #projects {
 	padding-top: 60px;
 	height: auto;
-	min-height: 90%;
+	min-height: 600px;
 
 	.container {
 		max-width: 90%;
@@ -393,7 +398,7 @@ nav {
 
 	.project-stack {
 		padding-left: 40px;
-		width: 270px;
+		padding-right: 40px;
 		position: absolute;
 		bottom: 40px;
 	}
@@ -421,6 +426,7 @@ nav {
 #passions {
 
 	padding-top: 30px;
+	padding-bottom: 40px;
 	height: auto;
 	text-align: center;
 
@@ -495,7 +501,7 @@ nav {
 			font-size: 48px;
 		}
 	}
-	
+
 }
 
 #footer {
@@ -505,7 +511,7 @@ nav {
 	bottom: 0;
 	text-align: center;
 	background-color: $secondary-color;
-	margin-top: 80px;
+	margin-top: 30px;
 	padding-top: 10px;
 	padding-bottom: 20px;
 	z-index: 999;

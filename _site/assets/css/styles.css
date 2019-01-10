@@ -32,7 +32,6 @@ mark {
   height: 100px;
   position: relative;
   display: inline-block;
-  left: 50%;
   margin-top: 20px; }
 
 .section-header {
@@ -71,7 +70,7 @@ nav {
     text-decoration: line-through; }
   nav .current-page {
     color: green; }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 500px) {
     nav .nav-item {
       padding: 2px;
       padding-top: 10px; }
@@ -84,6 +83,7 @@ nav {
 
 #hero {
   height: 100%;
+  min-height: 600px;
   width: 100%;
   background-color: #303030;
   color: #ffffff;
@@ -96,7 +96,8 @@ nav {
     font-weight: bold;
     position: absolute;
     bottom: 100px;
-    left: 100px; }
+    left: 100px;
+    line-height: 1em; }
   #hero .highlight-on-scroll {
     color: #fdf59c; }
   @media only screen and (max-width: 700px) {
@@ -105,11 +106,13 @@ nav {
       padding-left: 40px;
       text-align: top;
       font-size: 72px;
-      top: 120px;
-      left: 0px; } }
+      top: 20%;
+      left: 0px;
+      max-width: 400px; } }
 
 #about {
   height: 80%;
+  min-height: 600px;
   background-color: #f2f2f3;
   color: #303030;
   width: 100%;
@@ -157,6 +160,7 @@ nav {
 
 #experiences {
   height: auto;
+  min-height: 600px;
   background-color: #f2f2f3;
   width: 100%;
   padding-top: 80px; }
@@ -184,6 +188,7 @@ nav {
     text-align: left;
     width: 70%;
     font-family: "Merriweather", serif;
+    line-height: 1.3em;
     font-size: 24px;
     font-style: italic;
     font-weight: bold;
@@ -221,7 +226,7 @@ nav {
 #projects {
   padding-top: 60px;
   height: auto;
-  min-height: 90%; }
+  min-height: 600px; }
   #projects .container {
     max-width: 90%;
     margin: 0 auto;
@@ -284,7 +289,7 @@ nav {
     text-decoration: underline; }
   #projects .project-stack {
     padding-left: 40px;
-    width: 270px;
+    padding-right: 40px;
     position: absolute;
     bottom: 40px; }
   #projects .stack-item {
@@ -300,6 +305,7 @@ nav {
 
 #passions {
   padding-top: 30px;
+  padding-bottom: 40px;
   height: auto;
   text-align: center; }
   #passions a {
@@ -354,7 +360,7 @@ nav {
   bottom: 0;
   text-align: center;
   background-color: #e0e0e0;
-  margin-top: 80px;
+  margin-top: 30px;
   padding-top: 10px;
   padding-bottom: 20px;
   z-index: 999; }
@@ -396,15 +402,18 @@ nav {
 
 @banner-image-width : 4000px;
 @banner-image-height : 1900px;
-.title-container {
+body {
+  text-align: center; }
+
+.content-title-container {
   position: relative;
   width: auto;
   color: #303030; }
-  .title-container .banner {
+  .content-title-container .banner {
     object-fit: cover;
     height: 380px;
     width: 100%; }
-  .title-container .page-title {
+  .content-title-container .page-title {
     position: absolute;
     float: left;
     bottom: 30px;
@@ -417,11 +426,15 @@ nav {
     background-color: #ffffff;
     padding: 10px 20px 10px 20px; }
 
-.container {
+.content-container {
+  margin: 0 auto;
   width: auto;
+  max-width: 850px;
   height: auto;
   min-height: 100%;
-  text-align: center; }
+  text-align: center;
+  font-family: "Merriweather", serif;
+  line-height: 1.9em; }
 
 #subtitle {
   font-family: "Merriweather", serif;
@@ -430,6 +443,7 @@ nav {
   font-size: 18px;
   color: #303030;
   width: 80%;
+  max-width: 600px;
   text-align: center;
   display: inline-block;
   padding: 30px; }
@@ -438,9 +452,38 @@ nav {
   position: static;
   padding-left: 90px;
   padding-right: 90px;
+  padding-bottom: 40px;
+  padding-top: 20px;
   text-align: left;
   /* markdown images, not html */
   /* for mobile devices and small screens */ }
+  #content hr {
+    border-color: #e0e0e0;
+    /* Chrome, Safari */
+    background-color: #e0e0e0;
+    /* Firefox */
+    color: #e0e0e0;
+    /* ID */
+    height: 1px;
+    border: 0; }
+  #content blockquote {
+    font-style: italic;
+    border-left: 10px solid #e0e0e0;
+    padding-left: 10px; }
+  #content code {
+    background-color: #ffffff;
+    font-family: "PT Mono", monospace;
+    padding: 3px; }
+  #content pre {
+    background-color: #303030;
+    overflow-x: scroll;
+    width: 550px;
+    border-radius: 5px;
+    padding: 20px;
+    font-family: "PT Mono", monospace; }
+  #content pre code {
+    color: #f2f2f3;
+    background-color: transparent; }
   #content a {
     color: #303030;
     font-weight: bold;
@@ -457,9 +500,13 @@ nav {
     position: relative;
     background-color: #e0e0e0;
     margin-left: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
     padding: 20px;
-    width: 200px; }
+    width: 250px;
+    font-size: 13px;
+    font-family: "PT Mono", monospace;
+    line-height: 1.3em; }
   #content p img {
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -484,19 +531,21 @@ nav {
     margin-bottom: 20px; }
   #content p .float-left {
     float: left;
-    margin: 10px 20px 10px 0px;
-    max-width: 300px; }
+    margin: 5px 20px 5px 0px;
+    max-width: 500px; }
   #content p .float-right {
     float: right;
-    margin: 10px 0px 10px 20px;
-    max-width: 300px; }
+    margin: 5px 0px 5px 20px;
+    max-width: 500px; }
   #content p .horizontal-fill {
     max-width: 100%;
     width: 100%;
     object-fit: cover;
-    height: 400px;
+    height: 500px;
     display: block; }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 800px) {
+    #content pre {
+      width: auto; }
     #content p .float-left, #content p .float-right {
       width: 100%;
       max-width: 100%;
@@ -508,7 +557,8 @@ nav {
     #content p .horizontal-fill {
       height: auto;
       margin-top: 20px;
-      margin-bottom: 20px; }
+      margin-bottom: 20px; } }
+  @media only screen and (max-width: 700px) {
     #content .sidebar {
       float: none;
       position: relative;
@@ -517,7 +567,7 @@ nav {
       padding: 20px;
       width: auto; } }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 600px) {
   #content {
     padding-left: 40px;
     padding-right: 40px; } }
