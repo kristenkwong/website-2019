@@ -74,7 +74,7 @@ nav {
     text-decoration: line-through; }
   nav .current-page {
     color: green; }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 813px) {
     nav .nav-item {
       padding: 2px;
       padding-top: 10px; }
@@ -104,7 +104,7 @@ nav {
     line-height: 1em; }
   #hero .highlight-on-scroll {
     color: #fdf59c; }
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 813px) {
     #hero #title {
       padding-right: 40px;
       padding-left: 40px;
@@ -215,7 +215,7 @@ nav {
     -webkit-transition: margin-left 0.5s;
     /* Safari */
     transition: margin-left 0.5s; }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 813px) {
     #experiences .container {
       width: 80%; }
     #experiences .tagline {
@@ -296,7 +296,7 @@ nav {
   #projects .stack-item {
     display: inline;
     font-size: 0.8em; }
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 813px) {
     #projects .description {
       padding: 30px; }
     #projects .project-stack {
@@ -307,7 +307,7 @@ nav {
       text-align: center; }
     #projects .project {
       width: 95%; } }
-  @media only screen and (max-width: 350px) {
+  @media only screen and (max-width: 813px) {
     #projects .project-name {
       font-size: 1.4em; }
     #projects .project-summary {
@@ -359,7 +359,7 @@ nav {
       font-size: 1.1em;
       font-weight: bold;
       margin-right: 5px; }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 813px) {
     #passions .container {
       padding-left: 30px;
       padding-right: 30px; }
