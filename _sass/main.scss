@@ -6,6 +6,11 @@ $secondary-color: #e0e0e0;
 $dark-bg: #303030;
 $light-bg: #f2f2f3;
 $accent-color: #fdf59c;
+$body-font-size: 0.93em;
+$title-font-size: 1.3em;
+$header-font-size: 4.5em;
+$tagline-font-size: 1.8em;
+$line-height: 1.3em;
 
 html, body {
 	background-color: $light-bg;
@@ -13,17 +18,11 @@ html, body {
 	height: 100%;
 	margin: 0px;
 	padding: 0px;
-	font-size: 13px;
+	font-size: $body-font-size;
+	line-height: $line-height;
 	font-family: $font-body;
 	color: $dark-bg;
 	scroll-behavior: smooth;
-}
-
-/* for really smol screens, looking at u SE */
-@media only screen and (max-width: 400px) {
-	html, body {
-		font-size: 12px;
-	}
 }
 
 ::selection { /* WebKit/Blink Browsers */
@@ -55,7 +54,7 @@ mark {
 
 .section-header {
 	font-family: $font-heading;
-	font-size: 72px;
+	font-size: $header-font-size;
 	font-weight: bold;
 	text-align: left;
 	position: relative;
@@ -67,12 +66,18 @@ mark {
 	}
 }
 
+@media only screen and (max-width: 500px) {
+	.section-header {
+		font-size: 3.5em;
+	}
+}
+
 nav {
 	position: fixed;
 	background-color: $dark-bg;
 	width: 100%;
 	z-index: 99999;
-	font-size: 14px;
+	font-size: 0.85em;
 	top: 0;
 
 	#nav-items {
@@ -116,27 +121,7 @@ nav {
 		}
 
 		.nav-item:not(#home) {
-			font-size: 12px;
-			float: none;
-			display: inline-block;
-		}
-	}
-
-	/* for phones */
-	@media only screen
-  and (min-device-width: 320px)
-  and (max-device-width: 480px) {
-		.nav-item {
-			padding: 2px;
-			padding-top: 10px;
-		}
-
-		#home {
-			width: 100%;
-		}
-
-		.nav-item:not(#home) {
-			font-size: 12px;
+			font-size: $body-font-size;
 			float: none;
 			display: inline-block;
 		}
@@ -159,7 +144,7 @@ nav {
 		height: auto;
 		font-family: $font-heading;
 		text-align: left;
-		font-size: 72px;
+		font-size: $header-font-size;
 		font-weight: bold;
 		position: absolute;
 		bottom: 100px;
@@ -177,31 +162,8 @@ nav {
 			padding-right: 40px;
 			padding-left: 40px;
 			text-align: top;
-			font-size: 72px;
 			left: 0px;
 			max-width: 400px;
-		}
-	}
-
-	/* for phones */
-	@media only screen
-  and (min-device-width: 320px)
-  and (max-device-width: 480px) {
-		#title {
-			padding-right: 40px;
-			padding-left: 40px;
-			text-align: top;
-			font-size: 72px;
-			top: 20%;
-			left: 0px;
-			max-width: 400px;
-		}
-	}
-
-	/* for really smol screens, looking at u SE */
-	@media only screen and (max-width: 400px) {
-		#title {
-			font-size: 50px;
 		}
 	}
 }
@@ -219,7 +181,7 @@ nav {
 	.desc {
 		padding-top: 20px;
 		width: 300px;
-		font-size: 13px;
+		font-size: $body-font-size;
 		text-align: center;
 		display: block;
 		margin: 0 auto;
@@ -233,7 +195,7 @@ nav {
 		a {
 			font-family: $font-heading;
 			font-style: italic;
-			font-size: 16px;
+			font-size: 1.2em;
 			/* border: 2px solid $dark-bg; */
 			padding: 10px 20px 10px 20px;
 			text-decoration: none;
@@ -263,7 +225,7 @@ nav {
 	}
 
 	.readmore {
-		font-size: 11px;
+		font-size: 0.8em;
 	}
 }
 
@@ -297,11 +259,11 @@ nav {
 
 	.company {
 		font-weight: bold;
-		font-size: 14px;
+		font-size: 1.1em;
 	}
 
 	.dates {
-		font-size: 12px;
+		font-size: $body-font-size;
 		font-color: $secondary-color;
 	}
 
@@ -310,7 +272,7 @@ nav {
 		width: 70%;
 		font-family: $font-heading;
 		line-height: 1.3em;
-		font-size: 24px;
+		font-size: $tagline-font-size;
 		font-style: italic;
 		font-weight: bold;
 		-webkit-transition: margin-left 0.5s; /* Safari */
@@ -352,26 +314,6 @@ nav {
 		.section-header {
 			padding-left: 0;
 			text-align: center;
-			font-size: 48px;
-		}
-	}
-
-	/* for phones */
-	@media only screen
-  and (min-device-width: 320px)
-  and (max-device-width: 480px) {
-		.container {
-			width: 80%;
-		}
-
-		.tagline {
-			width: 90%;
-		}
-
-		.section-header {
-			padding-left: 0;
-			text-align: center;
-			font-size: 48px;
 		}
 	}
 }
@@ -441,7 +383,8 @@ nav {
 
 	.project-name {
 		font-weight: bold;
-		font-size: 28px;
+		font-size: 1.7em;
+		line-height: 1.5em;
 		font-family: $font-heading;
 		font-style: italic;
 	}
@@ -453,14 +396,11 @@ nav {
 
 	.project-summary {
 		height: 150px;
+		font-size: $body-font-size;
+		line-height: $line-height;
 		padding-top: 15px;
 		padding-left: 10px;
 		padding-bottom: 15px;
-	}
-
-	.link {
-		font-size: 11px;
-		text-decoration: underline;
 	}
 
 	.project-stack {
@@ -472,15 +412,23 @@ nav {
 
 	.stack-item {
 		display: inline;
-		font-size: 11px;
+		font-size: 0.8em;
 	}
 
 	@media only screen and (max-width: 450px) {
 
+		.description {
+			padding: 30px;
+		}
+
+		.project-stack {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+
 		.section-header {
 			padding-left: 0;
 			text-align: center;
-			font-size: 48px;
 		}
 
 		.project {
@@ -488,18 +436,14 @@ nav {
 		}
 	}
 
-	/* for phones */
-	@media only screen
-  and (min-device-width: 320px)
-  and (max-device-width: 480px) {
-		.section-header {
-			padding-left: 0;
-			text-align: center;
-			font-size: 48px;
+	@media only screen and (max-width: 350px) {
+
+		.project-name {
+			font-size: 1.4em;
 		}
 
-		.project {
-			width: 95%;
+		.project-summary {
+			font-size: 0.8em;
 		}
 	}
 
@@ -547,7 +491,8 @@ nav {
 			font-family: $font-heading;
 			font-weight: bold;
 			font-style: italic;
-			font-size: 16px;
+			font-size: $title-font-size;
+			line-height: 1.5em;
 		}
 
 		.text {
@@ -562,12 +507,12 @@ nav {
 		.heading {
 			font-family: $font-heading;
 			font-weight: bold;
-			font-size: 24px;
+			font-size: $title-font-size;
 		}
 
 		.feature {
 			.article-title {
-				font-size: 14px;
+				font-size: 1.1em;
 				font-weight: bold;
 				margin-right: 5px;
 			}
@@ -577,21 +522,14 @@ nav {
 
 	@media only screen and (max-width: 600px) {
 
-		.section-header {
-			padding-left: 0;
-			text-align: center;
-			font-size: 48px;
+		.container {
+			padding-left: 30px;
+			padding-right: 30px;
 		}
-	}
 
-	/* for phones */
-	@media only screen
-  and (min-device-width: 320px)
-  and (max-device-width: 480px) {
 		.section-header {
 			padding-left: 0;
 			text-align: center;
-			font-size: 48px;
 		}
 	}
 
@@ -656,6 +594,8 @@ nav {
 
 	.text {
 		padding-top: 30px;
-		font-size: 11px;
+		padding-left: 20px;
+		padding-right: 20px;
+		font-size: 0.8em;
 	}
 }

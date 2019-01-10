@@ -7,6 +7,8 @@ $secondary-color: #e0e0e0;
 $dark-bg: #303030;
 $light-bg: #f2f2f3;
 $accent-color: #fdf59c;
+$serif-font-size-content: 1.13em;
+$content-line-height: 1.9em;
 
 body {
 	text-align: center;
@@ -22,12 +24,14 @@ body {
 		object-fit: cover;
 		height: 380px;
 		width: 100%;
+		margin-bottom: 20px;
 	}
 
 	.page-title {
 		position: absolute;
+		line-height: normal;
 		float: left;
-		bottom: 30px;
+		bottom: 50px;
 		margin-left: 50px;
 		margin-right: 50px;
 		font-family: $font-heading;
@@ -47,7 +51,8 @@ body {
 	min-height: 100%;
 	text-align: center;
 	font-family: $font-heading;
-	line-height: 1.9em;
+	font-size: $serif-font-size-content;
+	line-height: $content-line-height;
 }
 
 #subtitle {
@@ -69,7 +74,6 @@ body {
 	padding-left: 90px;
 	padding-right: 90px;
 	padding-bottom: 40px;
-	padding-top: 20px;
 	text-align: left;
 
 	hr {
@@ -128,7 +132,7 @@ body {
 		margin-top: 20px;
 		padding: 20px;
 		width: 250px;
-		font-size: 13px;
+		font-size: 0.95em;
 		font-family: $font-body;
 		line-height: 1.3em;
 	}
@@ -218,48 +222,12 @@ body {
 			width: auto;
 		}
 	}
-
-	/* for phones */
-	@media only screen
-  and (min-device-width: 320px)
-  and (max-device-width: 480px) {
-		pre {
-			width: auto;
-		}
-
-		p .float-left, p .float-right {
-			width: 100%;
-			max-width: 100%;
-			margin-top: 20px;
-			margin-bottom: 20px;
-		}
-
-		p img:not(.custom) {
-			width: 100%;
-			margin-top: 20px;
-		}
-
-		p .horizontal-fill {
-			height: auto;
-			margin-top: 20px;
-			margin-bottom: 20px;
-		}
-
-		.sidebar {
-			float: none;
-			position: relative;
-			margin-left: 0px;
-			margin-bottom: 30px;
-			padding: 20px;
-			width: auto;
-		}
-	}
 }
 
 @media only screen and (max-width: 600px) {
 	#content {
-		padding-left: 40px;
-		padding-right: 40px;
+		padding-left: 30px;
+		padding-right: 30px;
 	}
 }
 

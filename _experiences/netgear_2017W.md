@@ -21,7 +21,9 @@ description: I did my first 8-month coop at Netgear as a Software Test Engineer,
 ## Software Test Engineer Co-op @ Netgear
 
 **Dates:** Jan - Aug 2017
+
 **Location:** Richmond, Canada
+
 **Tools:** Python, Arduino
 
 ### Responsibilities:

@@ -5,15 +5,12 @@ html, body {
   height: 100%;
   margin: 0px;
   padding: 0px;
-  font-size: 13px;
+  font-size: 0.93em;
+  line-height: 1.3em;
   font-family: "PT Mono", monospace;
   color: #303030;
   scroll-behavior: smooth; }
 
-/* for really smol screens, looking at u SE */
-@media only screen and (max-width: 400px) {
-  html, body {
-    font-size: 12px; } }
 ::selection {
   /* WebKit/Blink Browsers */
   background: #e0e0e0; }
@@ -40,7 +37,7 @@ mark {
 
 .section-header {
   font-family: "Merriweather", serif;
-  font-size: 72px;
+  font-size: 4.5em;
   font-weight: bold;
   text-align: left;
   position: relative;
@@ -49,14 +46,16 @@ mark {
   .section-header mark {
     background-color: #e0e0e0; }
 
+@media only screen and (max-width: 500px) {
+  .section-header {
+    font-size: 3.5em; } }
 nav {
   position: fixed;
   background-color: #303030;
   width: 100%;
   z-index: 99999;
-  font-size: 14px;
-  top: 0;
-  /* for phones */ }
+  font-size: 0.85em;
+  top: 0; }
   nav #nav-items {
     padding-left: 20px;
     padding-right: 20px;
@@ -82,17 +81,7 @@ nav {
     nav #home {
       width: 100%; }
     nav .nav-item:not(#home) {
-      font-size: 12px;
-      float: none;
-      display: inline-block; } }
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    nav .nav-item {
-      padding: 2px;
-      padding-top: 10px; }
-    nav #home {
-      width: 100%; }
-    nav .nav-item:not(#home) {
-      font-size: 12px;
+      font-size: 0.93em;
       float: none;
       display: inline-block; } }
 
@@ -102,14 +91,12 @@ nav {
   width: 100%;
   background-color: #303030;
   color: #ffffff;
-  position: relative;
-  /* for phones */
-  /* for really smol screens, looking at u SE */ }
+  position: relative; }
   #hero #title {
     height: auto;
     font-family: "Merriweather", serif;
     text-align: left;
-    font-size: 72px;
+    font-size: 4.5em;
     font-weight: bold;
     position: absolute;
     bottom: 100px;
@@ -122,21 +109,8 @@ nav {
       padding-right: 40px;
       padding-left: 40px;
       text-align: top;
-      font-size: 72px;
       left: 0px;
       max-width: 400px; } }
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    #hero #title {
-      padding-right: 40px;
-      padding-left: 40px;
-      text-align: top;
-      font-size: 72px;
-      top: 20%;
-      left: 0px;
-      max-width: 400px; } }
-  @media only screen and (max-width: 400px) {
-    #hero #title {
-      font-size: 50px; } }
 
 #about {
   height: 80%;
@@ -150,7 +124,7 @@ nav {
   #about .desc {
     padding-top: 20px;
     width: 300px;
-    font-size: 13px;
+    font-size: 0.93em;
     text-align: center;
     display: block;
     margin: 0 auto; }
@@ -161,7 +135,7 @@ nav {
     #about .resume a {
       font-family: "Merriweather", serif;
       font-style: italic;
-      font-size: 16px;
+      font-size: 1.2em;
       /* border: 2px solid $dark-bg; */
       padding: 10px 20px 10px 20px;
       text-decoration: none;
@@ -184,15 +158,14 @@ nav {
     /* Safari */
     transition: background-color 0.5s; }
   #about .readmore {
-    font-size: 11px; }
+    font-size: 0.8em; }
 
 #experiences {
   height: auto;
   min-height: 600px;
   background-color: #f2f2f3;
   width: 100%;
-  padding-top: 80px;
-  /* for phones */ }
+  padding-top: 80px; }
   #experiences .container {
     width: 60%;
     margin: 0 auto; }
@@ -209,16 +182,16 @@ nav {
     transition: margin-right 0.5s; }
   #experiences .company {
     font-weight: bold;
-    font-size: 14px; }
+    font-size: 1.1em; }
   #experiences .dates {
-    font-size: 12px;
+    font-size: 0.93em;
     font-color: #e0e0e0; }
   #experiences .tagline {
     text-align: left;
     width: 70%;
     font-family: "Merriweather", serif;
     line-height: 1.3em;
-    font-size: 24px;
+    font-size: 1.8em;
     font-style: italic;
     font-weight: bold;
     -webkit-transition: margin-left 0.5s;
@@ -249,23 +222,12 @@ nav {
       width: 90%; }
     #experiences .section-header {
       padding-left: 0;
-      text-align: center;
-      font-size: 48px; } }
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    #experiences .container {
-      width: 80%; }
-    #experiences .tagline {
-      width: 90%; }
-    #experiences .section-header {
-      padding-left: 0;
-      text-align: center;
-      font-size: 48px; } }
+      text-align: center; } }
 
 #projects {
   padding-top: 60px;
   height: auto;
-  min-height: 600px;
-  /* for phones */ }
+  min-height: 600px; }
   #projects .container {
     max-width: 90%;
     margin: 0 auto;
@@ -312,7 +274,8 @@ nav {
     padding: 40px; }
   #projects .project-name {
     font-weight: bold;
-    font-size: 28px;
+    font-size: 1.7em;
+    line-height: 1.5em;
     font-family: "Merriweather", serif;
     font-style: italic; }
   #projects .project a {
@@ -320,12 +283,11 @@ nav {
     color: #303030; }
   #projects .project-summary {
     height: 150px;
+    font-size: 0.93em;
+    line-height: 1.3em;
     padding-top: 15px;
     padding-left: 10px;
     padding-bottom: 15px; }
-  #projects .link {
-    font-size: 11px;
-    text-decoration: underline; }
   #projects .project-stack {
     padding-left: 40px;
     padding-right: 40px;
@@ -333,28 +295,29 @@ nav {
     bottom: 40px; }
   #projects .stack-item {
     display: inline;
-    font-size: 11px; }
+    font-size: 0.8em; }
   @media only screen and (max-width: 450px) {
+    #projects .description {
+      padding: 30px; }
+    #projects .project-stack {
+      padding-left: 30px;
+      padding-right: 30px; }
     #projects .section-header {
       padding-left: 0;
-      text-align: center;
-      font-size: 48px; }
+      text-align: center; }
     #projects .project {
       width: 95%; } }
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    #projects .section-header {
-      padding-left: 0;
-      text-align: center;
-      font-size: 48px; }
-    #projects .project {
-      width: 95%; } }
+  @media only screen and (max-width: 350px) {
+    #projects .project-name {
+      font-size: 1.4em; }
+    #projects .project-summary {
+      font-size: 0.8em; } }
 
 #passions {
   padding-top: 30px;
   padding-bottom: 40px;
   height: auto;
-  text-align: center;
-  /* for phones */ }
+  text-align: center; }
   #passions a {
     color: #303030;
     -webkit-transition: background-color 0.5s;
@@ -381,7 +344,8 @@ nav {
       font-family: "Merriweather", serif;
       font-weight: bold;
       font-style: italic;
-      font-size: 16px; }
+      font-size: 1.3em;
+      line-height: 1.5em; }
     #passions .item .text {
       font-family: "PT Mono", monospace; }
   #passions .features {
@@ -390,21 +354,18 @@ nav {
     #passions .features .heading {
       font-family: "Merriweather", serif;
       font-weight: bold;
-      font-size: 24px; }
+      font-size: 1.3em; }
     #passions .features .feature .article-title {
-      font-size: 14px;
+      font-size: 1.1em;
       font-weight: bold;
       margin-right: 5px; }
   @media only screen and (max-width: 600px) {
+    #passions .container {
+      padding-left: 30px;
+      padding-right: 30px; }
     #passions .section-header {
       padding-left: 0;
-      text-align: center;
-      font-size: 48px; } }
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    #passions .section-header {
-      padding-left: 0;
-      text-align: center;
-      font-size: 48px; } }
+      text-align: center; } }
 
 #footer {
   width: 100%;
@@ -450,7 +411,9 @@ nav {
     transition: all 0.5s; }
   #footer .text {
     padding-top: 30px;
-    font-size: 11px; }
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 0.8em; }
 
 @banner-image-width : 4000px;
 @banner-image-height : 1900px;
@@ -464,11 +427,13 @@ body {
   .content-title-container .banner {
     object-fit: cover;
     height: 380px;
-    width: 100%; }
+    width: 100%;
+    margin-bottom: 20px; }
   .content-title-container .page-title {
     position: absolute;
+    line-height: normal;
     float: left;
-    bottom: 30px;
+    bottom: 50px;
     margin-left: 50px;
     margin-right: 50px;
     font-family: "Merriweather", serif;
@@ -486,6 +451,7 @@ body {
   min-height: 100%;
   text-align: center;
   font-family: "Merriweather", serif;
+  font-size: 1.13em;
   line-height: 1.9em; }
 
 #subtitle {
@@ -505,11 +471,9 @@ body {
   padding-left: 90px;
   padding-right: 90px;
   padding-bottom: 40px;
-  padding-top: 20px;
   text-align: left;
   /* markdown images, not html */
-  /* for small screens */
-  /* for phones */ }
+  /* for small screens */ }
   #content hr {
     border-color: #e0e0e0;
     /* Chrome, Safari */
@@ -557,7 +521,7 @@ body {
     margin-top: 20px;
     padding: 20px;
     width: 250px;
-    font-size: 13px;
+    font-size: 0.95em;
     font-family: "PT Mono", monospace;
     line-height: 1.3em; }
   #content p img {
@@ -619,33 +583,11 @@ body {
       margin-bottom: 30px;
       padding: 20px;
       width: auto; } }
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    #content pre {
-      width: auto; }
-    #content p .float-left, #content p .float-right {
-      width: 100%;
-      max-width: 100%;
-      margin-top: 20px;
-      margin-bottom: 20px; }
-    #content p img:not(.custom) {
-      width: 100%;
-      margin-top: 20px; }
-    #content p .horizontal-fill {
-      height: auto;
-      margin-top: 20px;
-      margin-bottom: 20px; }
-    #content .sidebar {
-      float: none;
-      position: relative;
-      margin-left: 0px;
-      margin-bottom: 30px;
-      padding: 20px;
-      width: auto; } }
 
 @media only screen and (max-width: 600px) {
   #content {
-    padding-left: 40px;
-    padding-right: 40px; } }
+    padding-left: 30px;
+    padding-right: 30px; } }
 /* for phones */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   #content {

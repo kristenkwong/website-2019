@@ -1,5 +1,5 @@
 ---
-stack: 
+stack:
 - JavaScript
 - Node.js
 - Express
@@ -11,7 +11,7 @@ github: https://github.com/kristenkwong/frienDB
 link: https://friendb.herokuapp.com/
 enddate: 2017-3-31
 title: frienDB
-summary: FrienDB is a simple web application, simulating a social media service, running on Heroku with the Postgres add-on. The app contains a home page with all users and posts with their content, individual pages for users, displaying more detailed information, as well as their posts. 
+summary: FrienDB is a web app, simulating a social media service, running on Heroku with the Postgres add-on. The app contains a home page with all users and posts with their content, individual pages for users, displaying more detailed information, as well as their posts. 
 banner: /assets/images/projects/frienDB.png
 readmore: false
 ---
