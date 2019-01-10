@@ -6,13 +6,14 @@ $secondary-color: #e0e0e0;
 $dark-bg: #303030;
 $light-bg: #f2f2f3;
 $accent-color: #fdf59c;
-$body-font-size: 0.93em;
+$body-font-size: 100%;
 $title-font-size: 1.3em;
 $header-font-size: 4.5em;
 $tagline-font-size: 1.8em;
 $line-height: 1.3em;
 
 html, body {
+	-webkit-text-size-adjust: 100%;
 	background-color: $light-bg;
 	width: 100%;
 	height: 100%;
