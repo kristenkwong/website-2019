@@ -4,7 +4,7 @@ dates: April - August 2018
 title: Apple Inc.
 startdate: 2018-04-30
 tagline: developed tools to analyse and improve the software performance of millions of devices around the world,
-banner: /assets/images/experience/apple2018.jpg
+banner: /assets/images/experience/apple2018.JPG
 subtitle: I developed tools to analyse and improve the software performance of millions of devices around the world by implementing solutions to greatly increase the efficiency of data gathering and analysis.
 description: 
 ---

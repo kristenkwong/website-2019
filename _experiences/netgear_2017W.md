@@ -4,7 +4,7 @@ dates: January - August 2017
 title: Netgear
 startdate: 2017-01-02
 tagline: integrated an Arduino into testing framework for a previously manual process,
-banner: /assets/images/experience/netgear.jpg
+banner: /assets/images/experience/netgear.JPG
 subtitle:
 description: I did my first 8-month coop at Netgear as a Software Test Engineer, where I worked on building the testing framework for an upcoming project.
 ---
