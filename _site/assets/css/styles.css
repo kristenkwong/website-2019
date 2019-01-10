@@ -1,0 +1,573 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather:400,400i,700|PT+Mono");
+html, body {
+  background-color: #f2f2f3;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  font-size: 13px;
+  font-family: "PT Mono", monospace;
+  color: #303030;
+  scroll-behavior: smooth; }
+
+::selection {
+  /* WebKit/Blink Browsers */
+  background: #e0e0e0; }
+
+::-moz-selection {
+  /* Gecko Browsers */
+  background: #e0e0e0; }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: red; }
+
+mark {
+  background-color: #fdf59c; }
+
+.vert-line {
+  border-left: 1px solid #e0e0e0;
+  height: 100px;
+  position: relative;
+  display: inline-block;
+  margin-top: 20px; }
+
+.section-header {
+  font-family: "Merriweather", serif;
+  font-size: 72px;
+  font-weight: bold;
+  text-align: left;
+  position: relative;
+  padding-bottom: 40px;
+  color: #303030; }
+  .section-header mark {
+    background-color: #e0e0e0; }
+
+nav {
+  position: fixed;
+  background-color: #303030;
+  width: 100%;
+  z-index: 99999;
+  font-size: 14px;
+  top: 0; }
+  nav #nav-items {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px; }
+  nav #home {
+    float: left; }
+  nav .nav-item {
+    margin: 0;
+    padding: 10px;
+    float: right; }
+  nav .nav-item a {
+    text-decoration: none;
+    color: white;
+    font-weight: normal; }
+  nav .nav-item a:hover {
+    text-decoration: line-through; }
+  nav .current-page {
+    color: green; }
+  @media only screen and (max-width: 500px) {
+    nav .nav-item {
+      padding: 2px;
+      padding-top: 10px; }
+    nav #home {
+      width: 100%; }
+    nav .nav-item:not(#home) {
+      font-size: 12px;
+      float: none;
+      display: inline-block; } }
+
+#hero {
+  height: 100%;
+  min-height: 600px;
+  width: 100%;
+  background-color: #303030;
+  color: #ffffff;
+  position: relative; }
+  #hero #title {
+    height: auto;
+    font-family: "Merriweather", serif;
+    text-align: left;
+    font-size: 72px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 100px;
+    left: 100px;
+    line-height: 1em; }
+  #hero .highlight-on-scroll {
+    color: #fdf59c; }
+  @media only screen and (max-width: 700px) {
+    #hero #title {
+      padding-right: 40px;
+      padding-left: 40px;
+      text-align: top;
+      font-size: 72px;
+      top: 20%;
+      left: 0px;
+      max-width: 400px; } }
+
+#about {
+  height: 80%;
+  min-height: 600px;
+  background-color: #f2f2f3;
+  color: #303030;
+  width: 100%;
+  padding-top: 120px;
+  position: relative;
+  margin-bottom: 40px; }
+  #about .desc {
+    padding-top: 20px;
+    width: 300px;
+    font-size: 13px;
+    text-align: center;
+    display: block;
+    margin: 0 auto; }
+  #about .resume {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 30px; }
+    #about .resume a {
+      font-family: "Merriweather", serif;
+      font-style: italic;
+      font-size: 16px;
+      /* border: 2px solid $dark-bg; */
+      padding: 10px 20px 10px 20px;
+      text-decoration: none;
+      background-color: #ffffff; }
+    #about .resume a:hover {
+      background-color: #e0e0e0;
+      padding: 10px 20px 10px 20px;
+      text-decoration: none; }
+  #about a {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #303030;
+    -webkit-transition: background-color 0.5s;
+    /* Safari */
+    transition: background-color 0.5s; }
+  #about a:hover {
+    text-decoration: underline;
+    background-color: #fdf59c;
+    -webkit-transition: background-color 0.5s;
+    /* Safari */
+    transition: background-color 0.5s; }
+  #about .readmore {
+    font-size: 11px; }
+
+#experiences {
+  height: auto;
+  min-height: 600px;
+  background-color: #f2f2f3;
+  width: 100%;
+  padding-top: 80px; }
+  #experiences .container {
+    width: 60%;
+    margin: 0 auto; }
+  #experiences .section-header {
+    padding-left: 90px; }
+  #experiences .experience {
+    height: auto; }
+  #experiences .description {
+    padding-top: 20px;
+    margin-bottom: 40px;
+    text-align: right;
+    -webkit-transition: margin-right 0.5s;
+    /* Safari */
+    transition: margin-right 0.5s; }
+  #experiences .company {
+    font-weight: bold;
+    font-size: 14px; }
+  #experiences .dates {
+    font-size: 12px;
+    font-color: #e0e0e0; }
+  #experiences .tagline {
+    text-align: left;
+    width: 70%;
+    font-family: "Merriweather", serif;
+    line-height: 1.3em;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: bold;
+    -webkit-transition: margin-left 0.5s;
+    /* Safari */
+    transition: margin-left 0.5s; }
+  #experiences .tagline a {
+    text-decoration: none;
+    color: #303030; }
+  #experiences .tagline:hover {
+    margin-left: 40px;
+    -webkit-transition: margin-left 0.5s;
+    /* Safari */
+    transition: margin-left 0.5s; }
+  #experiences .tagline:hover + .description {
+    margin-right: 40px;
+    -webkit-transition: margin-right 0.5s;
+    /* Safari */
+    transition: margin-right 0.5s; }
+  #experiences .description:hover + .hover {
+    margin-left: 40px;
+    -webkit-transition: margin-left 0.5s;
+    /* Safari */
+    transition: margin-left 0.5s; }
+  @media only screen and (max-width: 500px) {
+    #experiences .container {
+      width: 80%; }
+    #experiences .tagline {
+      width: 90%; }
+    #experiences .section-header {
+      padding-left: 0;
+      text-align: center;
+      font-size: 48px; } }
+
+#projects {
+  padding-top: 60px;
+  height: auto;
+  min-height: 600px; }
+  #projects .container {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center; }
+  #projects .section-header {
+    padding-left: 90px; }
+  #projects .project {
+    text-align: left;
+    margin: 10px;
+    width: 350px;
+    height: 350px;
+    background-color: #ffffff;
+    position: relative;
+    display: inline-block;
+    top: 0px;
+    -webkit-transition: top 0.2s;
+    /* Safari */
+    transition: top 0.2s; }
+  #projects .project:hover {
+    top: -8px;
+    -webkit-transition: top 0.2s;
+    /* Safari */
+    transition: top 0.2s; }
+  #projects .links {
+    position: absolute;
+    right: 0;
+    padding-right: 20px;
+    padding-top: 20px;
+    z-index: 99; }
+  #projects svg {
+    height: 30px; }
+  #projects svg path {
+    fill: #e0e0e0;
+    -webkit-transition: all 0.5s;
+    /* Safari */
+    transition: all 0.5s; }
+  #projects svg path:hover {
+    fill: #303030;
+    -webkit-transition: all 0.5s;
+    /* Safari */
+    transition: all 0.5s; }
+  #projects .description {
+    position: absolute;
+    padding: 40px; }
+  #projects .project-name {
+    font-weight: bold;
+    font-size: 28px;
+    font-family: "Merriweather", serif;
+    font-style: italic; }
+  #projects .project a {
+    text-decoration: none;
+    color: #303030; }
+  #projects .project-summary {
+    height: 150px;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-bottom: 15px; }
+  #projects .link {
+    font-size: 11px;
+    text-decoration: underline; }
+  #projects .project-stack {
+    padding-left: 40px;
+    padding-right: 40px;
+    position: absolute;
+    bottom: 40px; }
+  #projects .stack-item {
+    display: inline;
+    font-size: 11px; }
+  @media only screen and (max-width: 450px) {
+    #projects .section-header {
+      padding-left: 0;
+      text-align: center;
+      font-size: 48px; }
+    #projects .project {
+      width: 95%; } }
+
+#passions {
+  padding-top: 30px;
+  padding-bottom: 40px;
+  height: auto;
+  text-align: center; }
+  #passions a {
+    color: #303030;
+    -webkit-transition: background-color 0.5s;
+    /* Safari */
+    transition: background-color 0.5s; }
+  #passions a:hover {
+    background-color: #fdf59c;
+    -webkit-transition: background-color 0.5s;
+    /* Safari */
+    transition: background-color 0.5s; }
+  #passions .section-header {
+    padding-left: 90px; }
+  #passions .container {
+    padding-left: 60px;
+    padding-right: 60px;
+    max-width: 700px;
+    display: inline-block; }
+    #passions .container p {
+      text-align: left; }
+  #passions .item {
+    padding-top: 10px;
+    text-align: left; }
+    #passions .item .heading {
+      font-family: "Merriweather", serif;
+      font-weight: bold;
+      font-style: italic;
+      font-size: 16px; }
+    #passions .item .text {
+      font-family: "PT Mono", monospace; }
+  #passions .features {
+    padding-top: 20px;
+    text-align: left; }
+    #passions .features .heading {
+      font-family: "Merriweather", serif;
+      font-weight: bold;
+      font-size: 24px; }
+    #passions .features .feature .article-title {
+      font-size: 14px;
+      font-weight: bold;
+      margin-right: 5px; }
+  @media only screen and (max-width: 600px) {
+    #passions .section-header {
+      padding-left: 0;
+      text-align: center;
+      font-size: 48px; } }
+
+#footer {
+  width: 100%;
+  position: static;
+  bottom: 0;
+  text-align: center;
+  background-color: #e0e0e0;
+  margin-top: 30px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  z-index: 999; }
+  #footer a {
+    margin: 3px;
+    text-decoration: none; }
+  #footer svg {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 25px;
+    width: 25px; }
+  #footer path {
+    fill: #ffffff;
+    -webkit-transition: all 0.5s;
+    /* Safari */
+    transition: all 0.5s; }
+  #footer path:hover {
+    fill: #303030;
+    -webkit-transition: all 0.5s;
+    /* Safari */
+    transition: all 0.5s; }
+  #footer .red {
+    color: #e24949; }
+  #footer .email a {
+    color: #303030;
+    font-weight: bold;
+    text-decoration: underline;
+    -webkit-transition: all 0.5s;
+    /* Safari */
+    transition: all 0.5s; }
+  #footer .email a:hover {
+    background-color: #fdf59c;
+    -webkit-transition: all 0.5s;
+    /* Safari */
+    transition: all 0.5s; }
+  #footer .text {
+    padding-top: 30px;
+    font-size: 11px; }
+
+@banner-image-width : 4000px;
+@banner-image-height : 1900px;
+body {
+  text-align: center; }
+
+.content-title-container {
+  position: relative;
+  width: auto;
+  color: #303030; }
+  .content-title-container .banner {
+    object-fit: cover;
+    height: 380px;
+    width: 100%; }
+  .content-title-container .page-title {
+    position: absolute;
+    float: left;
+    bottom: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-family: "Merriweather", serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 24px;
+    background-color: #ffffff;
+    padding: 10px 20px 10px 20px; }
+
+.content-container {
+  margin: 0 auto;
+  width: auto;
+  max-width: 850px;
+  height: auto;
+  min-height: 100%;
+  text-align: center;
+  font-family: "Merriweather", serif;
+  line-height: 1.9em; }
+
+#subtitle {
+  font-family: "Merriweather", serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+  color: #303030;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  display: inline-block;
+  padding: 30px; }
+
+#content {
+  position: static;
+  padding-left: 90px;
+  padding-right: 90px;
+  padding-bottom: 40px;
+  padding-top: 20px;
+  text-align: left;
+  /* markdown images, not html */
+  /* for mobile devices and small screens */ }
+  #content hr {
+    border-color: #e0e0e0;
+    /* Chrome, Safari */
+    background-color: #e0e0e0;
+    /* Firefox */
+    color: #e0e0e0;
+    /* ID */
+    height: 1px;
+    border: 0; }
+  #content blockquote {
+    font-style: italic;
+    border-left: 10px solid #e0e0e0;
+    padding-left: 10px; }
+  #content code {
+    background-color: #ffffff;
+    font-family: "PT Mono", monospace;
+    padding: 3px; }
+  #content pre {
+    background-color: #303030;
+    overflow-x: scroll;
+    width: 550px;
+    border-radius: 5px;
+    padding: 20px;
+    font-family: "PT Mono", monospace; }
+  #content pre code {
+    color: #f2f2f3;
+    background-color: transparent; }
+  #content a {
+    color: #303030;
+    font-weight: bold;
+    -webkit-transition: background-color 0.5s;
+    /* Safari */
+    transition: background-color 0.5s; }
+  #content a:hover {
+    background-color: #fdf59c;
+    -webkit-transition: background-color 0.5s;
+    /* Safari */
+    transition: background-color 0.5s; }
+  #content .sidebar {
+    float: right;
+    position: relative;
+    background-color: #e0e0e0;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    width: 250px;
+    font-size: 13px;
+    font-family: "PT Mono", monospace;
+    line-height: 1.3em; }
+  #content p img {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none; }
+  #content p img:not(.custom) {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    overflow: auto;
+    margin-top: 20px;
+    clear: both; }
+  #content .caption {
+    font-size: 10px;
+    text-align: center;
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px; }
+  #content p .float-left {
+    float: left;
+    margin: 5px 20px 5px 0px;
+    max-width: 500px; }
+  #content p .float-right {
+    float: right;
+    margin: 5px 0px 5px 20px;
+    max-width: 500px; }
+  #content p .horizontal-fill {
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+    height: 500px;
+    display: block; }
+  @media only screen and (max-width: 800px) {
+    #content pre {
+      width: auto; }
+    #content p .float-left, #content p .float-right {
+      width: 100%;
+      max-width: 100%;
+      margin-top: 20px;
+      margin-bottom: 20px; }
+    #content p img:not(.custom) {
+      width: 100%;
+      margin-top: 20px; }
+    #content p .horizontal-fill {
+      height: auto;
+      margin-top: 20px;
+      margin-bottom: 20px; } }
+  @media only screen and (max-width: 700px) {
+    #content .sidebar {
+      float: none;
+      position: relative;
+      margin-left: 0px;
+      margin-bottom: 30px;
+      padding: 20px;
+      width: auto; } }
+
+@media only screen and (max-width: 600px) {
+  #content {
+    padding-left: 40px;
+    padding-right: 40px; } }

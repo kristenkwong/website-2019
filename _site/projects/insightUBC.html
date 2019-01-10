@@ -1,0 +1,264 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>InsightUBC :: Kristen Kwong - Software Engineer</title>
+		<link rel="shortcut icon" type="image/png" href="/assets/images/icon.png">
+		<meta name="author" content="Kristen Kwong"/>
+		<meta charset="utf-8"/>
+
+		<meta itemprop="description" name="description" content="InsightUBC is a full-stack web application, providing a query system for UBC course and room information, hosted on Heroku. Data, such as room capacity, buil..." />
+
+		<!--- OPEN GRAPH TAGS ---->
+		<meta property="og:locale" content="en_US">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="InsightUBC :: Kristen Kwong - Software Engineer">
+		<meta property="og:url" content="http://localhost:4000/projects/insightUBC.html">
+		<meta property="og:image" content="/assets/images/projects/insightUBC.png" />
+		<meta property="og:site_name" content="Kristen Kwong - Software Engineer">
+		<meta property="article:author" content="Kristen Kwong" />
+		<meta property="article:published_time" content="" />
+		<meta property="og:description" content="Kristen Kwong is a software engineer and third year Computer Science student at UBC in Vancouver, Canada, with a passion for development, design, and travel.">
+
+		<!--- TWITTER CARD ---->
+  		<meta name="twitter:card" content="summary_large_image"/>
+		<meta name="twitter:title" content="InsightUBC :: Kristen Kwong - Software Engineer">
+		<meta name="twitter:description" content="Kristen Kwong is a software engineer and third year Computer Science student at UBC in Vancouver, Canada, with a passion for development, design, and travel.">
+		<meta name="twitter:creator" content="@kristenkwng">
+		<meta name="twitter:card" content="summary">
+
+		<link rel="stylesheet" href="/assets/css/styles.css">
+		<script type="text/javascript" src="/assets/js/main.js"></script>
+		<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" />
+		<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>InsightUBC</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="InsightUBC" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="InsightUBC: Course and Room Data Querying" />
+<meta property="og:description" content="InsightUBC: Course and Room Data Querying" />
+<link rel="canonical" href="http://localhost:4000/projects/insightUBC.html" />
+<meta property="og:url" content="http://localhost:4000/projects/insightUBC.html" />
+<script type="application/ld+json">
+{"description":"InsightUBC: Course and Room Data Querying","@type":"WebPage","url":"http://localhost:4000/projects/insightUBC.html","headline":"InsightUBC","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+		<link rel="stylesheet" href="/assets/css/styles.css">
+		<script type="text/javascript" src="/assets/js/main.js"></script>
+		<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" />
+		<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>InsightUBC</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="InsightUBC" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="InsightUBC: Course and Room Data Querying" />
+<meta property="og:description" content="InsightUBC: Course and Room Data Querying" />
+<link rel="canonical" href="http://localhost:4000/projects/insightUBC.html" />
+<meta property="og:url" content="http://localhost:4000/projects/insightUBC.html" />
+<script type="application/ld+json">
+{"description":"InsightUBC: Course and Room Data Querying","@type":"WebPage","url":"http://localhost:4000/projects/insightUBC.html","headline":"InsightUBC","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+	</head>
+	<body>
+		<nav id="navbar">
+	<div id="nav-items">
+		<span class="nav-item" id="home">
+			<a href="/" >Kristen Kwong</a>
+		</span>
+		
+		<span class="nav-item">
+			<a href="/assets/resume.pdf" >
+				Resume
+			</a>
+		</span>
+		
+		<span class="nav-item">
+			<a href="/#projects" >
+				Projects
+			</a>
+		</span>
+		
+		<span class="nav-item">
+			<a href="/#experiences" >
+				Experience
+			</a>
+		</span>
+		
+		<span class="nav-item">
+			<a href="/#about" >
+				About
+			</a>
+		</span>
+		
+	</div>
+</nav>
+		<div class="content-title-container">
+			<img src="/assets/images/projects/insightUBC.png" class="banner">
+			<div class="page-title">
+				InsightUBC
+			</div>
+		</div>
+		<div class="content-container">
+			
+			<div id="content">
+				<h1 id="insightubc-course-and-room-data-querying">InsightUBC: Course and Room Data Querying</h1>
+
+<h4 id="-click-here-to-see-our-app-in-action-">✨✨ CLICK <a href="https://insightubc-310.herokuapp.com/">HERE</a> TO SEE OUR APP IN ACTION ✨✨</h4>
+
+<p>InsightUBC is a full-stack web application, providing a query system for UBC course and room information, hosted on Heroku. Data, such as room capacity, building names, course averages, course instructors, and pass/fail rates, can be queried and filtered through a WebUI. Room and course datasets are parsed from <a href="https://webprd01.pair.ubc.ca/reports/gradesdist_request.action">UBC PAIR</a> (accessible only by UBC students and faculty), which provides actual data from course sections.</p>
+
+<p><strong>Made with:</strong> Backend – Node, TypeScript; Frontend – JavaScript, HTML, CSS; Testing - Chai, Mocha, Karma; Hosted on Heroku</p>
+
+<p>This project was a term project for <strong><a href="https://github.com/ubccpsc/310">CPSC 310: Introduction to Software Engineering</a></strong>.</p>
+
+<h2 id="️-application-components">⚙️ Application components</h2>
+
+<h3 id="testing">Testing</h3>
+<p><a href="https://mochajs.org/">Mocha Test Environment</a> with <a href="https://www.chaijs.com/api/bdd/">Chai Expectations</a> was used to <strong>black box test</strong> dataset parsing and manipulation methods, such as <code class="highlighter-rouge">addDataset</code> and <code class="highlighter-rouge">deleteDataset</code> in <code class="highlighter-rouge">/src/controller/DatasetController.ts</code>.</p>
+
+<p>Tests can be found in <code class="highlighter-rouge">test/InsightFacade.spec.ts</code> and run with <code class="highlighter-rouge">yarn test</code> after setting up the local environment (see instructions below).</p>
+
+<p>Frontend testing was done with the <a href="https://karma-runner.github.io/2.0/index.html">Karma</a> test runner.</p>
+
+<h3 id="parsing-datasets">Parsing datasets</h3>
+
+<p>There are two types of datasets: courses and rooms. Datasets are initially a single <strong>ZIP file</strong>, which are read then parsed as <strong>JSON files</strong> (courses) or <strong>HTML files</strong> (rooms) from a cached, older version of <a href="https://learningspaces.ubc.ca/find-space">UBC’s space finder</a>.</p>
+
+<p>Datasets are parsed (using JSZip then JSON.parse for JSONs or parse5 for HTML) and checked to be valid, according to a criteria, then saved in JSON format to the <code class="highlighter-rouge">./data</code> folder, so they can be loaded from disk when needed.</p>
+
+<p>When room datasets are parsed, the address is encoded to a latitude/longitude pair by using a provided API.</p>
+
+<h3 id="query-engine">Query engine</h3>
+
+<p>The EBNF of a valid query can be found below:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>QUERY ::='{'BODY ', ' OPTIONS (', ' TRANSFORMATIONS)? '}'
+
+BODY ::= 'WHERE:{' (FILTER)? '}'
+OPTIONS ::= 'OPTIONS:{' COLUMNS ', ' (SORT)?'}'
+TRANSFORMATIONS ::= 'TRANSFORMATIONS: {' GROUP ', ' APPLY '}'
+
+FILTER ::= (LOGICCOMPARISON | MCOMPARISON | SCOMPARISON | NEGATION)
+
+LOGICCOMPARISON ::= LOGIC ':[{' FILTER ('}, {' FILTER )* '}]'  
+MCOMPARISON ::= MCOMPARATOR ':{' key ':' number '}'  
+SCOMPARISON ::= 'IS:{' key ':' [*]? inputstring [*]? '}'  // inputstring may have option * characters as wildcards
+NEGATION ::= 'NOT :{' FILTER '}'
+
+LOGIC ::= 'AND' | 'OR'
+MCOMPARATOR ::= 'LT' | 'GT' | 'EQ'
+
+COLUMNS ::= 'COLUMNS:[' ((key|applykey) ',')* (key|applykey) ']'
+SORT ::= 'ORDER: ' ('{ dir:'  DIRECTION ', keys: [ ' ORDERKEY (',' ORDERKEY)* ']}') | ORDERKEY
+DIRECTION ::= 'UP' | 'DOWN'  
+ORDERKEY ::= key | applykey
+
+GROUP ::= 'GROUP: [' (key ',')* key ']'                                                          
+APPLY ::= 'APPLY: [' (APPLYRULE (', ' APPLYRULE )* )? ']'  
+APPLYRULE ::= '{' applykey ': {' APPLYTOKEN ':' key '}}'
+APPLYTOKEN ::= 'MAX' | 'MIN' | 'AVG' | 'COUNT' | 'SUM'                           
+
+key ::= string '_' string
+inputstring ::= [^*]* // zero or more of any character except asterisk.
+applykey ::= [^_]+ // one or more of any character except underscore.
+</code></pre></div></div>
+<p><sup><a href="https://github.com/ubccpsc/310/blob/2018sept/project/Deliverable2.md">EBNF source from project requirements</a></sup></p>
+
+<p>Semantic and syntactic checks are performed on each query to make sure that the incoming query matches the specified EBNF.</p>
+
+<h3 id="web-server--frontend-ui">Web server &amp; frontend UI</h3>
+
+<p>We use <code class="highlighter-rouge">restify</code> as a REST server library. <strong>REST endpoints</strong> are adapted to our existing dataset and query methods:</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">GET /</code>: returns our UI</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">PUT /dataset/:id/:kind</code>: submits a ZIP file as a dataset</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">DELETE /dataset/:id</code>: removes a previously saved ZIP file</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">POST /query</code>: sends a query in JSON format as the request body</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">GET /datasets</code>: returns a list of datasets that were added</p>
+  </li>
+</ul>
+
+<p>Other <code class="highlighter-rouge">GET /*</code> endpoints get our static resources in the <code class="highlighter-rouge">public</code> folder of the frontend.</p>
+
+<p>Vanilla <strong>JavaScript</strong> is used to build query from the HTML form on the UI through the <code class="highlighter-rouge">document</code> object, in the <code class="highlighter-rouge">CampusExplorer.buildQuery</code> method. An Ajax/REST call is sent to the <code class="highlighter-rouge">/query</code> endpoint in the <code class="highlighter-rouge">CampusExplorer.sendQuery</code> method using browser-native method <code class="highlighter-rouge">XMLHttpRequest</code>.</p>
+
+<h2 id="-building-and-running-the-project-locally">⚒ Building and running the project locally</h2>
+
+<p>If you want to build the project on your local machine, follow these steps.</p>
+
+<h3 id="configuring-the-development-environment">Configuring the development environment</h3>
+
+<p>To start using this project, you need to get your computer configured so you can build and execute the code.
+To do this, follow these steps; the specifics of each step (especially the first two) will vary based on which operating system your computer has:</p>
+
+<ol>
+  <li>
+    <p>Install git. Check after by using <code class="highlighter-rouge">git --version</code>.</p>
+  </li>
+  <li>
+    <p>Install Node LTS (8.X), which will also install NPM. Check by using <code class="highlighter-rouge">node --version</code> and <code class="highlighter-rouge">npm --version</code> on the command line.</p>
+  </li>
+  <li>
+    <p><a href="https://yarnpkg.com/en/docs/install">Install Yarn</a>, which is a package and dependency manager (like npm). Check that it’s installed correctly by using <code class="highlighter-rouge">yarn --version</code> command after.</p>
+  </li>
+  <li>
+    <p>Clone the project repository: <code class="highlighter-rouge">git clone https://github.com/kristenkwong/InsightUBC.git</code></p>
+  </li>
+</ol>
+
+<h3 id="project-commands">Project commands</h3>
+
+<p>After the environment has been configured, use these commands to use Yarn to install dependencies and build the projects, as well as run tests or start the application.</p>
+
+<ol>
+  <li>
+    <p><code class="highlighter-rouge">yarn install</code>: download the packages in <em>package.json</em> to the <em>node_modules</em> directory.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">yarn build</code>: compile the project.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">yarn test</code>: run the test suite.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">yarn start</code>: start the application. You can set the port the application runs on by using <code class="highlighter-rouge">export PORT=4321</code>. You should be able to view it in the browser on http://localhost:4321/. (Replace 4321 with your choice of port if you’d like.)</p>
+  </li>
+</ol>
+
+			</div>
+		</div>
+		<div id="footer">
+	<?xml version="1.0" encoding="utf-8"?>
+	<a href="https://github.com/kristenkwong">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+			<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+		</svg>
+	</a>
+
+	<a href="https://linkedin.com/in/kristenkwong">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+			<path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+		</svg>
+	</a>
+
+	<div class="email">
+		<a href="mailto:kristenkwong@gmail.com">kristenkwong@gmail.com</a>
+	</div>
+
+	<div class="text">
+		© Designed and coded with love<span class="red">♥</span> by Kristen Kwong
+	</div>
+</div>
+	</body>
+</html>

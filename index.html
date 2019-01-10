@@ -1,83 +1,167 @@
-<!DOCTYPE html>
+---
+title: Kristen Kwong - Software Engineer
+layout: default
+---
+<div id="hero">
+	<div class="container">
+		<span id="title">Hey there,
+			<br>I'm <span class="highlight-on-scroll">Kristen</span>! 👋🏻
+		</span>
+	</div>
+</div>
 
-<html lang="en">
-	<head>
+<a id="about"></a>
+<div id="about">
+	<div class="desc">
+		I'm a <mark>software engineer</mark> and third year Computer Science student at the University of British Columbia.
+	</div>
+	<div class="desc">
+		Currently, I'm a TA for CPSC 304 Databases, and a hackathon organizer at <a href="https://www.nwhacks.io/">nwPlus</a>.
+		I'm also an incoming software engineering intern at <a href="https://www.apple.com/">Apple</a> on the Siri Client team.
+	</div>
+	<div class="desc readmore">
+		<a href="/about.html">Read more →</a>
+	</div>
+	<div class="vert-line"></div>
+	<div class="resume">
+		<a href="/assets/resume.pdf">resume</a>
+	</div>
+</div>
 
-		<title>kristen kwong</title>
-		<link rel="icon" href="images/icon.png">
-		<meta name="author" content="Kristen Kwong"/>
-		<meta name="description" content="Kristen Kwong is a second year Computer Science student at UBC, with a passion for development, design, and travel." />
-		<meta charset="utf-8"/>
+<a id="experiences"></a>
+<div id="experiences">
 
-		<!--- OPEN GRAPH DATA ---->
-		<meta property="og:title" content="Kristen Kwong"/>
- 		<meta property="og:url" content="http://kristenkwong.com"/>
-  		<meta property="og:description" content="Kristen Kwong is a second year Computer Science student at UBC, with a passion for development, design, and travel."/>
-  		<meta property="og:site_name" content="Kristen Kwong"/>
-  		<meta property="og:image" content="images/icon.png"/>
+	<div class="section-header">
+		experience
+	</div>
 
-		<!--- TWITTER CARD ---->
-		<meta name="twitter:card" content="summary"/>
- 		<meta name="twitter:title" content="Kristen Kwong's Website"/>
-  		<meta name="twitter:description" content="Kristen Kwong is a second year Computer Science student at UBC,
-						  with a passion for development, design, and travel."/>
-  		<meta name="twitter:creator" content="@kristenkwng"/>
-  		<meta name="twitter:image" content="images/icon.png"/>
-
-		<link rel="stylesheet" href="css/style.css">
-
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-		<!-- GOOGLE FONTS -->
-		<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600" rel="stylesheet">
-	</head>
-
-	<body>
-
-		<div id="container">
-
-			<h3>kristen kwong 👩🏻‍💻</h3>
-
-			<p>
-				👋🏻 hi there, welcome to my page!
-			</p>
-
-			<p>
-				it's a little empty here cause i'm doing some renovations at the moment 🚧
-			</p>
-
-			<p>
-				check out my resume <a href="resume.pdf">here</a>, and feel free to connect with me!
-			</p>
-
-			<div class="links">
-				<a href="https://www.linkedin.com/in/kristenkwong/">linkedin</a> | <a href="https://github.com/kristenkwong">github</a> | kristenkwong@gmail.com
+	<div class="container">
+		{% assign sorted_experiences = site.experiences | sort: "startdate" | reverse %}
+		{% for experience in sorted_experiences %}
+			<div class="experience">
+				<div class="tagline"><a href="{{ experience.url }}">{{ experience.tagline }}</a></div>
+				<div class="description">
+					<div class="company"><mark>{{ experience.title }}</mark></div>
+					<div class="position">{{ experience.position | strip_html }}</div>
+					<div class="dates">{{ experience.dates }}</div>
+				</div>
 			</div>
+		{% endfor %}
+	</div>
 
-			<br><br>
+</div>
 
-			<p>
-				<br>
-				<b>some tidbits</b>
-				<br><br>
-				<b>▅ travel plans:</b> rochester dec 7 / nyc dec 27 / toronto + rochester feb 15 / rochester apr 29 / cali may 13
-				<br><br>
-				<b>▅ what's playing?</b> probably astroworld on repeat
-				<br><br>
-				<b>▅ current classes</b> intermediate algorithms and data structures, software engineering principles, web applications, and spanish
-				<br><br>
-				<b>▅ upcoming career plans</b> heading back to apple as a software engineering intern for the siri client team in summer'19 💎
-			</p>
+<a id="projects"></a>
+<div id="projects">
 
+	<div class="section-header">
+		projects
+	</div>
 
+	<div class="container">
 
-			<div class="tiny">
-				<b>fun fact:</b> kristen despises capital letters
-				<br>
-				© updated sept 2018 by kristen kwong
+		{% assign sorted_projects = site.projects | sort: "enddate" | reverse %}
+		{% for project in sorted_projects %}
+			<div class="project">
+				<div class="links">
+					{% unless project.github == "" %}
+					<a href="{{ project.github }}">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+							<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+						</svg>
+					</a>
+					{% endunless %}
+					{% unless project.link == "" %}
+					<a href="{{ project.link }}">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6.188 8.719c.439-.439.926-.801 1.444-1.087 2.887-1.591 6.589-.745 8.445 2.069l-2.246 2.245c-.644-1.469-2.243-2.305-3.834-1.949-.599.134-1.168.433-1.633.898l-4.304 4.306c-1.307 1.307-1.307 3.433 0 4.74 1.307 1.307 3.433 1.307 4.74 0l1.327-1.327c1.207.479 2.501.67 3.779.575l-2.929 2.929c-2.511 2.511-6.582 2.511-9.093 0s-2.511-6.582 0-9.093l4.304-4.306zm6.836-6.836l-2.929 2.929c1.277-.096 2.572.096 3.779.574l1.326-1.326c1.307-1.307 3.433-1.307 4.74 0 1.307 1.307 1.307 3.433 0 4.74l-4.305 4.305c-1.311 1.311-3.44 1.3-4.74 0-.303-.303-.564-.68-.727-1.051l-2.246 2.245c.236.358.481.667.796.982.812.812 1.846 1.417 3.036 1.704 1.542.371 3.194.166 4.613-.617.518-.286 1.005-.648 1.444-1.087l4.304-4.305c2.512-2.511 2.512-6.582.001-9.093-2.511-2.51-6.581-2.51-9.092 0z"/></svg>
+					</a>
+					{% endunless %}
+				</div>
+				<div class="description">
+					<div class="project-name">
+						<a href="{{ project.url }}">
+							{{ project.title }}
+						</a>
+					</div>
+					<div class="project-summary">
+						{{ project.summary }}
+					</div>
+					{% unless project.readmore == false %}
+					<div class="link">
+						<a href="{{ project.url }}">read more →</a>
+					</div>
+					{% endunless %}
+				</div>
+				<div class="project-stack">
+					{% for item in project.stack %}
+						<div class="stack-item">
+							<mark>{{ item }}</mark>
+						</div>
+					{% endfor %}
+				</div>
 			</div>
+		{% endfor %}
 
+	</div>
+
+</div>
+
+<div id="passions">
+
+	<div class="container-header">
+		<div class="section-header">
+			& passions
+		</div>
+	</div>
+
+	<div class="container">
+		<p>I'm not coding all the time. Here are some of the other things that get me pumped up.</p>
+		<div class="item">
+			<div class="heading">Diversity in Tech</div>
+			<div class="text">
+				- Organized <a href="https://www.nwplus.io/#/localhackday">UBC Local Hack Day</a> 2016, 2017, & 2018 to build a more welcoming tech community. Read more about our event <a href="http://localhost:4000/experiences/lhd_2016W.html">here</a>!
+				<br>- Attended <a href="https://ghc.anitab.org/">Grace Hopper</a> twice
+				<br>- 2018-19 Fellow at <a href="https://rewritingthecode.org/">Rewriting the Code</a>
+				<br>- Volunteered for <a href="https://www.cs.ubc.ca/girlsmarts4tech/">GirlSmarts4Tech</a>
+			</div>
+		</div>
+		<div class="item">
+			<div class="heading">Design</div>
+			<div class="text">- Design and marketing for UBC Hacks and Local Hack Day 2016 & 2017
+				<br>- Interned at VIZ Future, design firm in Shanghai
+			</div>
+		</div>
+		<div class="item">
+			<div class="heading">Learning</div>
+			<div class="text">- Current coursework: <mark>Computer networking</mark>, <mark>computer hardware and operating systems</mark>, problem solving in CS, Spanish
+				<br>- Outside of school: <mark>Cybersecurity</mark>
+			</div>
+		</div>
+		<div class="item">
+			<div class="heading">Travel</div>
+			<div class="text">- Next destination: <mark>Washington, DC</mark> for Shmoocon
+				<br>- Recent destinations: New York City; Rochester; Houston
+			</div>
+		</div>
+		<div class="features">
+			<div class="heading">Features</div>
+			<div class="feature">
+				<a class="article-title" href="https://medium.com/nwplusubc/started-as-hackers-83383092b159">Started as hackers, now we're here</a>
+				<span class="desc">Read about my journey from complete hackathon newbie to three-time organizer at <a href="https://www.nwplus.io/#/localhackday">nwPlus</a>.</span>
+			</div>
 		</div>
 
-	</body>
-</html>
+		{% assign sorted_posts = site.posts | sort: "date" | reverse %}
+		{% unless sorted_posts != '' %}
+		<div class="features">
+			<div class="heading">Blog</div>
+			{% for post in sorted_posts %}
+				<div class="feature">
+					<a class="article-title" href="{{ post.url }}">{{ post.title }}</a>
+					<span class="desc">{{ post.summary }}</span>
+				</div>
+			{% endfor %}
+		</div>
+		{% endunless %}
+	</div>
+</div>
