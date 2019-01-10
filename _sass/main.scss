@@ -111,7 +111,7 @@ nav {
 		color: green;
 	}
 
-	@media only screen and (max-width: 813px) {
+	@media only screen and (max-width: 500px) {
 		.nav-item {
 			padding: 2px;
 			padding-top: 10px;
@@ -157,7 +157,7 @@ nav {
 		color: $accent-color;
 	}
 
-	@media only screen and (max-width: 813px) {
+	@media only screen and (max-width: 500px) {
 
 		#title {
 			padding-right: 40px;
@@ -416,7 +416,7 @@ nav {
 		font-size: 0.8em;
 	}
 
-	@media only screen and (max-width: 813px) {
+	@media only screen and (max-width: 500px) {
 
 		.description {
 			padding: 30px;
@@ -437,7 +437,7 @@ nav {
 		}
 	}
 
-	@media only screen and (max-width: 813px) {
+	@media only screen and (max-width: 500px) {
 
 		.project-name {
 			font-size: 1.4em;
@@ -521,7 +521,7 @@ nav {
 
 	}
 
-	@media only screen and (max-width: 813px) {
+	@media only screen and (max-width: 500px) {
 
 		.container {
 			padding-left: 30px;
