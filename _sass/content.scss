@@ -182,7 +182,7 @@ body {
 		display: block;
 	}
 
-	/* for mobile devices and small screens */
+	/* for small screens */
 	@media only screen and (max-width: 800px) {
 
 		pre {
@@ -218,9 +218,55 @@ body {
 			width: auto;
 		}
 	}
+
+	/* for phones */
+	@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px) {
+		pre {
+			width: auto;
+		}
+
+		p .float-left, p .float-right {
+			width: 100%;
+			max-width: 100%;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+
+		p img:not(.custom) {
+			width: 100%;
+			margin-top: 20px;
+		}
+
+		p .horizontal-fill {
+			height: auto;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+
+		.sidebar {
+			float: none;
+			position: relative;
+			margin-left: 0px;
+			margin-bottom: 30px;
+			padding: 20px;
+			width: auto;
+		}
+	}
 }
 
 @media only screen and (max-width: 600px) {
+	#content {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+}
+
+/* for phones */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px) {
 	#content {
 		padding-left: 40px;
 		padding-right: 40px;

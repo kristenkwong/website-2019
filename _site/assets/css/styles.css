@@ -10,6 +10,10 @@ html, body {
   color: #303030;
   scroll-behavior: smooth; }
 
+/* for really smol screens, looking at u SE */
+@media only screen and (max-width: 400px) {
+  html, body {
+    font-size: 12px; } }
 ::selection {
   /* WebKit/Blink Browsers */
   background: #e0e0e0; }
@@ -51,7 +55,8 @@ nav {
   width: 100%;
   z-index: 99999;
   font-size: 14px;
-  top: 0; }
+  top: 0;
+  /* for phones */ }
   nav #nav-items {
     padding-left: 20px;
     padding-right: 20px;
@@ -80,6 +85,16 @@ nav {
       font-size: 12px;
       float: none;
       display: inline-block; } }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    nav .nav-item {
+      padding: 2px;
+      padding-top: 10px; }
+    nav #home {
+      width: 100%; }
+    nav .nav-item:not(#home) {
+      font-size: 12px;
+      float: none;
+      display: inline-block; } }
 
 #hero {
   height: 100%;
@@ -87,7 +102,9 @@ nav {
   width: 100%;
   background-color: #303030;
   color: #ffffff;
-  position: relative; }
+  position: relative;
+  /* for phones */
+  /* for really smol screens, looking at u SE */ }
   #hero #title {
     height: auto;
     font-family: "Merriweather", serif;
@@ -106,9 +123,20 @@ nav {
       padding-left: 40px;
       text-align: top;
       font-size: 72px;
+      left: 0px;
+      max-width: 400px; } }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    #hero #title {
+      padding-right: 40px;
+      padding-left: 40px;
+      text-align: top;
+      font-size: 72px;
       top: 20%;
       left: 0px;
       max-width: 400px; } }
+  @media only screen and (max-width: 400px) {
+    #hero #title {
+      font-size: 50px; } }
 
 #about {
   height: 80%;
@@ -163,7 +191,8 @@ nav {
   min-height: 600px;
   background-color: #f2f2f3;
   width: 100%;
-  padding-top: 80px; }
+  padding-top: 80px;
+  /* for phones */ }
   #experiences .container {
     width: 60%;
     margin: 0 auto; }
@@ -222,11 +251,21 @@ nav {
       padding-left: 0;
       text-align: center;
       font-size: 48px; } }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    #experiences .container {
+      width: 80%; }
+    #experiences .tagline {
+      width: 90%; }
+    #experiences .section-header {
+      padding-left: 0;
+      text-align: center;
+      font-size: 48px; } }
 
 #projects {
   padding-top: 60px;
   height: auto;
-  min-height: 600px; }
+  min-height: 600px;
+  /* for phones */ }
   #projects .container {
     max-width: 90%;
     margin: 0 auto;
@@ -302,12 +341,20 @@ nav {
       font-size: 48px; }
     #projects .project {
       width: 95%; } }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    #projects .section-header {
+      padding-left: 0;
+      text-align: center;
+      font-size: 48px; }
+    #projects .project {
+      width: 95%; } }
 
 #passions {
   padding-top: 30px;
   padding-bottom: 40px;
   height: auto;
-  text-align: center; }
+  text-align: center;
+  /* for phones */ }
   #passions a {
     color: #303030;
     -webkit-transition: background-color 0.5s;
@@ -349,6 +396,11 @@ nav {
       font-weight: bold;
       margin-right: 5px; }
   @media only screen and (max-width: 600px) {
+    #passions .section-header {
+      padding-left: 0;
+      text-align: center;
+      font-size: 48px; } }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     #passions .section-header {
       padding-left: 0;
       text-align: center;
@@ -456,7 +508,8 @@ body {
   padding-top: 20px;
   text-align: left;
   /* markdown images, not html */
-  /* for mobile devices and small screens */ }
+  /* for small screens */
+  /* for phones */ }
   #content hr {
     border-color: #e0e0e0;
     /* Chrome, Safari */
@@ -566,8 +619,35 @@ body {
       margin-bottom: 30px;
       padding: 20px;
       width: auto; } }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    #content pre {
+      width: auto; }
+    #content p .float-left, #content p .float-right {
+      width: 100%;
+      max-width: 100%;
+      margin-top: 20px;
+      margin-bottom: 20px; }
+    #content p img:not(.custom) {
+      width: 100%;
+      margin-top: 20px; }
+    #content p .horizontal-fill {
+      height: auto;
+      margin-top: 20px;
+      margin-bottom: 20px; }
+    #content .sidebar {
+      float: none;
+      position: relative;
+      margin-left: 0px;
+      margin-bottom: 30px;
+      padding: 20px;
+      width: auto; } }
 
 @media only screen and (max-width: 600px) {
+  #content {
+    padding-left: 40px;
+    padding-right: 40px; } }
+/* for phones */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   #content {
     padding-left: 40px;
     padding-right: 40px; } }

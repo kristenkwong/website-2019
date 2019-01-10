@@ -19,6 +19,13 @@ html, body {
 	scroll-behavior: smooth;
 }
 
+/* for really smol screens, looking at u SE */
+@media only screen and (max-width: 400px) {
+	html, body {
+		font-size: 12px;
+	}
+}
+
 ::selection { /* WebKit/Blink Browsers */
 	background: $secondary-color;
 }
@@ -114,6 +121,26 @@ nav {
 			display: inline-block;
 		}
 	}
+
+	/* for phones */
+	@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px) {
+		.nav-item {
+			padding: 2px;
+			padding-top: 10px;
+		}
+
+		#home {
+			width: 100%;
+		}
+
+		.nav-item:not(#home) {
+			font-size: 12px;
+			float: none;
+			display: inline-block;
+		}
+	}
 }
 
 #hero {
@@ -151,9 +178,30 @@ nav {
 			padding-left: 40px;
 			text-align: top;
 			font-size: 72px;
+			left: 0px;
+			max-width: 400px;
+		}
+	}
+
+	/* for phones */
+	@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px) {
+		#title {
+			padding-right: 40px;
+			padding-left: 40px;
+			text-align: top;
+			font-size: 72px;
 			top: 20%;
 			left: 0px;
 			max-width: 400px;
+		}
+	}
+
+	/* for really smol screens, looking at u SE */
+	@media only screen and (max-width: 400px) {
+		#title {
+			font-size: 50px;
 		}
 	}
 }
@@ -307,6 +355,25 @@ nav {
 			font-size: 48px;
 		}
 	}
+
+	/* for phones */
+	@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px) {
+		.container {
+			width: 80%;
+		}
+
+		.tagline {
+			width: 90%;
+		}
+
+		.section-header {
+			padding-left: 0;
+			text-align: center;
+			font-size: 48px;
+		}
+	}
 }
 
 #projects {
@@ -421,6 +488,21 @@ nav {
 		}
 	}
 
+	/* for phones */
+	@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px) {
+		.section-header {
+			padding-left: 0;
+			text-align: center;
+			font-size: 48px;
+		}
+
+		.project {
+			width: 95%;
+		}
+	}
+
 }
 
 #passions {
@@ -495,6 +577,17 @@ nav {
 
 	@media only screen and (max-width: 600px) {
 
+		.section-header {
+			padding-left: 0;
+			text-align: center;
+			font-size: 48px;
+		}
+	}
+
+	/* for phones */
+	@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px) {
 		.section-header {
 			padding-left: 0;
 			text-align: center;
