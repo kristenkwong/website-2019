@@ -226,17 +226,7 @@ body {
 
 @media only screen and (max-width: 600px) {
 	#content {
-		padding-left: 30px;
-		padding-right: 30px;
-	}
-}
-
-/* for phones */
-@media only screen
-and (min-device-width: 320px)
-and (max-device-width: 480px) {
-	#content {
-		padding-left: 10px;
-		padding-right: 10px;
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 }
