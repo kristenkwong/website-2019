@@ -6,11 +6,13 @@ $secondary-color: #e0e0e0;
 $dark-bg: #303030;
 $light-bg: #f2f2f3;
 $accent-color: #fdf59c;
-$body-font-size: 0.94em;
+$body-font-size: 0.92em;
 $title-font-size: 1.3em;
 $header-font-size: 4.5em;
 $tagline-font-size: 1.8em;
 $line-height: 1.3em;
+$mobile-body-font-size: 0.97em;
+$mobile-tagline-font-size: 1.4em;
 
 html, body {
 	-webkit-text-size-adjust: 100%;
@@ -24,6 +26,12 @@ html, body {
 	font-family: $font-body;
 	color: $dark-bg;
 	scroll-behavior: smooth;
+}
+
+@media only screen and (max-width: 500px) {
+	html, body {
+		font-size: $mobile-body-font-size;
+	}
 }
 
 ::selection { /* WebKit/Blink Browsers */
@@ -310,6 +318,7 @@ nav {
 
 		.tagline {
 			width: 90%;
+			font-size: $mobile-tagline-font-size;
 		}
 
 		.section-header {
@@ -444,7 +453,8 @@ nav {
 		}
 
 		.project-summary {
-			font-size: 0.8em;
+			font-size: 0.9em;
+			line-height: 1.1em;
 		}
 	}
 
@@ -478,6 +488,7 @@ nav {
 		padding-right: 60px;
 		max-width: 700px;
 		display: inline-block;
+		font-size: $body-font-size;
 
 		p {
 			text-align: left;

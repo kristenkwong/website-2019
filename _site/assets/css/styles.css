@@ -6,12 +6,15 @@ html, body {
   height: 100%;
   margin: 0px;
   padding: 0px;
-  font-size: 0.94em;
+  font-size: 0.92em;
   line-height: 1.3em;
   font-family: "PT Mono", monospace;
   color: #303030;
   scroll-behavior: smooth; }
 
+@media only screen and (max-width: 500px) {
+  html, body {
+    font-size: 0.97em; } }
 ::selection {
   /* WebKit/Blink Browsers */
   background: #e0e0e0; }
@@ -82,7 +85,7 @@ nav {
     nav #home {
       width: 100%; }
     nav .nav-item:not(#home) {
-      font-size: 0.94em;
+      font-size: 0.92em;
       float: none;
       display: inline-block; } }
 
@@ -125,7 +128,7 @@ nav {
   #about .desc {
     padding-top: 20px;
     width: 300px;
-    font-size: 0.94em;
+    font-size: 0.92em;
     text-align: center;
     display: block;
     margin: 0 auto; }
@@ -185,7 +188,7 @@ nav {
     font-weight: bold;
     font-size: 1.1em; }
   #experiences .dates {
-    font-size: 0.94em;
+    font-size: 0.92em;
     font-color: #e0e0e0; }
   #experiences .tagline {
     text-align: left;
@@ -220,7 +223,8 @@ nav {
     #experiences .container {
       width: 80%; }
     #experiences .tagline {
-      width: 90%; }
+      width: 90%;
+      font-size: 1.4em; }
     #experiences .section-header {
       padding-left: 0;
       text-align: center; } }
@@ -284,7 +288,7 @@ nav {
     color: #303030; }
   #projects .project-summary {
     height: 150px;
-    font-size: 0.94em;
+    font-size: 0.92em;
     line-height: 1.3em;
     padding-top: 15px;
     padding-left: 10px;
@@ -312,7 +316,8 @@ nav {
     #projects .project-name {
       font-size: 1.4em; }
     #projects .project-summary {
-      font-size: 0.8em; } }
+      font-size: 0.9em;
+      line-height: 1.1em; } }
 
 #passions {
   padding-top: 30px;
@@ -335,7 +340,8 @@ nav {
     padding-left: 60px;
     padding-right: 60px;
     max-width: 700px;
-    display: inline-block; }
+    display: inline-block;
+    font-size: 0.92em; }
     #passions .container p {
       text-align: left; }
   #passions .item {
