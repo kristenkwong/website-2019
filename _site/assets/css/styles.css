@@ -100,7 +100,7 @@ nav {
     height: auto;
     font-family: "Merriweather", serif;
     text-align: left;
-    font-size: 4.5em;
+    font-size: 6.5em;
     font-weight: bold;
     position: absolute;
     bottom: 100px;
@@ -114,7 +114,8 @@ nav {
       padding-left: 40px;
       text-align: top;
       left: 0px;
-      max-width: 400px; } }
+      max-width: 400px;
+      font-size: 3.9em; } }
 
 #about {
   height: 80%;

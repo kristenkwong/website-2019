@@ -153,7 +153,7 @@ nav {
 		height: auto;
 		font-family: $font-heading;
 		text-align: left;
-		font-size: $header-font-size;
+		font-size: 6.5em;
 		font-weight: bold;
 		position: absolute;
 		bottom: 100px;
@@ -173,6 +173,7 @@ nav {
 			text-align: top;
 			left: 0px;
 			max-width: 400px;
+			font-size: 3.9em;
 		}
 	}
 }
