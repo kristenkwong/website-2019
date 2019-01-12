@@ -477,14 +477,17 @@ nav {
 	a:hover {
 		background-color: $accent-color;
 		-webkit-transition: background-color 0.5s; /* Safari */
-  		transition: background-color 0.5s;
+  	transition: background-color 0.5s;
 	}
 
 	.section-header {
 		padding-left: 90px;
+		text-align: left;
 	}
 
 	.container {
+		-webkit-transition: padding-left 1s, padding-right 1s; /* Safari */
+		transition: padding-left 1s, padding-right 1s;
 		padding-left: 60px;
 		padding-right: 60px;
 		max-width: 700px;
@@ -536,6 +539,8 @@ nav {
 	@media only screen and (max-width: 500px) {
 
 		.container {
+			-webkit-transition: padding-left 1s, padding-right 1s; /* Safari */
+			transition: padding-left 1s, padding-right 1s;
 			padding-left: 30px;
 			padding-right: 30px;
 		}
@@ -559,6 +564,7 @@ nav {
 	padding-top: 10px;
 	padding-bottom: 20px;
 	z-index: 999;
+	font-size: $body-font-size;
 
 	a {
 		margin: 3px;

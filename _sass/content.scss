@@ -7,7 +7,8 @@ $secondary-color: #e0e0e0;
 $dark-bg: #303030;
 $light-bg: #f2f2f3;
 $accent-color: #fdf59c;
-$serif-font-size-content: 1.13em;
+$serif-font-size-content: 1em;
+$content-title-font-size: 1.7em;
 $content-line-height: 1.9em;
 
 body {
@@ -37,7 +38,7 @@ body {
 		font-family: $font-heading;
 		font-weight: bold;
 		font-style: italic;
-		font-size: 24px;
+		font-size: $content-title-font-size;
 		background-color: $primary-color;
 		padding: 10px 20px 10px 20px;
 	}
@@ -59,7 +60,7 @@ body {
 	font-family: $font-heading;
 	font-style: italic;
 	font-weight: bold;
-	font-size: 18px;
+	font-size: 1.2em;
 	color: $dark-bg;
 	width: 80%;
 	max-width: 600px;
@@ -71,6 +72,8 @@ body {
 #content {
 
 	position: static;
+	-webkit-transition: padding-left 1s, padding-right 1s; /* Safari */
+	transition: padding-left 1s, padding-right 1s;
 	padding-left: 90px;
 	padding-right: 90px;
 	padding-bottom: 40px;
@@ -132,7 +135,7 @@ body {
 		margin-top: 20px;
 		padding: 20px;
 		width: 250px;
-		font-size: 0.95em;
+		font-size: 0.9em;
 		font-family: $font-body;
 		line-height: 1.3em;
 	}
@@ -226,6 +229,8 @@ body {
 
 @media only screen and (max-width: 600px) {
 	#content {
+		-webkit-transition: padding-left 1s, padding-right 1s; /* Safari */
+  	transition: padding-left 1s, padding-right 1s;
 		padding-left: 30px;
 		padding-right: 30px;
 	}

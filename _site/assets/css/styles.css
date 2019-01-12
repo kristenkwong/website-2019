@@ -336,8 +336,12 @@ nav {
     /* Safari */
     transition: background-color 0.5s; }
   #passions .section-header {
-    padding-left: 90px; }
+    padding-left: 90px;
+    text-align: left; }
   #passions .container {
+    -webkit-transition: padding-left 1s, padding-right 1s;
+    /* Safari */
+    transition: padding-left 1s, padding-right 1s;
     padding-left: 60px;
     padding-right: 60px;
     max-width: 700px;
@@ -369,6 +373,9 @@ nav {
       margin-right: 5px; }
   @media only screen and (max-width: 500px) {
     #passions .container {
+      -webkit-transition: padding-left 1s, padding-right 1s;
+      /* Safari */
+      transition: padding-left 1s, padding-right 1s;
       padding-left: 30px;
       padding-right: 30px; }
     #passions .section-header {
@@ -384,7 +391,8 @@ nav {
   margin-top: 30px;
   padding-top: 10px;
   padding-bottom: 20px;
-  z-index: 999; }
+  z-index: 999;
+  font-size: 0.92em; }
   #footer a {
     margin: 3px;
     text-decoration: none; }
@@ -447,7 +455,7 @@ body {
     font-family: "Merriweather", serif;
     font-weight: bold;
     font-style: italic;
-    font-size: 24px;
+    font-size: 1.7em;
     background-color: #ffffff;
     padding: 10px 20px 10px 20px; }
 
@@ -459,14 +467,14 @@ body {
   min-height: 100%;
   text-align: center;
   font-family: "Merriweather", serif;
-  font-size: 1.13em;
+  font-size: 1em;
   line-height: 1.9em; }
 
 #subtitle {
   font-family: "Merriweather", serif;
   font-style: italic;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.2em;
   color: #303030;
   width: 80%;
   max-width: 600px;
@@ -476,6 +484,9 @@ body {
 
 #content {
   position: static;
+  -webkit-transition: padding-left 1s, padding-right 1s;
+  /* Safari */
+  transition: padding-left 1s, padding-right 1s;
   padding-left: 90px;
   padding-right: 90px;
   padding-bottom: 40px;
@@ -529,7 +540,7 @@ body {
     margin-top: 20px;
     padding: 20px;
     width: 250px;
-    font-size: 0.95em;
+    font-size: 0.9em;
     font-family: "PT Mono", monospace;
     line-height: 1.3em; }
   #content p img {
@@ -594,5 +605,8 @@ body {
 
 @media only screen and (max-width: 600px) {
   #content {
+    -webkit-transition: padding-left 1s, padding-right 1s;
+    /* Safari */
+    transition: padding-left 1s, padding-right 1s;
     padding-left: 30px;
     padding-right: 30px; } }
