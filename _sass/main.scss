@@ -461,7 +461,14 @@ nav {
 
 }
 
-#passions {
+#blog  {
+	.feature {
+		background-color: $secondary-color;
+		padding: 30px 20px 30px 20px;
+	}
+}
+
+#passions, #blog {
 
 	padding-top: 30px;
 	padding-bottom: 40px;
@@ -524,13 +531,19 @@ nav {
 			font-family: $font-heading;
 			font-weight: bold;
 			font-size: 1.7em;
+			line-height: 1.5;
 		}
 
 		.feature {
 			.article-title {
-				font-size: 1.1em;
+				font-size: $title-font-size;
 				font-weight: bold;
 				margin-right: 5px;
+				font-family: $font-heading;
+			}
+
+			.post-date {
+				font-size: 10px;
 			}
 		}
 

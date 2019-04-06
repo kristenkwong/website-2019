@@ -16,8 +16,7 @@ layout: default
 		I'm a <mark>software engineer</mark> and third year Computer Science student at the University of British Columbia.
 	</div>
 	<div class="desc">
-		Currently, I'm a TA for Relational Databases, hackathon organizer at <a href="https://www.nwhacks.io/">nwPlus</a>, and member of <a href="https://ctftime.org/team/73723">UBC's CTF Team</a>.
-		I'm also an incoming software engineering intern at <a href="https://www.apple.com/">Apple</a> on the Siri Client team.
+		I'm an incoming software engineering intern at <a href="https://www.apple.com/">Apple</a> on the Siri Client team, and a member of <a href="https://ubcctf.github.io">UBC's CTF Team</a>.
 	</div>
 	<div class="desc readmore">
 		<a href="/about.html">Read more →</a>
@@ -135,13 +134,13 @@ layout: default
 		<div class="item">
 			<div class="heading">Involvement</div>
 			<div class="text">📚 nwPlus 2018-19 Team
-				<br>🔑 UBC CTF Team & Team <a href="https://ctftime.org/team/73723">Maple Bacon</a>
+				<br>🔑 UBC CTF Team & Team <a href="https://ubcctf.github.io">Maple Bacon</a>
 			</div>
 		</div>
 		<div class="item">
 			<div class="heading">Learning</div>
-			<div class="text">📚 Coursework: <mark>computer networking</mark>, <mark>hardware & operating systems</mark>, <mark>advanced databases</mark>, Spanish
-				<br>⚙️ Outside of school: <mark>cybersecurity</mark>
+			<div class="text">📚 Coursework: computer networking, hardware & operating systems, advanced databases, Spanish
+				<br>⚙️ Outside of school: cybersecurity
 			</div>
 		</div>
 		<div class="item">
@@ -154,21 +153,33 @@ layout: default
 			<div class="heading">Features</div>
 			<div class="feature">
 				<a class="article-title" href="https://medium.com/nwplusubc/started-as-hackers-83383092b159">Started as hackers, now we're here</a>
-				<span class="desc">Read about my journey from complete hackathon newbie to three-time organizer at <a href="https://www.nwplus.io/#/localhackday">nwPlus</a>.</span>
+				<div class="desc">Read about my journey from complete hackathon newbie to three-time organizer at <a href="https://www.nwplus.io/#/localhackday">nwPlus</a>.</div>
 			</div>
 		</div>
+	</div>
 
+	
+</div>
+
+<a id="blog"></a>
+<div id="blog">
+
+	<div class="container-header">
+		<div class="section-header">
+			blog + writing
+		</div>
+	</div>
+
+	<div class="container">
 		{% assign sorted_posts = site.posts | sort: "date" | reverse %}
-		{% unless sorted_posts != '' %}
 		<div class="features">
-			<div class="heading">Blog</div>
-			{% for post in sorted_posts %}
+			{% for post in site.posts %}
 				<div class="feature">
-					<a class="article-title" href="{{ post.url }}">{{ post.title }}</a>
-					<span class="desc">{{ post.summary }}</span>
+					<a class="article-title" href="{{ post.url }}">{{ post.title }}</a> <span class="post-date">{{post.date | date: "%a, %b %d, %Y" }}</span>
+					<div class="desc">{{ post.summary }}</div>
 				</div>
 			{% endfor %}
 		</div>
-		{% endunless %}
 	</div>
+
 </div>

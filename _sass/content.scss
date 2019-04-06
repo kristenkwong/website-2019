@@ -1,3 +1,5 @@
+@import "code.scss";
+
 @banner-image-width: 4000px;
 @banner-image-height: 1900px;
 $font-body: 'PT Mono', monospace;
@@ -15,6 +17,13 @@ body {
 	text-align: center;
 }
 
+a.anchor { /* page anchors */
+    display: block;
+    position: relative;
+    top: -50px;
+    visibility: hidden;
+}
+
 .content-title-container {
 
 	position: relative;
@@ -26,6 +35,10 @@ body {
 		height: 380px;
 		width: 100%;
 		margin-bottom: 20px;
+	}
+
+	.banner-padding {
+		height: 80px;
 	}
 
 	.page-title {
@@ -93,31 +106,34 @@ body {
 		padding-left: 10px;
 	}
 
-	code {
+
+
+	code { /* inline code */
 		background-color: $primary-color;
 		font-family: $font-body;
 		padding: 3px;
 	}
 
+	
 	pre {
 		background-color: $dark-bg;
-		overflow-x: scroll;
-		width: 550px;
-		border-radius: 5px;
-		padding: 20px;
 		font-family: $font-body;
 	}
 
 	pre code {
-		color: $light-bg;
 		background-color: transparent;
+	}  
+
+	h1 {
+		line-height: 1.5;
+		font-size: 32px;
 	}
 
 	a {
 		color: $dark-bg;
-		font-weight: bold;
+		/* font-weight: bold; */
 		-webkit-transition: background-color 0.5s; /* Safari */
-  		transition: background-color 0.5s;
+		transition: background-color 0.5s;
 	}
 
 	a:hover {

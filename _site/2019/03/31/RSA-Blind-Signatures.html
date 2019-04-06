@@ -1,0 +1,578 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>RSA, Blind Signatures, and a VolgaCTF Crypto Challenge :: Kristen Kwong - Software Engineer</title>
+		<link rel="shortcut icon" type="image/png" href="/assets/images/icon.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Kristen Kwong"/>
+		<meta charset="utf-8"/>
+
+		<meta itemprop="description" name="description" content="Given a server that runs commands with a valid signature, but signs only certain ones, execute a blinding attack to get a valid RSA signature on  one such re..." />
+
+		<!--- OPEN GRAPH TAGS ---->
+		<meta property="og:locale" content="en_US">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="RSA, Blind Signatures, and a VolgaCTF Crypto Challenge :: Kristen Kwong - Software Engineer">
+		<meta property="og:url" content="http://localhost:4000/2019/03/31/RSA-Blind-Signatures.html">
+		<meta property="og:image" content="" />
+		<meta property="og:site_name" content="Kristen Kwong - Software Engineer">
+		<meta property="article:author" content="Kristen Kwong" />
+		<meta property="article:published_time" content="2019-03-31 00:00:00 -0700" />
+		<meta property="og:description" content="Kristen Kwong is a software engineer and third year Computer Science student at UBC in Vancouver, Canada, with a passion for development, design, and travel.">
+
+		<!--- TWITTER CARD ---->
+  		<meta name="twitter:card" content="summary_large_image"/>
+		<meta name="twitter:title" content="RSA, Blind Signatures, and a VolgaCTF Crypto Challenge :: Kristen Kwong - Software Engineer">
+		<meta name="twitter:description" content="Kristen Kwong is a software engineer and third year Computer Science student at UBC in Vancouver, Canada, with a passion for development, design, and travel.">
+		<meta name="twitter:creator" content="@kristenkwng">
+		<meta name="twitter:card" content="summary">
+
+		<!-- Mathjax Support -->
+		<script type="text/javascript" async
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+		</script>
+
+		<link rel="stylesheet" href="/assets/css/styles.css">
+		<script type="text/javascript" src="/assets/js/main.js"></script>
+		<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" />
+		<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>RSA, Blind Signatures, and a VolgaCTF Crypto Challenge</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="RSA, Blind Signatures, and a VolgaCTF Crypto Challenge" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="RSA, Blind Signatures, and a VolgaCTF Crypto Challenge" />
+<meta property="og:description" content="RSA, Blind Signatures, and a VolgaCTF Crypto Challenge" />
+<link rel="canonical" href="http://localhost:4000/2019/03/31/RSA-Blind-Signatures.html" />
+<meta property="og:url" content="http://localhost:4000/2019/03/31/RSA-Blind-Signatures.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-03-31T00:00:00-07:00" />
+<script type="application/ld+json">
+{"description":"RSA, Blind Signatures, and a VolgaCTF Crypto Challenge","@type":"BlogPosting","url":"http://localhost:4000/2019/03/31/RSA-Blind-Signatures.html","headline":"RSA, Blind Signatures, and a VolgaCTF Crypto Challenge","dateModified":"2019-03-31T00:00:00-07:00","datePublished":"2019-03-31T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/03/31/RSA-Blind-Signatures.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+		<link rel="stylesheet" href="/assets/css/styles.css">
+		<script type="text/javascript" src="/assets/js/main.js"></script>
+		<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" />
+		<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>RSA, Blind Signatures, and a VolgaCTF Crypto Challenge</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="RSA, Blind Signatures, and a VolgaCTF Crypto Challenge" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="RSA, Blind Signatures, and a VolgaCTF Crypto Challenge" />
+<meta property="og:description" content="RSA, Blind Signatures, and a VolgaCTF Crypto Challenge" />
+<link rel="canonical" href="http://localhost:4000/2019/03/31/RSA-Blind-Signatures.html" />
+<meta property="og:url" content="http://localhost:4000/2019/03/31/RSA-Blind-Signatures.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-03-31T00:00:00-07:00" />
+<script type="application/ld+json">
+{"description":"RSA, Blind Signatures, and a VolgaCTF Crypto Challenge","@type":"BlogPosting","url":"http://localhost:4000/2019/03/31/RSA-Blind-Signatures.html","headline":"RSA, Blind Signatures, and a VolgaCTF Crypto Challenge","dateModified":"2019-03-31T00:00:00-07:00","datePublished":"2019-03-31T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/03/31/RSA-Blind-Signatures.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+	</head>
+	<body>
+		<nav id="navbar">
+	<div id="nav-items">
+		<span class="nav-item" id="home">
+			<a href="/" >Kristen Kwong</a>
+		</span>
+		
+		<span class="nav-item">
+			<a href="/assets/resume.pdf" >
+				Resume
+			</a>
+		</span>
+		
+		<span class="nav-item">
+			<a href="/#blog" >
+				Blog
+			</a>
+		</span>
+		
+		<span class="nav-item">
+			<a href="/#projects" >
+				Projects
+			</a>
+		</span>
+		
+		<span class="nav-item">
+			<a href="/#experiences" >
+				Experience
+			</a>
+		</span>
+		
+		<span class="nav-item">
+			<a href="/#about" >
+				About
+			</a>
+		</span>
+		
+	</div>
+</nav>
+		<div class="content-title-container">
+			
+			 <!-- for no banner pages -->
+				<div class="banner-padding"></div>
+			
+		</div>
+		<div class="content-container">
+			
+			<div id="content">
+				<h1 id="rsa-blind-signatures-and-a-volgactf-crypto-challenge">RSA, Blind Signatures, and a VolgaCTF Crypto Challenge</h1>
+
+<blockquote>
+  <p>Given a server that runs commands with a valid signature, but signs only certain ones, execute a blinding attack to get a valid RSA signature on  one such restricted command.</p>
+</blockquote>
+
+<p><a href="https://ubcctf.github.io/">Maple Bacon</a> participated in <a href="https://q.2019.volgactf.ru">VolgaCTF 2019</a>, which ran for 48 hours from March 29th at 15:00 UTC. We were all pretty busy, with it being the last week of classes, but we managed to finished 41st out of 1097 teams. In addition to the challenge in this writeup, I also solved Store (Web 100), Fakegram Star (Antifake 75), and Horrible Retelling (Antifake 50).</p>
+
+<p>I wrote this since it was my first time looking in depth at a crypto problem. I researched and tried to understand how the RSA encryption algorithm worked (including all the math - keep reading for an actual proof), as well as the blinding and unblinding functions, and incorporated these into my exploit.</p>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ul>
+  <li><a href="#problem">Understanding the Problem</a></li>
+  <li><a href="#rsa">Diving into RSA</a></li>
+  <li><a href="#signatures">RSA Signatures</a></li>
+  <li><a href="#functions">Blinding and Unblinding Functions</a></li>
+  <li><a href="#exploit">The Exploit</a></li>
+</ul>
+
+<h2 id="blind---crypto-200">Blind - Crypto 200</h2>
+
+<h3 id="description">Description</h3>
+
+<p>Pull the flag…if you can.</p>
+
+<p><code class="highlighter-rouge">nc blind.g.2019.volgactf.ru 7070</code></p>
+
+<p><a href="https://q.2019.volgactf.ru/files/cfa25d5253c2f08f19a14923150402d5/server.py">server.py</a></p>
+
+<p><a class="anchor" id="problem"></a></p>
+
+<h2 id="understanding-the-problem">Understanding the Problem</h2>
+
+<p>I like to connect to the box to take a look at what happens and the input/outputs that we’re looking at. Using netcat, we connect to the port and see this:</p>
+
+<p><img src="/assets/images/posts/2019-04-03-RSA-Blind-Signatures/1.png" alt="" /></p>
+
+<p>Looks like it’s asking for a command. Perhaps a Linux command might work?</p>
+
+<p><img src="/assets/images/posts/2019-04-03-RSA-Blind-Signatures/2.png" alt="" /></p>
+
+<p>That didn’t work. Guess that might have been too easy. Let’s take a look at the <code class="highlighter-rouge">[server.py](http://server.py)</code> file that was helpfully provided for us. Let’s skip down to the <code class="highlighter-rouge">main</code> function and try to figure out what the server’s doing.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">signature</span> <span class="o">=</span> <span class="n">RSA</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="n">check_cmd_signatures</span><span class="p">(</span><span class="n">signature</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="n">send_message</span><span class="p">(</span><span class="s">'Enter your command:'</span><span class="p">)</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="n">read_message</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="p">(</span><span class="n">sgn</span><span class="p">,</span> <span class="n">cmd_exp</span><span class="p">)</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">' '</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>There are a couple points of interest here:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">signature</code> is initialized to an object of the RSA class, with the variable <code class="highlighter-rouge">e</code>, <code class="highlighter-rouge">d</code>, and <code class="highlighter-rouge">n</code>. Looking through the script, we see that <code class="highlighter-rouge">n</code> and <code class="highlighter-rouge">e</code> are local variables in the section nicely commented as <code class="highlighter-rouge">Keys</code>. However, <code class="highlighter-rouge">d</code> is imported in from another Python module, <code class="highlighter-rouge">private_key</code>  in the line <code class="highlighter-rouge">from private_key import d</code>.</li>
+  <li><code class="highlighter-rouge">check_cmd_signatures(signature)</code> just seems to do a verification that the signing process is working properly, so we can ignore that.</li>
+  <li>We see the message that we get when we connect to the box: “Enter your command”. When we put an input, <code class="highlighter-rouge">read_message().strip()</code> removes the whitespace. More importantly, the next line tells us that the expression is split into <code class="highlighter-rouge">sgn</code> and <code class="highlighter-rouge">cmd_exp</code>.</li>
+</ul>
+
+<p>That last point is pretty significant. When we scroll down to the bottom, we see that one of the catch statements is:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+    <span class="n">send_message</span><span class="p">(</span><span class="s">'Something must have gone very, very wrong...'</span><span class="p">)</span>
+    <span class="n">eprint</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Since our input was only a single word, it wasn’t able to unpack the message into the two separate variables and threw an Exception.</p>
+
+<p>After the input is unpacked, the server uses <code class="highlighter-rouge">shlex</code> to get an array of the command in a <em>shell-like syntax</em>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cmd_l</span> <span class="o">=</span> <span class="n">shlex</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">cmd_exp</span><span class="p">)</span>
+<span class="n">cmd</span> <span class="o">=</span> <span class="n">cmd_l</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">shlex.split</code> is similar to <code class="highlighter-rouge">split()</code> but instead of splitting on a delimiter, also respects quotes. For example, <code class="highlighter-rouge">shlex.split("cd 'my folder'")</code> will give you <code class="highlighter-rouge">["cd", "'my folder'"]</code> while <code class="highlighter-rouge">"cd 'my folder'".split()</code> gives you <code class="highlighter-rouge">['cd', "'my", "folder'"]</code>.</p>
+
+<p>We’ll have to keep this in mind when writing our exploit, since the nuisances with the quotes may cause problems.</p>
+
+<p>Skimming through the rest of the function, we see that it’s designed to work with commands that start with <code class="highlighter-rouge">ls</code>, <code class="highlighter-rouge">dir</code>, <code class="highlighter-rouge">cd</code>, <code class="highlighter-rouge">cat</code>, <code class="highlighter-rouge">sign</code>, <code class="highlighter-rouge">exit</code>, or <code class="highlighter-rouge">leave</code>. Any other command will cause the script to exit with “Unknown command”.</p>
+
+<p>If we look at the if statement for <code class="highlighter-rouge">ls</code> and <code class="highlighter-rouge">dir</code>, we see:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">cmd</span> <span class="o">==</span> <span class="s">'ls'</span> <span class="ow">or</span> <span class="n">cmd</span> <span class="o">==</span> <span class="s">'dir'</span><span class="p">:</span>
+    <span class="n">ret_str</span> <span class="o">=</span> <span class="n">run_cmd</span><span class="p">(</span><span class="n">cmd_exp</span><span class="p">)</span>
+    <span class="n">send_message</span><span class="p">(</span><span class="n">ret_str</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This seems to say that these commands aren’t verified and will just run on the server. Let’s just give this a shot. I use <code class="highlighter-rouge">1 ls</code> because we know that the script splits the command into two parts, and the second part is used as the <code class="highlighter-rouge">cmd</code> in the if statements. We don’t know anything about the <code class="highlighter-rouge">sgn</code> right now, so we’ll just put something random for now, which works because the script won’t do anything with it if the command is <code class="highlighter-rouge">ls</code>.</p>
+
+<p><img src="/assets/images/posts/2019-04-03-RSA-Blind-Signatures/3.png" alt="" /></p>
+
+<p>Nice! Looks like the <code class="highlighter-rouge">private_key.py</code> file I mentioned earlier is there, along with the <code class="highlighter-rouge">flag</code> file that we’ll probably want to read. Can we run <code class="highlighter-rouge">cat flag</code> to just easily grab it?</p>
+
+<p><img src="/assets/images/posts/2019-04-03-RSA-Blind-Signatures/4.png" alt="" /></p>
+
+<p>😞</p>
+
+<p>So the server doesn’t just let us run <em>any</em> command we want. Let’s go back to the script and try to figure out how it does this signature verification check.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">elif</span> <span class="n">cmd</span> <span class="o">==</span> <span class="s">'cat'</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">sgn</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sgn</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">signature</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="n">cmd_exp</span><span class="p">,</span> <span class="n">sgn</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">SignatureException</span><span class="p">(</span><span class="s">'Signature verification check failed'</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cmd_l</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="nb">Exception</span><span class="p">(</span><span class="s">'Nothing to cat'</span><span class="p">)</span>
+        <span class="n">ret_str</span> <span class="o">=</span> <span class="n">run_cmd</span><span class="p">(</span><span class="n">cmd_exp</span><span class="p">)</span>
+        <span class="n">send_message</span><span class="p">(</span><span class="n">ret_str</span><span class="p">)</span>
+    <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+        <span class="n">send_message</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">sgn</code> is converted into an integer, and then sent to <code class="highlighter-rouge">signature.verify</code>, along with the command. If it passes that check, the server will run our command, so we have to find a way for our command to verify successfully.</p>
+
+<p>How do commands get signed? Let’s take a look at the script for the <code class="highlighter-rouge">sign</code> command.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">elif</span> <span class="n">cmd</span> <span class="o">==</span> <span class="s">'sign'</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">send_message</span><span class="p">(</span><span class="s">'Enter your command to sign:'</span><span class="p">)</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="n">read_message</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'base64'</span><span class="p">)</span>
+        <span class="n">cmd_l</span> <span class="o">=</span> <span class="n">shlex</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+        <span class="n">sign_cmd</span> <span class="o">=</span> <span class="n">cmd_l</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">sign_cmd</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s">'cat'</span><span class="p">,</span> <span class="s">'cd'</span><span class="p">]:</span>
+            <span class="n">sgn</span> <span class="o">=</span> <span class="n">signature</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">sign_cmd</span><span class="p">)</span>
+            <span class="n">send_message</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">sgn</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">send_message</span><span class="p">(</span><span class="s">'Invalid command'</span><span class="p">)</span>
+    <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+        <span class="n">send_message</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>In short, this command will sign any message encoded in base64 except for the ones that start with <code class="highlighter-rouge">cat</code> or <code class="highlighter-rouge">cd</code>. Looks like they really don’t want us reading any of the other files on the server.</p>
+
+<p>The signature can be analyzed in the <code class="highlighter-rouge">RSA</code> class.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">RSA</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">e</span> <span class="o">=</span> <span class="n">e</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">d</span> <span class="o">=</span> <span class="n">d</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="n">n</span>
+
+    <span class="k">def</span> <span class="nf">sign</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'hex'</span><span class="p">),</span> <span class="mi">16</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">pow</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">d</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">verify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">signature</span><span class="p">):</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'hex'</span><span class="p">),</span> <span class="mi">16</span><span class="p">)</span>
+        <span class="n">verify</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">signature</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">e</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">message</span> <span class="o">==</span> <span class="n">verify</span>
+</code></pre></div></div>
+
+<p>I had no idea what RSA cryptography was when I started looking into this challenge, so I started researching some background information on how it works.</p>
+
+<p><a class="anchor" id="rsa"></a></p>
+<h2 id="diving-into-rsa">Diving into RSA</h2>
+
+<p>RSA (Rivest-Shamir-Adleman) is an asymmetric encryption algorithm, which uses prime factorization as the trapdoor function.</p>
+
+<p>The <strong>trapdoor</strong> function refers to a very important concept in cryptography: it is trivial to go from one state to another, but going the opposite direction, without specific information, becomes unfeasible. In other words, the function is <em>one-way</em>. You can imagine this being extremely useful, since you want to be able to quickly encrypt a message, but make it difficult for just anyone to decrypt it.</p>
+
+<p><strong><a href="https://en.wikipedia.org/wiki/Integer_factorization">Prime factorization</a></strong> (or integer factorization) is a number theory concept that every positive integer can be broken down into composite prime numbers. The prime factorization of extremely large numbers cannot be efficiently computed, and the hardest instances are <strong>semiprimes</strong>, which is when the number is the product of two primes. If the two primes are close enough, they can be factored using <a href="https://en.wikipedia.org/wiki/Fermat%27s_factorization_method">Fermat’s method</a>, but if they aren’t close enough together, trial and error can be more efficient than Fermat’s – which, suffice to say, isn’t efficient at all. Computing the prime factors of a very large number is known as the <strong><a href="https://en.wikipedia.org/wiki/RSA_problem">RSA problem</a></strong>.</p>
+
+<h2 id="rsa-encryption-and-decryption">RSA Encryption and Decryption</h2>
+
+<p>The RSA algorithm works with the following four steps:</p>
+
+<h3 id="1-key-generation">1. Key Generation</h3>
+
+<ol>
+  <li>Two large prime numbers, p and q, are picked. These should be similar in magnitude, but differ in length so Fermat’s method will not work.</li>
+  <li>
+    <p>You use these numbers to compute</p>
+
+    <script type="math/tex; mode=display">n = pq \tag{RSA:1}</script>
+
+    <p>n will be the modulus for both the public and the private keys. Its length is usually expressed in bits and is known as the <strong>key length</strong>. n will be made public.</p>
+  </li>
+  <li>
+    <p>Compute the <a href="https://en.wikipedia.org/wiki/Euler_totient_function">Euler totient function</a>:</p>
+
+    <script type="math/tex; mode=display">\phi(n) = (p-1)(q-1) \tag{RSA:2}</script>
+
+    <p><a href="https://en.wikipedia.org/wiki/Carmichael%27s_totient_function">Carmichael’s totient function</a> λ(n) can also be used, since φ(n) is always divisible by λ(n).</p>
+
+    <script type="math/tex; mode=display">\lambda(n) = lcm(p-1, q-1) \tag{RSA:3}</script>
+  </li>
+  <li>
+    <p>Select e such that it is between 3 and n-1 that is relatively prime to p-1 and q-1. <strong>Relatively prime</strong>, or <strong>coprime</strong>, means that the only common factor between them is 1, or that it’s <em>greatest common denominator</em> is 1. Equivalently:</p>
+
+    <script type="math/tex; mode=display">gcd(e, \phi(n)) = 1 \text{ or } gcd(e, \lambda(n)) = 1 \tag{RSA:4}</script>
+  </li>
+  <li>
+    <p>Compute d as the <strong>multiplicative inverse</strong> of e modulo λ(n) as</p>
+
+    <script type="math/tex; mode=display">d = e^{-1} \text{ mod } \phi(n) \text{ or } d = e^{-1} \text{ mod } \lambda(n) \tag{RSA:5}</script>
+  </li>
+</ol>
+
+<p>The <strong>public key</strong> will consist of modulus n and public exponent e. The <strong>private key</strong> will consist of the private exponent d.</p>
+
+<h3 id="2-key-distribution">2. Key Distribution</h3>
+
+<p>Let’s say Bob wants to send Alice his message M. Bob needs Alice’s public key to encrypt the message, and Alice uses her private key to decrypt the message.</p>
+
+<p>Alice sends Bob her public key (n, e) to Bob, while keeping the private key secret.</p>
+
+<h3 id="3-encryption">3. Encryption</h3>
+
+<p>To encrypt message M, first turn the message into an integer m, such that 0 ≤ m &lt; n, with a reversible <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)#Padding_schemes">padding scheme</a> known by both parties. This turns the message into a numeric form for encryption.</p>
+
+<p>The ciphertext C is computed by raising m to the eth power modulo n.</p>
+
+<script type="math/tex; mode=display">C \equiv E(M) \equiv m^e \text{ mod } n \tag{RSA:6}</script>
+
+<h3 id="4-decryption">4. Decryption</h3>
+
+<p>You can recover message m by using the private key d. Compute:</p>
+
+<script type="math/tex; mode=display">m \equiv D(C) \equiv C^d \text{ mod } n \tag{RSA:7}</script>
+
+<p>Given m, you can easily compute M by reversing the padding scheme.</p>
+
+<p>For a proof of correctness of this encryption and decryption algorithms, section <strong>VI The Underlying Mathematics</strong> of the original <a href="https://people.csail.mit.edu/rivest/Rsapaper.pdf">RSA paper</a> is a very interesting read.</p>
+
+<p><a class="anchor" id="signatures"></a></p>
+<h2 id="rsa-signatures">RSA Signatures</h2>
+
+<p>Phew. That was quite a lot of information. But that still doesn’t explain how our challenge is going to be solved. The server implements <strong>RSA signing</strong>.</p>
+
+<ul>
+  <li>When you are encrypting a message, you use the recipient’s public key, and they decrypt it with their private key.</li>
+  <li>When signing a message, you use your private key, and the recipient verifies that the message is yours using your public key.</li>
+</ul>
+
+<p>What the server is doing when signing is using their private key d to essentially encrypt the input with the private key, which we can verify by looking at the function in the server script (yes, we’re still working on this challenge):</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sign</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'hex'</span><span class="p">),</span> <span class="mi">16</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">pow</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">d</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>So the message is M is transformed into integer m by encoding it to hex, then returned by raising it to the dth power mod n. This gives you the signed message, which is signature S. Mathematically:</p>
+
+<script type="math/tex; mode=display">S \equiv m^d \text{ mod } n</script>
+
+<p>To verify the signature, it computes the inverse of this in the <code class="highlighter-rouge">verify</code> function.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">verify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">signature</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'hex'</span><span class="p">),</span> <span class="mi">16</span><span class="p">)</span>
+    <span class="n">verify</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">signature</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">e</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">message</span> <span class="o">==</span> <span class="n">verify</span>
+</code></pre></div></div>
+
+<p>Which gives you</p>
+
+<script type="math/tex; mode=display">m' \equiv S^e \text{ mod } n</script>
+
+<p>If m’ = m, then you can verify that the signature is correct. The <code class="highlighter-rouge">verify</code> function compares your message (the command <code class="highlighter-rouge">cat flag</code> in our case) with the signed version of it, and will return true if it matches.</p>
+
+<p>However, our server refuses to sign <code class="highlighter-rouge">cat flag</code>. How can we trick the server into signing it? I actually spent a long time trying to figure this out – I actually tried to factor p and q from n at the start before I knew any better. Just when I was about to give up and click on another challenge, I realized that the challenge was named Blind. Why? That led me to my next search.</p>
+
+<p><a class="anchor" id="blind"></a></p>
+<h2 id="blind-signatures">Blind Signatures</h2>
+
+<p>Many times, for privacy and anonymity, you want to be able to have a message signed without the signer knowing what the message is – for example, in electronic voting or digital currency. This is called a <strong>blind signature</strong>.</p>
+
+<p>Let’s say Bob wants Alice to sign a message, but he doesn’t want her to read it. These steps are followed to obtain Alice’s signature:</p>
+
+<ul>
+  <li>Bob “blinds” the message m with a random number b, which is known as the <strong>blinding factor</strong>. Let’s call this blind(m, b).</li>
+  <li>Alice signs the message, so we get signed(blind(m, b), d). This is signed with her private key d, so Bob does not know this.</li>
+  <li>Bob “unblinds” the message with b, getting unblinded(signed(blind(m, b), d), b). The blind and unblind functions must reduce to signed(m, d), which is Alice’s signature on m.</li>
+</ul>
+
+<p>That sounds like exactly what we want. Let’s analyze our problem:</p>
+
+<ul>
+  <li>We want the server to sign <code class="highlighter-rouge">cat flag</code>.</li>
+  <li>The server refuses to sign any message starting with <code class="highlighter-rouge">cat</code>.</li>
+  <li>But the server will sign any other message. If we blind <code class="highlighter-rouge">cat flag</code>, send it to the server to sign the blinded message (which it doesn’t know is one of the blacklisted commands), and then unblind it, we will be able to get its signature on our command.</li>
+</ul>
+
+<p>Let’s go about building the exploit.</p>
+
+<p><a class="anchor" id="functions"></a></p>
+<h2 id="blinding-and-unblinding-functions">Blinding and Unblinding Functions</h2>
+
+<p>These are going to work like this.</p>
+
+<p>For a message <em>M</em>, convert it to an integer equivalent m. We will also choose a random value <em>k</em>, which can be any integer that is coprime to <em>n</em>. k^e mod n will be the blinding factor. Given <em>e</em> as the public exponent and <em>n</em> as the modulus, same as in the RSA signing process, we will blind the message <em>m</em> by multiplying it with the blinding factor as follows:</p>
+
+<script type="math/tex; mode=display">m' \equiv mk^e \text{ mod } n \tag{Blind:1}</script>
+
+<p>We get the blinded message <em>m’</em>. We will send m’ to be signed, and it will return as:</p>
+
+<script type="math/tex; mode=display">S' \equiv (m')^d \text{ mod } n \tag{Blind:2}</script>
+
+<p>where S’ is the signed blinded message. Because the message doesn’t start with <code class="highlighter-rouge">cat</code> or any other blacklisted command, the server will happily do this for us. Now, the unblinded signature can be calculated by dividing by <em>k</em>.</p>
+
+<script type="math/tex; mode=display">S = \frac{S'}{k} \text{ mod } n \tag{Blind:3}</script>
+
+<h3 id="proof">Proof</h3>
+
+<p>More mathy stuff but I found it interesting so wanted to write it here. Let’s prove that this actually works. The <code class="highlighter-rouge">verify</code> function will raise the signed message <em>S</em> to the <em>e</em>th power, and compare this with the original message <em>m</em> to check that they are equal. The verification can be written as so, and we can substitute in (Blind:2):</p>
+
+<script type="math/tex; mode=display">S^e \equiv (\frac{S'}{k})^e \text{ mod } n \equiv \frac{(S')^e}{k^e} \text{ mod } n \tag{Blind:4}</script>
+
+<p>With (Blind:2), we can substitute S’:</p>
+
+<script type="math/tex; mode=display">S^e \equiv \frac{(m')^{ed}}{k^e} \text{ mod } n \tag{Blind:5}</script>
+
+<p>Because RSA keys satisfy the equation:</p>
+
+<script type="math/tex; mode=display">k^{ed} \equiv k \text{ mod } n</script>
+
+<p>We can reduce (Blind:5) further.</p>
+
+<script type="math/tex; mode=display">S^e \equiv \frac{(m')}{k^e} \text{ mod } n \tag{Blind:6}</script>
+
+<p>Substituting (Blind:1) into (Blind:6), we get:</p>
+
+<script type="math/tex; mode=display">S^e \equiv \frac{mk^e}{k^e} \equiv m \text{ mod } n \tag{Blind:7}</script>
+
+<p>This demonstrates that the unblinded signature is passed in through the verify function, it will prove to be equal to the original message m.</p>
+
+<p><a class="anchor" id="exploit"></a></p>
+<h2 id="the-exploit">The Exploit</h2>
+
+<p>If you’ve skipped all the way down here, here’s the lowdown:</p>
+
+<ul>
+  <li>We need to build the function <code class="highlighter-rouge">blind</code>, which will multiply your command by the blinding factor k^e mod n.</li>
+  <li>We need to build the function <code class="highlighter-rouge">unblind</code>, which will divide by k mod n.</li>
+  <li>We send the <code class="highlighter-rouge">blind(m)</code> to the server, which will sign it. We take the response and <code class="highlighter-rouge">unblind</code> it, giving us the signature on the original command.</li>
+  <li>We then send the signature and the original command to the server, which will successfully pass the verification and run the command.</li>
+</ul>
+
+<h3 id="blind">Blind</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">blind</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'hex'</span><span class="p">),</span> <span class="mi">16</span><span class="p">)</span> <span class="c1"># original message in hex
+</span>    <span class="n">message</span> <span class="o">=</span> <span class="n">message</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="c1"># blinded message in hex
+</span>    <span class="n">message</span> <span class="o">=</span> <span class="n">long_to_bytes</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="c1"># back to string
+</span>    <span class="n">message</span> <span class="o">=</span> <span class="s">"'"</span> <span class="o">+</span> <span class="n">message</span> <span class="o">+</span> <span class="s">"'"</span>  <span class="c1"># to get around shlex.split
+</span>    <span class="n">message</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="c1"># input to sign must be base64 encoded
+</span>    <span class="k">return</span> <span class="n">message</span>
+</code></pre></div></div>
+
+<p>As mentioned earlier, since the server uses <code class="highlighter-rouge">shlex.split</code>, we need to put single quotes around the command for it to be parsed properly. Comments inline explaining what I’m doing should be pretty straightforward.</p>
+
+<h3 id="unblind">Unblind</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">unblind</span><span class="p">(</span><span class="n">blinded_sgn</span><span class="p">):</span>
+    <span class="c1"># unblind by m / (k % n)
+</span>    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">blinded_sgn</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="n">inverse</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>I originally had <code class="highlighter-rouge">int(blinded_sgn, 10) / (k % n)</code>, but Python’s division operator is an integer divide, not a modular divide. Equivalently, we can multiply by the inverse mod of k and n instead, which is from PyCrypto. (Shoutout to our amazing coach <a href="https://www.robertxiao.ca/">Robert</a> for helping me with this!)</p>
+
+<h3 id="script">Script</h3>
+
+<p>Here’s the full script that connects to the server and spits out the flag.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">binascii</span>
+<span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">inverse</span><span class="p">,</span> <span class="n">long_to_bytes</span>
+<span class="kn">import</span> <span class="nn">base64</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">26507591511689883990023896389022361811173033984051016489514421457013639621509962613332324662222154683066173937658495362448733162728817642341239457485221865493926211958117034923747221236176204216845182311004742474549095130306550623190917480615151093941494688906907516349433681015204941620716162038586590895058816430264415335805881575305773073358135217732591500750773744464142282514963376379623449776844046465746330691788777566563856886778143019387464133144867446731438967247646981498812182658347753229511846953659235528803754112114516623201792727787856347729085966824435377279429992530935232902223909659507613583396967</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mi">65537</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># change this if you get "no closing quotation"
+</span>
+<span class="k">def</span> <span class="nf">blind</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="c1"># blinds the message by multiplying by k^e mod n
+</span>    <span class="n">message</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'hex'</span><span class="p">),</span> <span class="mi">16</span><span class="p">)</span> <span class="c1"># original message in hex
+</span>    <span class="n">message</span> <span class="o">=</span> <span class="n">message</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="c1"># blinded message in hex
+</span>    <span class="n">message</span> <span class="o">=</span> <span class="n">long_to_bytes</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="c1"># back to string
+</span>    <span class="n">message</span> <span class="o">=</span> <span class="s">"'"</span> <span class="o">+</span> <span class="n">message</span> <span class="o">+</span> <span class="s">"'"</span>  <span class="c1"># to get around shlex.split
+</span>    <span class="n">message</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">message</span>
+
+<span class="k">def</span> <span class="nf">unblind</span><span class="p">(</span><span class="n">blinded_sgn</span><span class="p">):</span>
+    <span class="c1"># unblind by m / (k % n)
+</span>    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">blinded_sgn</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="n">inverse</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+
+<span class="n">msg</span> <span class="o">=</span> <span class="s">"cat flag"</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="s">"blind.q.2019.volgactf.ru"</span><span class="p">,</span> <span class="mi">7070</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s">"Enter your command:"</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s">"1 sign</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s">"Enter your command to sign:"</span><span class="p">)</span>
+<span class="n">blinded_msg</span> <span class="o">=</span> <span class="n">blind</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">blinded_msg</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+<span class="n">signed_blinded</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s">"Enter"</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">"Enter"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"signed blinded: "</span> <span class="o">+</span> <span class="n">signed_blinded</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">signature</span> <span class="o">=</span> <span class="n">unblind</span><span class="p">(</span><span class="n">signed_blinded</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"unblinded signature: "</span> <span class="o">+</span> <span class="n">signature</span><span class="p">)</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="s">"blind.q.2019.volgactf.ru"</span><span class="p">,</span> <span class="mi">7070</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s">"Enter your command:"</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">signature</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">msg</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s">"Enter"</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">"Enter"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># flag should print here!
+</span><span class="n">r</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Sometimes, if you’re unlucky, your randomly blinded message contains <code class="highlighter-rouge">'</code>, and the server’s <code class="highlighter-rouge">shlex.split</code> will get confused; you’ll get the error “No closing quotation”. If this happens, just change the <code class="highlighter-rouge">k</code> value until it works.</p>
+
+<p>You can also send the message <code class="highlighter-rouge">cat private_key.py</code> to see the value of d that the server is using the sign the commands as well for funsies.</p>
+
+<p>We finally get the flag: <strong>VolgaCTF{B1ind_y0ur_tru3_int3nti0n5}</strong> ✨</p>
+
+<h2 id="references">References</h2>
+
+<p><a href="http://www.mathaware.org/mam/06/Kaliski.pdf">The Mathematics of RSA Public-Key Cryptosystem (Kaliski, RSA Laboratories)</a></p>
+
+<p><a href="https://people.csail.mit.edu/rivest/Rsapaper.pdf">A Method for Obtaining Digital Signatures and Public-Key Cryptosystems (Rivest, Shamir &amp; Adleman, MIT)</a></p>
+
+<p><a href="https://crypto.stanford.edu/~dabo/papers/RSA-survey.pdf">Twenty Years of Attacks on the RSA Cryptosystem (Boneh, Stanford)</a></p>
+
+<p><a href="https://www.cs.bham.ac.uk/~mdr/teaching/modules06/netsec/lectures/blind_sigs.html#mozTocId159784">Blind Signatures (Ryan, University of Birmingham)</a></p>
+
+<p><a href="https://www.cs.cornell.edu/courses/cs5430/2015sp/notes/rsa_sign_vs_dec.php">RSA Signing is Not RSA Decryption (Cornell)</a></p>
+
+<p>Wikipedia pages for <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)">RSA</a>, <a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">Diffie-Hellman Key Exchange</a>, <a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">Fermat’s Factorization</a>, <a href="https://en.wikipedia.org/wiki/Integer_factorization">Integer factorization</a>, and <a href="https://en.wikipedia.org/wiki/Coprime_integers">Coprime integers</a></p>
+
+			</div>
+		</div>
+		<div id="footer">
+	<?xml version="1.0" encoding="utf-8"?>
+	<a href="https://github.com/kristenkwong">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+			<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+		</svg>
+	</a>
+
+	<a href="https://linkedin.com/in/kristenkwong">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+			<path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+		</svg>
+	</a>
+
+	<div class="email">
+		<a href="mailto:kristenkwong@gmail.com">kristenkwong@gmail.com</a>
+	</div>
+
+	<div class="text">
+		© Designed and coded with love<span class="red">♥</span> by Kristen Kwong
+	</div>
+</div>
+	</body>
+</html>

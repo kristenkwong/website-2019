@@ -28,6 +28,11 @@
 		<meta name="twitter:creator" content="@kristenkwng">
 		<meta name="twitter:card" content="summary">
 
+		<!-- Mathjax Support -->
+		<script type="text/javascript" async
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+		</script>
+
 		<link rel="stylesheet" href="/assets/css/styles.css">
 		<script type="text/javascript" src="/assets/js/main.js"></script>
 		{% feed_meta %}
@@ -41,10 +46,15 @@
 	<body>
 		{% include navigation.html %}
 		<div class="content-title-container">
-			<img src="{{ page.banner }}" class="banner">
-			<div class="page-title">
-				{{ page.title }}
-			</div>
+			{% unless page.banner == "" %} <!-- for pages with banners -->
+				<img src="{{ page.banner }}" class="banner">
+				<div class="page-title">
+					{{ page.title }}
+				</div>
+			{% endunless %}
+			{% unless page.banner != "" %} <!-- for no banner pages -->
+				<div class="banner-padding"></div>
+			{% endunless %}
 		</div>
 		<div class="content-container">
 			{% if page.subtitle %}

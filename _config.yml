@@ -3,6 +3,8 @@ collections:
     output: true 
   projects:
     output: true
+  posts:
+    future: true
 
 defaults: 
   - scope:
@@ -17,6 +19,11 @@ defaults:
       layout: "content"
   - scope:
       path: ""
+      type: "posts"
+    values:
+      layout: "content"
+  - scope:
+      path: ""
     values:
       layout: "default"
 
@@ -26,3 +33,5 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+
+highlighter: rouge
