@@ -11,7 +11,7 @@ $title-font-size: 1.3em;
 $header-font-size: 4.5em;
 $tagline-font-size: 1.8em;
 $line-height: 1.3em;
-$mobile-body-font-size: 0.97em;
+$mobile-body-font-size: 0.94em;
 $mobile-tagline-font-size: 1.2em;
 
 html, body {
@@ -29,8 +29,13 @@ html, body {
 }
 
 @media only screen and (max-width: 500px) {
+
 	html, body {
 		font-size: $mobile-body-font-size;
+
+		.mjx-chtml {
+			font-size: 0.85em;
+		}
 	}
 }
 
