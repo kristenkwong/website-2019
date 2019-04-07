@@ -524,18 +524,6 @@ nav {
   /* Name.Variable.Instance */
   /* Name.Variable.Magic */
   /* Literal.Number.Integer.Long */ }
-  @media only screen and (max-width: 600px) {
-    .highlight {
-      white-space: pre-wrap;
-      /* css-3 */
-      white-space: -moz-pre-wrap;
-      /* Mozilla, since 1999 */
-      white-space: -pre-wrap;
-      /* Opera 4-6 */
-      white-space: -o-pre-wrap;
-      /* Opera 7 */
-      word-wrap: break-word;
-      /* Internet Explorer 5.5+ */ } }
   .highlight .hll {
     background-color: #404040; }
   .highlight .c {
@@ -774,6 +762,11 @@ a.anchor {
   display: inline-block;
   padding: 30px; }
 
+.date {
+  font-size: 0.9em;
+  padding: 0px;
+  font-family: "PT Mono", monospace; }
+
 #content {
   position: static;
   -webkit-transition: padding-left 1s, padding-right 1s;
@@ -900,4 +893,8 @@ a.anchor {
     /* Safari */
     transition: padding-left 1s, padding-right 1s;
     padding-left: 30px;
-    padding-right: 30px; } }
+    padding-right: 30px; }
+
+  a.anchor {
+    /* page anchors */
+    top: -90px; } }

@@ -82,6 +82,12 @@ a.anchor { /* page anchors */
 	padding: 30px;
 }
 
+.date {
+	font-size: 0.9em;
+	padding: 0px;
+	font-family: $font-body;
+}
+
 #content {
 
 	position: static;
@@ -244,10 +250,15 @@ a.anchor { /* page anchors */
 }
 
 @media only screen and (max-width: 600px) {
+
 	#content {
 		-webkit-transition: padding-left 1s, padding-right 1s; /* Safari */
   	transition: padding-left 1s, padding-right 1s;
 		padding-left: 30px;
 		padding-right: 30px;
+	}
+
+	a.anchor { /* page anchors */
+		top: -90px;
 	}
 }

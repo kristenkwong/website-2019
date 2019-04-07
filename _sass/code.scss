@@ -19,14 +19,6 @@ $royal: #5d89cc;
     overflow-x: scroll;
     border-radius: 5px;
 
-    @media only screen and (max-width: 600px) {
-        white-space: pre-wrap;       /* css-3 */
-        white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-        white-space: -pre-wrap;      /* Opera 4-6 */
-        white-space: -o-pre-wrap;    /* Opera 7 */
-        word-wrap: break-word;       /* Internet Explorer 5.5+ */
-    }
-
     .hll { background-color: #404040 }
     .c { color: $secondary-color; font-style: italic } /* Comment */
     .err { color: $pink; background-color: #e3d2d2 } /* Error */

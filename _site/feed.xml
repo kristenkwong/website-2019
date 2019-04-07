@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-04-06T15:54:24-07:00</updated><id>http://localhost:4000/feed.xml</id><subtitle>Kristen Kwong is a software engineer and third year Computer Science student at UBC in Vancouver, Canada, with a passion for development, design, and travel.</subtitle><entry><title type="html">RSA, Blind Signatures, and a VolgaCTF Crypto Challenge</title><link href="http://localhost:4000/2019/03/31/RSA-Blind-Signatures.html" rel="alternate" type="text/html" title="RSA, Blind Signatures, and a VolgaCTF Crypto Challenge" /><published>2019-03-31T00:00:00-07:00</published><updated>2019-03-31T00:00:00-07:00</updated><id>http://localhost:4000/2019/03/31/RSA-Blind-Signatures</id><content type="html" xml:base="http://localhost:4000/2019/03/31/RSA-Blind-Signatures.html">&lt;h1 id=&quot;rsa-blind-signatures-and-a-volgactf-crypto-challenge&quot;&gt;RSA, Blind Signatures, and a VolgaCTF Crypto Challenge&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-04-07T15:03:12-07:00</updated><id>http://localhost:4000/feed.xml</id><subtitle>Kristen Kwong is a software engineer and third year Computer Science student at UBC in Vancouver, Canada, with a passion for development, design, and travel.</subtitle><entry><title type="html">RSA, Blind Signatures, and a VolgaCTF Crypto Challenge</title><link href="http://localhost:4000/2019/03/31/RSA-Blind-Signatures.html" rel="alternate" type="text/html" title="RSA, Blind Signatures, and a VolgaCTF Crypto Challenge" /><published>2019-03-31T00:00:00-07:00</published><updated>2019-03-31T00:00:00-07:00</updated><id>http://localhost:4000/2019/03/31/RSA-Blind-Signatures</id><content type="html" xml:base="http://localhost:4000/2019/03/31/RSA-Blind-Signatures.html">&lt;h1 id=&quot;rsa-blind-signatures-and-a-volgactf-crypto-challenge&quot;&gt;RSA, Blind Signatures, and a VolgaCTF Crypto Challenge&lt;/h1&gt;
+
+&lt;div class=&quot;date&quot;&gt;Sunday, March 31, 2019 || words: 3359&lt;/div&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Given a server that runs commands with a valid signature, but signs only certain ones, execute a blinding attack to get a valid RSA signature on  one such restricted command.&lt;/p&gt;
@@ -26,7 +28,7 @@
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;nc blind.g.2019.volgactf.ru 7070&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://q.2019.volgactf.ru/files/cfa25d5253c2f08f19a14923150402d5/server.py&quot;&gt;server.py&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/images/posts/2019-04-03-RSA-Blind-Signatures/server.py&quot;&gt;server.py&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a class=&quot;anchor&quot; id=&quot;problem&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -40,7 +42,7 @@
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/posts/2019-04-03-RSA-Blind-Signatures/2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;That didn’t work. Guess that might have been too easy. Let’s take a look at the &lt;code class=&quot;highlighter-rouge&quot;&gt;[server.py](http://server.py)&lt;/code&gt; file that was helpfully provided for us. Let’s skip down to the &lt;code class=&quot;highlighter-rouge&quot;&gt;main&lt;/code&gt; function and try to figure out what the server’s doing.&lt;/p&gt;
+&lt;p&gt;That didn’t work. Guess that might have been too easy. Let’s take a look at the &lt;a href=&quot;/assets/images/posts/2019-04-03-RSA-Blind-Signatures/server.py&quot;&gt;server.py&lt;/a&gt; file that was helpfully provided for us. Let’s skip down to the &lt;code class=&quot;highlighter-rouge&quot;&gt;main&lt;/code&gt; function and try to figure out what the server’s doing.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'__main__'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;signature&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RSA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -191,12 +193,20 @@
   &lt;li&gt;
     &lt;p&gt;Select e such that it is between 3 and n-1 that is relatively prime to p-1 and q-1. &lt;strong&gt;Relatively prime&lt;/strong&gt;, or &lt;strong&gt;coprime&lt;/strong&gt;, means that the only common factor between them is 1, or that it’s &lt;em&gt;greatest common denominator&lt;/em&gt; is 1. Equivalently:&lt;/p&gt;
 
-    &lt;script type=&quot;math/tex; mode=display&quot;&gt;gcd(e, \phi(n)) = 1 \text{ or } gcd(e, \lambda(n)) = 1 \tag{RSA:4}&lt;/script&gt;
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;gcd(e, \phi(n)) = 1&lt;/script&gt;
+
+    &lt;center&gt;or&lt;/center&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;gcd(e, \lambda(n)) = 1 \tag{RSA:4}&lt;/script&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Compute d as the &lt;strong&gt;multiplicative inverse&lt;/strong&gt; of e modulo λ(n) as&lt;/p&gt;
 
-    &lt;script type=&quot;math/tex; mode=display&quot;&gt;d = e^{-1} \text{ mod } \phi(n) \text{ or } d = e^{-1} \text{ mod } \lambda(n) \tag{RSA:5}&lt;/script&gt;
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;d = e^{-1} \text{ mod } \phi(n)&lt;/script&gt;
+
+    &lt;center&gt;or&lt;/center&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;d = e^{-1} \text{ mod } \lambda(n) \tag{RSA:5}&lt;/script&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 

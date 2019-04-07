@@ -5,9 +5,12 @@ banner: ""
 tags: 
 - ctf
 - cryptography
+wordcount: 3359
 ---
 
 # RSA, Blind Signatures, and a VolgaCTF Crypto Challenge
+
+<div class="date">{{page.date | date: "%A, %B %d, %Y" }} || words: {{page.wordcount}}</div> 
 
 > Given a server that runs commands with a valid signature, but signs only certain ones, execute a blinding attack to get a valid RSA signature on  one such restricted command.
 
@@ -31,7 +34,7 @@ Pull the flag...if you can.
 
 `nc blind.g.2019.volgactf.ru 7070`
 
-[server.py](https://q.2019.volgactf.ru/files/cfa25d5253c2f08f19a14923150402d5/server.py)
+[server.py](/assets/images/posts/2019-04-03-RSA-Blind-Signatures/server.py)
 
 <a class="anchor" id="problem"></a>
 
@@ -45,7 +48,7 @@ Looks like it's asking for a command. Perhaps a Linux command might work?
 
 ![](/assets/images/posts/2019-04-03-RSA-Blind-Signatures/2.png)
 
-That didn't work. Guess that might have been too easy. Let's take a look at the `[server.py](http://server.py)` file that was helpfully provided for us. Let's skip down to the `main` function and try to figure out what the server's doing.
+That didn't work. Guess that might have been too easy. Let's take a look at the [server.py](/assets/images/posts/2019-04-03-RSA-Blind-Signatures/server.py) file that was helpfully provided for us. Let's skip down to the `main` function and try to figure out what the server's doing.
 
 ```python
 if __name__ == '__main__':
@@ -197,11 +200,19 @@ The RSA algorithm works with the following four steps:
 
 4. Select e such that it is between 3 and n-1 that is relatively prime to p-1 and q-1. **Relatively prime**, or **coprime**, means that the only common factor between them is 1, or that it's *greatest common denominator* is 1. Equivalently:
 
-    $$gcd(e, \phi(n)) = 1 \text{ or } gcd(e, \lambda(n)) = 1 \tag{RSA:4}$$
+    $$gcd(e, \phi(n)) = 1$$
+
+    <center>or</center> 
+
+    $$gcd(e, \lambda(n)) = 1 \tag{RSA:4}$$
 
 5. Compute d as the **multiplicative inverse** of e modulo λ(n) as
 
-    $$d = e^{-1} \text{ mod } \phi(n) \text{ or } d = e^{-1} \text{ mod } \lambda(n) \tag{RSA:5}$$
+    $$d = e^{-1} \text{ mod } \phi(n) $$
+
+    <center>or</center>
+
+    $$d = e^{-1} \text{ mod } \lambda(n) \tag{RSA:5}$$
 
 The **public key** will consist of modulus n and public exponent e. The **private key** will consist of the private exponent d.
 
@@ -414,6 +425,7 @@ Sometimes, if you're unlucky, your randomly blinded message contains `'`, and th
 You can also send the message `cat private_key.py` to see the value of d that the server is using the sign the commands as well for funsies. 
 
 We finally get the flag: **VolgaCTF{B1ind_y0ur_tru3_int3nti0n5}** ✨
+
 
 ## References
 
