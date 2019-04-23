@@ -13,7 +13,7 @@
 		<!--- OPEN GRAPH TAGS ---->
 		<meta property="og:locale" content="en_US">
 		<meta property="og:type" content="article">
-		<meta property="og:title" content="{%if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+		<meta property="og:title" content="{%if page.title %}{{ page.title }} :: Kristen Kwong - Software Engineer{% else %}{{ site.title }}{% endif %}">
 		<meta property="og:url" content="{{ site.url }}{{ page.url }}">
 		<meta property="og:image" content="{% if page.banner %}{{ page.banner }}{% else %}/assets/images/icon.png{% endif %}" />
 		<meta property="og:site_name" content="Kristen Kwong - Software Engineer">
@@ -23,8 +23,8 @@
 
 		<!--- TWITTER CARD ---->
   		<meta name="twitter:card" content="summary_large_image"/>
-		<meta name="twitter:title" content="{%if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-		<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+		<meta name="twitter:title" content="{%if page.title %}{{ page.title }} :: Kristen Kwong - Software Engineer{% else %}{{ site.title }}{% endif %}">
+		<meta name="twitter:description" content="{% if page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}">
 		<meta name="twitter:creator" content="@kristenkwng">
 		<meta name="twitter:card" content="summary">
 
