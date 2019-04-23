@@ -72,6 +72,7 @@
 			</div>
 			{% endif %}
 			<div id="content">
+				{% if page.date %}<span class="date">{{page.date | date: "%A, %B %d, %Y" }}</span>{% endif %}
 				{{ content }}
 			</div>
 		</div>

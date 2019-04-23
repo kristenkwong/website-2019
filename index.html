@@ -158,28 +158,4 @@ layout: default
 		</div>
 	</div>
 
-	
-</div>
-
-<a id="blog"></a>
-<div id="blog">
-
-	<div class="container-header">
-		<div class="section-header">
-			blog
-		</div>
-	</div>
-
-	<div class="container">
-		{% assign sorted_posts = site.posts | sort: "date" | reverse %}
-		<div class="features">
-			{% for post in site.posts %}
-				<div class="feature">
-					<a class="article-title" href="{{ post.url }}">{{ post.title }}</a> <span class="post-date">{{post.date | date: "%a, %b %d, %Y" }}</span>
-					<div class="desc">{{ post.summary }}</div>
-				</div>
-			{% endfor %}
-		</div>
-	</div>
-
 </div>

@@ -1,4 +1,5 @@
 @import "code.scss";
+@import url('https://fonts.googleapis.com/css?family=Palanquin+Dark:500');
 
 @banner-image-width: 4000px;
 @banner-image-height: 1900px;
@@ -8,10 +9,12 @@ $primary-color: #ffffff;
 $secondary-color: #e0e0e0;
 $dark-bg: #303030;
 $light-bg: #f2f2f3;
+$light-grey: #8c8c8c;
 $accent-color: #fdf59c;
 $serif-font-size-content: 1em;
 $content-title-font-size: 1.7em;
 $content-line-height: 1.9em;
+$title-font: 'Palanquin Dark', sans-serif;
 
 body {
 	text-align: center;
@@ -38,7 +41,7 @@ a.anchor { /* page anchors */
 	}
 
 	.banner-padding {
-		height: 80px;
+		height: 100px;
 	}
 
 	.page-title {
@@ -83,9 +86,10 @@ a.anchor { /* page anchors */
 }
 
 .date {
-	font-size: 0.9em;
-	padding: 0px;
-	font-family: $font-body;
+	font-size: 14px;
+	font-family: $title-font;
+	color: $light-grey;
+	border-bottom: 3px solid $light-grey;
 }
 
 .mjx-chtml {
@@ -117,8 +121,6 @@ a.anchor { /* page anchors */
 		padding-left: 10px;
 	}
 
-
-
 	code { /* inline code */
 		background-color: $primary-color;
 		font-family: $font-body;
@@ -135,9 +137,21 @@ a.anchor { /* page anchors */
 		background-color: transparent;
 	}  
 
+	h1, h2, h3, h4, h5, h6 {
+		font-family: $title-font;
+		font-weight: normal;
+	}
+
 	h1 {
-		line-height: 1.5;
-		font-size: 32px;
+		line-height: 1.2;
+		font-size: 48px;
+	}
+
+	.subtitle {
+		font-family: $title-font;
+		font-size: 18px;
+		color: $light-grey;
+		padding-bottom: 10px;
 	}
 
 	a {

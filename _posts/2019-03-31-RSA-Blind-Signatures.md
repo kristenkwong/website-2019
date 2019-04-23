@@ -6,13 +6,10 @@ tags:
 - ctf
 - cryptography
 wordcount: 3359
+categories: blog
 ---
-
 # RSA, Blind Signatures, and a VolgaCTF Crypto Challenge
-
-<div class="date">{{page.date | date: "%A, %B %d, %Y" }} || words: {{page.wordcount}}</div> 
-
-> Given a server that runs commands with a valid signature, but signs only certain ones, execute a blinding attack to get a valid RSA signature on  one such restricted command.
+<div class="subtitle">{{page.summary}}</div>
 
 [Maple Bacon](https://ubcctf.github.io/) participated in [VolgaCTF 2019](https://q.2019.volgactf.ru), which ran for 48 hours from March 29th at 15:00 UTC. We were all pretty busy, with it being the last week of classes, but we managed to finished 41st out of 1097 teams. In addition to the challenge in this writeup, I also solved Store (Web 100), Fakegram Star (Antifake 75), and Horrible Retelling (Antifake 50).
 
