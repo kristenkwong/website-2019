@@ -5,7 +5,7 @@ stack:
 - JavaScript
 - HTML/CSS
 dates: Sept - Nov 2018
-github: https://github.com/kristenkwong/InsightUBC
+github: ""
 link: https://insightubc-310.herokuapp.com/
 enddate: 2018-11-31
 title: InsightUBC
@@ -95,32 +95,3 @@ We use `restify` as a REST server library. **REST endpoints** are adapted to our
 Other `GET /*` endpoints get our static resources in the `public` folder of the frontend.
 
 Vanilla **JavaScript** is used to build query from the HTML form on the UI through the `document` object, in the `CampusExplorer.buildQuery` method. An Ajax/REST call is sent to the `/query` endpoint in the `CampusExplorer.sendQuery` method using browser-native method `XMLHttpRequest`.
-
-## ⚒ Building and running the project locally
-
-If you want to build the project on your local machine, follow these steps.
-
-### Configuring the development environment
-
-To start using this project, you need to get your computer configured so you can build and execute the code.
-To do this, follow these steps; the specifics of each step (especially the first two) will vary based on which operating system your computer has:
-
-1. Install git. Check after by using `git --version`.
-
-1. Install Node LTS (8.X), which will also install NPM. Check by using `node --version` and `npm --version` on the command line.
-
-1. [Install Yarn](https://yarnpkg.com/en/docs/install), which is a package and dependency manager (like npm). Check that it's installed correctly by using `yarn --version` command after.
-
-1. Clone the project repository: `git clone https://github.com/kristenkwong/InsightUBC.git`
-
-### Project commands
-
-After the environment has been configured, use these commands to use Yarn to install dependencies and build the projects, as well as run tests or start the application.
-
-1. `yarn install`: download the packages in *package.json* to the *node_modules* directory.
-
-1. `yarn build`: compile the project.
-
-1. `yarn test`: run the test suite.
-
-1. `yarn start`: start the application. You can set the port the application runs on by using `export PORT=4321`. You should be able to view it in the browser on http://localhost:4321/. (Replace 4321 with your choice of port if you'd like.)

@@ -1,6 +1,6 @@
 ---
 position: Software Test Engineer
-dates: January - August 2017
+dates: Jan - Aug 2017
 title: Netgear
 startdate: 2017-01-02
 tagline: integrated an Arduino into a testing framework for a previously manual process,
