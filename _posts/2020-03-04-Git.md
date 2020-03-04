@@ -1,0 +1,16 @@
+---
+title: Intro to Git Workshop Resources
+summary: Resources for the Intro to Git workshop that I presented at cmd-f in 2019 and 2020, including slides. To be updated :)
+banner: ""
+tags:
+  - git
+  - speaking
+wordcount: 0
+categories: blog
+---
+
+# {{page.title}}
+
+<div class="subtitle">{{page.summary}}</div>
+
+You can find the slides <a href="/assets/files/git-workshop-slides.pdf">here</a>!
